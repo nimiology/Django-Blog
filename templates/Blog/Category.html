@@ -1,0 +1,37 @@
+{% extends 'Blog/../Base.html' %}
+{% load static %}
+{% block title %}Category | {{ Category.Title }}{% endblock %}
+{% block custom-css %}<link rel="stylesheet" href="{% static 'Blog/Blogi.css' %}" media="screen">{% endblock %}
+{% block main %}
+  {% for article in Articles  %}
+    <section class="u-clearfix u-grey-10 u-section-1" id="sec-a880">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
+        <div class="u-blog u-expanded-width u-blog-1">
+          <div class="u-repeater u-repeater-1"><!--blog_post-->
+            <div class="u-align-left u-blog-post u-container-style u-repeater-item u-white u-repeater-item-1">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <a class="u-post-header-link" href="{% url 'Blog:article' article.slug %}"><!--blog_post_image-->
+                  <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="{{ article.Thumbnail.url }}"><!--/blog_post_image-->
+                </a><!--blog_post_header-->
+                <h4 class="u-blog-control u-text u-text-1">
+                  <a class="u-post-header-link" href="{% url 'Blog:article' article.slug %}"><!--blog_post_header_content-->{{ article.Title }}<!--/blog_post_header_content--></a>
+                </h4><!--/blog_post_header--><!--blog_post_content-->
+                <div class="u-blog-control u-post-content u-text u-text-2"><!--blog_post_content_content-->{{ article.Text|truncatewords:15 }}<!--/blog_post_content_content--></div><!--/blog_post_content--><!--blog_post_readmore-->
+                <a href="{% url 'Blog:article' article.slug %}" class="u-blog-control u-btn u-button-style u-btn-1"><!--blog_post_readmore_content-->Read More<!--/blog_post_readmore_content--></a><!--/blog_post_readmore-->
+              </div>
+            </div><!--/blog_post-->
+          </div>
+        </div><!--/blog-->
+      </div>
+    </section>
+  {% endfor %}
+    <section class="u-align-left u-clearfix u-grey-10 u-section-7" id="sec-bfc4">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        {% if Articles.has_previous %}
+            <h5 class="u-align-left u-text u-text-1"><a href="{% url 'Blog:blog' Articles.previous_page_number %}">&lt;&lt;BACK</a></h5>{% endif %}
+      {% if Articles.has_next %}
+          <h6 class="u-align-right u-text u-text-2"><a href="{% url 'Blog:blog' Articles.next_page_number %}">NEXT&gt;&gt;</a></h6>{% endif %}
+        </div>
+    </section>
+
+{% endblock %}
