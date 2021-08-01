@@ -8,12 +8,15 @@
     <section class="u-clearfix u-section-1" id="sec-9030">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <p class="u-align-center u-text u-text-1">
-          <span style="font-weight: 700;">Name: Nima</span>
-          <br>
-          <span style="font-weight: 700;">&nbsp; &nbsp;&nbsp;</span>Job : Student<br>
-          <span style="font-weight: 700;">Date of birth: April 14, 2004</span>
+{#          <span style="font-weight: 700;">Name: Nima</span>#}
+{#          <br>#}
+{#          <span style="font-weight: 700;">&nbsp; &nbsp;&nbsp;</span>Job : Student<br>#}
+{#          <span style="font-weight: 700;">Date of birth: April 14, 2004</span>#}
           <span style="font-weight: 700;">
-            <br>&nbsp;Email: nimiologyy@gmail.com<br> Telegram:&nbsp;<a href="https://T.me/NIM00L">NIM00L</a>
+              {% for SocialMedia in SocialMedias %}
+                  <br>
+                <a href="{{ SocialMedia.Link }}">{{ SocialMedia.Title }}&nbsp;</a>
+              {% endfor %}
           </span>
           <br>
         </p>

@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from Blog.models import Article
 from Projects.models import Project
+from .models import SocialMedias
 # Create your views here.
 
 def Home(request):
@@ -12,6 +13,6 @@ def Home(request):
 
     return render(request, "StaticPages/Home.html", context)
 
-def About(request):
-    return render(request, "StaticPages/About.html")
+def SocialMedia(request):
+    return render(request, "StaticPages/SocialMedia.html", {'SocialMedias':SocialMedias.objects.order_by('Title')})
 
