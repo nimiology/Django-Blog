@@ -2,6 +2,7 @@
 {% load static %}
 {% block title %}Blog{% endblock %}
 {% block custom-css %}<link rel="stylesheet" href="{% static 'Blog/Blogi.css' %}" media="screen">{% endblock %}
+{% block Body %}u-body{% endblock %}
 {% block main %}
   {% for article in Articles %}
     <section class="u-clearfix u-grey-10 u-section-1" id="sec-a880">
