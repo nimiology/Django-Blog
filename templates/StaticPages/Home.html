@@ -4,7 +4,7 @@
 {% block custom-css %}
 <link rel="stylesheet" href="{% static 'Blog/Home.css' %}" media="screen">
 {% endblock %}
-{% block Body %}<u-body u-overlap u-overlap-contrast u-overlap-transparent">{% endblock %}
+{% block Body %}u-body u-overlap u-overlap-contrast u-overlap-transparent{% endblock %}
 
 {% block main %}
 
@@ -38,10 +38,10 @@
             <h1 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-text u-text-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">{{ Project.Title }}<br>
             </h1>
             <h1 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-text u-title u-text-2">
-              <a class="u-btn u-button-link u-button-style u-none u-text-white u-btn-1" href="{% url 'Blog:projects' %}" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">Working on</a>
+              <a class="u-btn u-button-link u-button-style u-none u-text-white u-btn-1" href="{% url 'Projects:projects' %}" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">Working on</a>
             </h1>
             <p class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-text u-text-3" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">{{ Project.Text|truncatewords:10 }}</p>
-            <a href="{% url 'Blog:project' Project.slug %}" class="u-active-none u-border-2 u-border-active-white u-border-hover-palette-2-base u-border-palette-2-base u-btn u-button-style u-hover-none u-none u-text-active-white u-text-hover-palette-2-base u-text-palette-2-base u-btn-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">READ MORE<br>
+            <a href="{% url 'Projects:project' Project.slug %}" class="u-active-none u-border-2 u-border-active-white u-border-hover-palette-2-base u-border-palette-2-base u-btn u-button-style u-hover-none u-none u-text-active-white u-text-hover-palette-2-base u-text-palette-2-base u-btn-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">READ MORE<br>
             </a>
       {% endfor %}
       </div>

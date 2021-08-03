@@ -14,36 +14,36 @@
         </h1><!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
         <div class="u-blog u-expanded-width u-blog-1">
           <div class="u-repeater u-repeater-1"><!--blog_post-->
-            {% for Project in Projectone %}
-                <div class="u-blog-post u-container-style u-grey-5 u-repeater-item u-repeater-item-1">
-                  <div class="u-container-layout u-similar-container u-container-layout-1">
-                    <a class="u-post-header-link" href="{% url 'Blog:project' Project.slug %}"><!--blog_post_image-->
-                      <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="{{ Project.Thumbnail.url }}"><!--/blog_post_image-->
-                    </a>
-                    <div class="u-align-center u-container-style u-expanded-width u-group u-group-1">
-                      <div class="u-container-layout u-container-layout-2"><!--blog_post_header-->
-                        <h2 class="u-blog-control u-custom-font u-font-montserrat u-text u-text-2">
-                          <a class="u-post-header-link" href="{% url 'Blog:project' Project.slug %}"><!--blog_post_header_content-->{{ Project.Title }}<!--/blog_post_header_content--></a>
-                        </h2><!--/blog_post_header--><!--blog_post_metadata-->
-                        <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-1"><!--blog_post_metadata_date-->
-                          <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content-->{{ Project.Publish }}<!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date-->
-                        </div><!--/blog_post_metadata--><!--blog_post_content-->
-                        <div class="u-blog-control u-post-content u-text u-text-3"><!--blog_post_content_content-->{{ Project.Text|truncatewords:10 }}<!--/blog_post_content_content--></div><!--/blog_post_content-->
-                      </div>
-                    </div>
-                  </div>
-            </div>
-            {% endfor %}
+{#            {% for Project in Projectone %}#}
+{#                <div class="u-blog-post u-container-style u-grey-5 u-repeater-item u-repeater-item-1">#}
+{#                  <div class="u-container-layout u-similar-container u-container-layout-1">#}
+{#                    <a class="u-post-header-link" href="{% url 'Blog:project' Project.slug %}"><!--blog_post_image-->#}
+{#                      <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="{{ Project.Thumbnail.url }}"><!--/blog_post_image-->#}
+{#                    </a>#}
+{#                    <div class="u-align-center u-container-style u-expanded-width u-group u-group-1">#}
+{#                      <div class="u-container-layout u-container-layout-2"><!--blog_post_header-->#}
+{#                        <h2 class="u-blog-control u-custom-font u-font-montserrat u-text u-text-2">#}
+{#                          <a class="u-post-header-link" href="{% url 'Blog:project' Project.slug %}"><!--blog_post_header_content-->{{ Project.Title }}<!--/blog_post_header_content--></a>#}
+{#                        </h2><!--/blog_post_header--><!--blog_post_metadata-->#}
+{#                        <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-1"><!--blog_post_metadata_date-->#}
+{#                          <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content-->{{ Project.Publish }}<!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date-->#}
+{#                        </div><!--/blog_post_metadata--><!--blog_post_content-->#}
+{#                        <div class="u-blog-control u-post-content u-text u-text-3"><!--blog_post_content_content-->{{ Project.Text|truncatewords:10 }}<!--/blog_post_content_content--></div><!--/blog_post_content-->#}
+{#                      </div>#}
+{#                    </div>#}
+{#                  </div>#}
+{#            </div>#}
+{#            {% endfor %}#}
             {% for Project in Projects %}
                 <div class="u-align-center u-blog-post u-container-style u-grey-5 u-repeater-item u-video-cover u-repeater-item-2">
                   <div class="u-container-layout u-similar-container u-container-layout-3">
-                    <a class="u-post-header-link" href="{% url 'Blog:project' Project.slug %}"><!--blog_post_image-->
+                    <a class="u-post-header-link" href="{% url 'Projects:project' Project.slug %}"><!--blog_post_image-->
                       <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-2" src="{{ Project.Thumbnail.url }}" data-image-width="626" data-image-height="342"><!--/blog_post_image-->
                     </a>
                     <div class="u-align-center u-container-style u-expanded-width u-group u-video-cover u-group-2">
                       <div class="u-container-layout u-container-layout-4"><!--blog_post_header-->
                         <h2 class="u-blog-control u-custom-font u-font-montserrat u-text u-text-4">
-                          <a class="u-post-header-link" href="{% url 'Blog:project' Project.slug %}"><!--blog_post_header_content-->{{ Project.Title }}<!--/blog_post_header_content--></a>
+                          <a class="u-post-header-link" href="{% url 'Projects:project' Project.slug %}"><!--blog_post_header_content-->{{ Project.Title }}<!--/blog_post_header_content--></a>
                         </h2><!--/blog_post_header--><!--blog_post_metadata-->
                         <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-2"><!--blog_post_metadata_date-->
                           <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content-->{{ Project.Publish }}<!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date-->
@@ -60,9 +60,9 @@
         <section class="u-align-left u-clearfix u-grey-5 u-section-3" id="sec-975f">
           <div class="u-clearfix u-sheet u-sheet-1">
             {% if Projects.has_previous %}
-                <h5 class="u-align-left u-text u-text-1"><a href="{% url 'Blog:projects' Projects.previous_page_number %}">&lt;&lt;BACK</a></h5>{% endif %}
+                <h5 class="u-align-left u-text u-text-1"><a href="{% url 'Projects:projects' Projects.previous_page_number %}">&lt;&lt;BACK</a></h5>{% endif %}
           {% if Projects.has_next %}
-              <h6 class="u-align-right u-text u-text-2"><a href="{% url 'Blog:projects' Projects.next_page_number %}">NEXT&gt;&gt;</a></h6>{% endif %}
+              <h6 class="u-align-right u-text u-text-2"><a href="{% url 'Projects:projects' Projects.next_page_number %}">NEXT&gt;&gt;</a></h6>{% endif %}
             </div>
         </section>
     </section>

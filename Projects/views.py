@@ -11,7 +11,7 @@ def Projects(request,page=1):
     #Projects = Projects.order_by("-Publish")
     context = {
         "Projects" : Projects,
-        "Projectone": Projects[:1],
+        # "Projectone": Projects[:1],
     }
     return render(request, "Projects/Projects.html", context)
 
