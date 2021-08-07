@@ -40,7 +40,7 @@
             <h1 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-text u-title u-text-2">
               <a class="u-btn u-button-link u-button-style u-none u-text-white u-btn-1" href="{% url 'Projects:projects' %}" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">Working on</a>
             </h1>
-            <p class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-text u-text-3" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">{{ Project.Text|truncatewords:10 }}</p>
+            <p class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-text u-text-3" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">{{ Project.Text|truncatewords:15 }}</p>
             <a href="{% url 'Projects:project' Project.slug %}" class="u-active-none u-border-2 u-border-active-white u-border-hover-palette-2-base u-border-palette-2-base u-btn u-button-style u-hover-none u-none u-text-active-white u-text-hover-palette-2-base u-text-palette-2-base u-btn-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">READ MORE<br>
             </a>
       {% endfor %}
@@ -52,7 +52,7 @@
         <div class="u-container-style u-grey-10 u-group u-group-1" data-animation-name="zoomIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
           <div class="u-container-layout u-container-layout-1">
             <h2 class="u-custom-font u-font-arial u-text u-text-1">My Blog</h2>
-            <p class="u-text u-text-2">This is my Blog.<br>&nbsp;Sometimes I will put things there.<br>
+            <p class="u-text u-text-2">This is my Blog.<br>&nbsp;Sometimes I will put things here.<br>
             </p>
             <a href="blog/" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-1">see more</a>
           </div>

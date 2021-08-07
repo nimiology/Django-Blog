@@ -1,3 +1,7 @@
+body {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
 .u-section-1 {
   background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("images/Jan_Matejko_-_Staczyk_-_Google_Art_Project.png");
   background-position: 50% 50%;
