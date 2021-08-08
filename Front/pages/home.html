@@ -27,7 +27,16 @@
                 <li>CONTACT</li>
             </ul>
             <div class="navbar-search">
-                <span class="bi-search"></span>
+                <button class="navbar-search-btn"><span class="bi-search"></span></button>
+                <div class="search-box-modal">
+                    <div class="col-5 col-md-6 col-lg-7 search-box-modal-container">
+                        <div class="col-12 search-box-modal-input">
+                            <input class="col-9" type="text" placeholder="SEARCH_">
+                            <button class="col-3"><span class="bi-search"></span></button>
+                        </div>
+                        <div class="search-box-modal-line"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -37,11 +46,5 @@
 </main>
 </body>
 <script src="../js/wow.min.js"></script>
-<script>
-    setTimeout(function () {
-        var headerEl = document.getElementsByTagName('header')[0];
-        console.log(document.getElementsByTagName('header'));
-        headerEl.classList.add('header-faded-in');
-    }, 1000);
-</script>
+<script src="../js/home.js"></script>
 </html>

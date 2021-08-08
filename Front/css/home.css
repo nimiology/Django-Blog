@@ -37,7 +37,7 @@ header {
           font-size: 0.9rem;
           font-family: 'Raleway', sans-serif;
           font-weight: 700;
-          transition: color 150ms, border-bottom-color 150ms,transform 150ms;
+          transition: color 150ms, border-bottom-color 150ms, transform 150ms;
           border-bottom: 2px solid transparent; }
           header nav .navbar-menu ul li:active, header nav .navbar-menu ul li:hover {
             transform: translateY(-3px);
@@ -46,10 +46,134 @@ header {
       header nav .navbar-menu .navbar-search {
         font-size: 1.25rem;
         cursor: pointer;
-        color: #ffffff;
         transition: color 150ms; }
-        header nav .navbar-menu .navbar-search:hover {
-          color: #db7b7b; }
+        header nav .navbar-menu .navbar-search .navbar-search-btn {
+          position: relative;
+          z-index: 25;
+          border: none;
+          outline: none;
+          background: transparent;
+          padding: 0;
+          margin: 0;
+          color: #ffffff;
+          transition: color 250ms; }
+          header nav .navbar-menu .navbar-search .navbar-search-btn:focus {
+            border: none;
+            outline: none; }
+            header nav .navbar-menu .navbar-search .navbar-search-btn:focus:after, header nav .navbar-menu .navbar-search .navbar-search-btn:focus:before {
+              content: ''; }
+          header nav .navbar-menu .navbar-search .navbar-search-btn:after, header nav .navbar-menu .navbar-search .navbar-search-btn:before {
+            content: ''; }
+          header nav .navbar-menu .navbar-search .navbar-search-btn:hover {
+            color: #db7b7b; }
+        header nav .navbar-menu .navbar-search .navbar-search-btn-active {
+          color: #e02e2e; }
+        header nav .navbar-menu .navbar-search .search-box-modal {
+          position: fixed;
+          background-color: #0C0909D5;
+          top: -250%;
+          right: -150%;
+          width: 1700px;
+          height: 1700px;
+          border-radius: 50%;
+          transition: top 750ms, right 750ms, transform 750ms;
+          z-index: 20;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          @media screen and (max-width: 1200px) {
+            header nav .navbar-menu .navbar-search .search-box-modal {
+              width: 1400px;
+              height: 1400px;
+              top: -200%;
+              right: -160%; } }
+          @media screen and (max-width: 830px) {
+            header nav .navbar-menu .navbar-search .search-box-modal {
+              width: 1000px;
+              height: 1000px;
+              right: -180%; } }
+          @media screen and (max-width: 510px) {
+            header nav .navbar-menu .navbar-search .search-box-modal {
+              width: 900px;
+              height: 900px;
+              top: -160%;
+              right: -250%; } }
+          @media screen and (max-width: 400px) {
+            header nav .navbar-menu .navbar-search .search-box-modal {
+              width: 700px;
+              height: 700px; } }
+          header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 250ms; }
+            header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: row;
+              padding: 0 2rem 0 1.5rem; }
+              header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input input {
+                border: none;
+                outline: none;
+                background: transparent;
+                padding: 0;
+                margin: 0;
+                font-size: 5rem;
+                color: #ffffff; }
+                header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input input:focus {
+                  border: none;
+                  outline: none; }
+                  header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input input:focus:after, header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input input:focus:before {
+                    content: ''; }
+                header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input input:after, header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input input:before {
+                  content: ''; }
+                @media screen and (max-width: 900px) {
+                  header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input input {
+                    font-size: 3rem; } }
+                @media screen and (max-width: 500px) {
+                  header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input input {
+                    font-size: 2rem;
+                    padding: 0 !important; } }
+              header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input button {
+                border: none;
+                outline: none;
+                background: transparent;
+                padding: 0;
+                margin: 0;
+                position: relative;
+                bottom: -20px;
+                opacity: 0;
+                font-size: 2rem;
+                transition: bottom 250ms, opacity 250ms; }
+                header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input button:focus {
+                  border: none;
+                  outline: none; }
+                  header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input button:focus:after, header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input button:focus:before {
+                    content: ''; }
+                header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input button:after, header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input button:before {
+                  content: ''; }
+                @media screen and (max-width: 500px) {
+                  header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input button {
+                    font-size: 1.5rem; } }
+                header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input button span {
+                  color: #b3b3b3;
+                  float: right; }
+                  header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-input button span:hover {
+                    color: #ffffff; }
+            header nav .navbar-menu .navbar-search .search-box-modal .search-box-modal-container .search-box-modal-line {
+              display: block;
+              width: 0;
+              height: 2px;
+              background-image: linear-gradient(90deg, #500a10, #b4372b);
+              border-radius: 3px;
+              transition: width 500ms; }
+        header nav .navbar-menu .navbar-search .search-box-modal-active {
+          top: 50% !important;
+          right: 50% !important;
+          transform: translate(50%, -50%); }
 
 .home-container {
   position: fixed;
