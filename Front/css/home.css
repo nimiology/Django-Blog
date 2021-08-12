@@ -1,13 +1,10 @@
-body {
-  background-color: #130E0EFF; }
-
 .header-faded-in {
   top: 0;
   opacity: 1; }
 
 header {
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   top: -10%;
   opacity: 0;
   transition: 1s;
@@ -18,7 +15,7 @@ header {
     align-items: center;
     margin: 2rem 3rem 0 3rem; }
     header nav .navbar-logo {
-      color: #ffffff; }
+      color: #767676; }
     header nav .navbar-menu {
       display: flex;
       justify-content: flex-end;
@@ -32,10 +29,9 @@ header {
         align-items: center; }
         header nav .navbar-menu ul li {
           cursor: pointer;
-          color: #ffffff;
+          color: #767676;
           margin-right: 3rem;
-          font-size: 0.9rem;
-          font-family: 'Raleway', sans-serif;
+          font-size: 1.1rem;
           font-weight: 700;
           transition: color 150ms, border-bottom-color 150ms, transform 150ms;
           border-bottom: 2px solid transparent; }
@@ -55,7 +51,7 @@ header {
           background: transparent;
           padding: 0;
           margin: 0;
-          color: #ffffff;
+          color: #767676;
           transition: color 250ms; }
           header nav .navbar-menu .navbar-search .navbar-search-btn:focus {
             border: none;
@@ -175,6 +171,9 @@ header {
           right: 50% !important;
           transform: translate(50%, -50%); }
 
+body {
+  background-color: #130E0EFF; }
+
 .home-container {
   position: fixed;
   z-index: 5;
@@ -188,3 +187,6 @@ header {
   background-position-y: center;
   animation-name: fadeInDown;
   animation-duration: 1s; }
+
+footer {
+  color: red; }
