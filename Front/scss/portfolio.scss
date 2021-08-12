@@ -3,8 +3,8 @@
 
 @import "header";
 
-main{
-  margin-top: 12rem;
+main {
+  margin-top: 10rem;
 }
 
 .portfolio-container {
@@ -16,7 +16,7 @@ main{
     align-items: center;
     margin-top: 2rem;
     width: 100%;
-    padding: 1.5rem 0;
+    padding: 4.5rem 0;
 
     .portfolio-card-images {
       position: relative;
@@ -24,6 +24,7 @@ main{
       justify-content: center;
       align-items: center;
       min-height: 500px;
+
       img {
         position: absolute;
         animation-name: fadeInUp;
@@ -135,10 +136,12 @@ main{
         right: 460px;
         top: 210px;
       }
+
       &:nth-child(2) {
         right: 20px;
         top: 170px;
       }
+
       &:nth-child(3) {
         right: 90px;
         top: -100px;
@@ -159,10 +162,12 @@ main{
         left: 460px;
         top: 210px;
       }
+
       &:nth-child(2) {
         left: 20px;
         top: 170px;
       }
+
       &:nth-child(3) {
         left: 90px;
         top: -100px;
@@ -176,13 +181,13 @@ main{
   }
 }
 
-.portfolio-container-center-line{
+.portfolio-container-center-line {
   position: fixed;
   left: 50%;
   top: 0;
   width: 1px;
   height: 100%;
-  transform: translate(-50%,0);
+  transform: translate(-50%, 0);
   background-color: $color-black;
 }
 

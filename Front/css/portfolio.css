@@ -3,7 +3,7 @@
   opacity: 1; }
 
 header {
-  position: fixed;
+  position: absolute;
   z-index: 40;
   top: -10%;
   opacity: 0;
@@ -172,7 +172,7 @@ header {
           transform: translate(50%, -50%); }
 
 main {
-  margin-top: 12rem; }
+  margin-top: 10rem; }
 
 .portfolio-container {
   padding: 0 3rem; }
@@ -182,7 +182,7 @@ main {
     align-items: center;
     margin-top: 2rem;
     width: 100%;
-    padding: 1.5rem 0; }
+    padding: 4.5rem 0; }
     .portfolio-container .portfolio-card .portfolio-card-images {
       position: relative;
       display: flex;
