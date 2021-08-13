@@ -3,6 +3,13 @@
 
 @import "header";
 
+header {
+  color: $color-text;
+  .navbar-search-btn {
+    color: $color-text;
+  }
+}
+
 body {
   background-color: #130E0EFF;
 }

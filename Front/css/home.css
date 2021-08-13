@@ -14,8 +14,6 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 2rem 3rem 0 3rem; }
-    header nav .navbar-logo {
-      color: #767676; }
     header nav .navbar-menu {
       display: flex;
       justify-content: flex-end;
@@ -29,7 +27,6 @@ header {
         align-items: center; }
         header nav .navbar-menu ul li {
           cursor: pointer;
-          color: #767676;
           margin-right: 3rem;
           font-size: 1.1rem;
           font-weight: 700;
@@ -51,7 +48,6 @@ header {
           background: transparent;
           padding: 0;
           margin: 0;
-          color: #767676;
           transition: color 250ms; }
           header nav .navbar-menu .navbar-search .navbar-search-btn:focus {
             border: none;
@@ -170,6 +166,11 @@ header {
           top: 50% !important;
           right: 50% !important;
           transform: translate(50%, -50%); }
+
+header {
+  color: #ffffff; }
+  header .navbar-search-btn {
+    color: #ffffff; }
 
 body {
   background-color: #130E0EFF; }
