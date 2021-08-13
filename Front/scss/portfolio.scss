@@ -3,6 +3,14 @@
 
 @import "header";
 
+header {
+  color: $color-black;
+
+  .navbar-search-btn {
+    color: $color-black;
+  }
+}
+
 main {
   margin-top: 10rem;
 }
@@ -25,29 +33,35 @@ main {
       align-items: center;
       min-height: 500px;
 
-      img {
+      div {
         position: absolute;
         animation-name: fadeInUp;
         animation-duration: 0.5s;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
 
         &:nth-child(1) {
           width: 190px;
           height: 190px;
           z-index: 30;
           animation-delay: 0.4s;
+          background-image: url("../assets/img/testImg3.jpg");
         }
 
         &:nth-child(2) {
-          width: 354px;
+          width: 394px;
           height: 295px;
           z-index: 10;
           animation-delay: 0.2s;
+          background-image: url("../assets/img/testImg2.png");
         }
 
         &:nth-child(3) {
           width: 603px;
           height: 452px;
           z-index: 20;
+          background-image: url("../assets/img/testImg.png");
         }
       }
     }
@@ -131,7 +145,7 @@ main {
   flex-direction: row-reverse;
 
   .portfolio-card-images {
-    img {
+    div {
       &:nth-child(1) {
         right: 460px;
         top: 210px;
@@ -157,7 +171,7 @@ main {
 
 .portfolio-card-left {
   .portfolio-card-images {
-    img {
+    div {
       &:nth-child(1) {
         left: 460px;
         top: 210px;
