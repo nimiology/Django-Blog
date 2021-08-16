@@ -5,13 +5,17 @@
 
 header {
   color: $color-text;
+
   .navbar-search-btn {
+    color: $color-text;
+  }
+  .navbar-menu ul a {
     color: $color-text;
   }
 }
 
 body {
-  background-color: #130E0EFF;
+  background-color: #130e0eff;
 }
 
 .home-container {
