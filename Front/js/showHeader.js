@@ -6,7 +6,7 @@ docReady(function () {
     if (WITH_DELAY) {
         setTimeout(function () {
             headerEl.classList.add('header-faded-in');
-        }, 1000);
+        }, DELAY_LENGTH);
     } else {
         headerEl.classList.add('header-faded-in');
     }
