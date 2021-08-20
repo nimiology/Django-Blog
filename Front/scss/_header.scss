@@ -46,7 +46,7 @@ header {
           letter-spacing: 2px;
           margin-right: 3rem;
           font: {
-            size: 1.1rem;
+            size: 18px;
             weight: 200;
           }
           transition: color 150ms, border-bottom-color 150ms, transform 150ms;
@@ -68,7 +68,7 @@ header {
 
         .navbar-search-btn {
           position: relative;
-          z-index: 25;
+          z-index: 35;
           @include input_reset();
           //color: #767676;
           transition: color 250ms;
@@ -91,7 +91,7 @@ header {
           height: 1700px;
           border-radius: 50%;
           transition: top 750ms, right 750ms, transform 750ms;
-          z-index: 20;
+          z-index: 30;
           display: flex;
           justify-content: center;
           align-items: center;

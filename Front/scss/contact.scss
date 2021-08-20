@@ -1,3 +1,114 @@
-.contact-container{
+@import "./includes/variabels";
+@import "./includes/utils";
 
+@import "header";
+
+header {
+  color: $color-text;
+
+  .navbar-search-btn {
+    color: $color-text;
+  }
+  .navbar-menu ul a {
+    color: $color-text;
+  }
 }
+
+// body {
+//   background-color: #130e0eff;
+// }
+
+.contact-container {
+  .contact-top-image {
+    height: 100vh;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+
+  .contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 8rem 0;
+    padding: 0 2rem 0 7rem;
+    height: 800px;
+
+    .contact-content-text {
+      padding-right: 5rem;
+      h1 {
+        color: $color-black;
+        font-family: "Rajdhani", "sans-serif";
+        font-size: 90px;
+        font-weight: 700;
+        line-height: 79px;
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+      }
+      div {
+        width: 80px;
+        height: 7px;
+        background-color: #3d7ddb;
+        margin-left: 5px;
+        margin-bottom: 2.5rem;
+      }
+      p {
+        font-family: "Roboto", "sans-serif";
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 29px;
+      }
+    }
+    .contact-content-form {
+      height: 100%;
+      form {
+        margin-top: 4rem;
+        input,
+        textarea,
+        button {
+          @include input_reset();
+          border: 2px solid $color-black;
+          font-family: "Roboto", "sans-serif";
+          font-size: 16px;
+          transition: border-color 0.25s, background-color 0.25s;
+          &:focus {
+            border: 2px solid $color-black;
+            border-bottom-color: orangered;
+          }
+        }
+        input {
+          padding: 0.75rem 1.25rem;
+          width: 49%;
+          font-weight: 300;
+        }
+        & > div {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        textarea {
+          margin-top: 0.3rem;
+          padding: 0.75rem 1.25rem;
+          font-weight: 300;
+        }
+        button {
+          border-color: #3d7ddb;
+          font-weight: 700;
+          padding: 0.8rem 0;
+          color: #3d7ddb;
+          &:focus {
+            border: 2px solid #3d7ddb;
+          }
+          &:hover {
+            color: $color-text;
+            background-color: #3d7ddb;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "footer";

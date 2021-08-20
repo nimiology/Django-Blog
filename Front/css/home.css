@@ -34,7 +34,7 @@ header {
           cursor: pointer;
           letter-spacing: 2px;
           margin-right: 3rem;
-          font-size: 1.1rem;
+          font-size: 18px;
           font-weight: 200;
           transition: color 150ms, border-bottom-color 150ms, transform 150ms;
           border-bottom: 2px solid transparent; }
@@ -48,7 +48,7 @@ header {
         transition: color 150ms; }
         header nav .navbar-menu .navbar-search .navbar-search-btn {
           position: relative;
-          z-index: 25;
+          z-index: 35;
           border: none;
           outline: none;
           background: transparent;
@@ -75,7 +75,7 @@ header {
           height: 1700px;
           border-radius: 50%;
           transition: top 750ms, right 750ms, transform 750ms;
-          z-index: 20;
+          z-index: 30;
           display: flex;
           justify-content: center;
           align-items: center; }
@@ -181,7 +181,7 @@ header {
     color: #ffffff; }
 
 body {
-  background-color: #130E0EFF; }
+  background-color: #130e0eff; }
 
 .home-container {
   position: fixed;
@@ -203,7 +203,7 @@ footer {
   align-items: center;
   flex-direction: column;
   position: relative;
-  z-index: 40;
+  z-index: 25;
   font-family: "Rajdhani", sans-serif;
   background-color: #fff;
   border-top: 2px solid #ec4e00; }
