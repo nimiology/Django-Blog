@@ -27,9 +27,6 @@ header {
       margin: 1rem;
     }
 
-    //.navbar-logo {
-    //  color: #767676;
-    //}
     .navbar-logo {
       font-size: 2rem;
     }
@@ -53,6 +50,7 @@ header {
           cursor: pointer;
           letter-spacing: 2px;
           margin-right: 3rem;
+
           font: {
             size: 18px;
             weight: 200;
@@ -79,9 +77,9 @@ header {
         transition: color 150ms;
 
         .navbar-search-btn {
+          @include input_reset();
           position: relative;
           z-index: 70;
-          @include input_reset();
           transition: color 250ms;
 
           @media screen and (max-width: 1100px) {
@@ -134,10 +132,6 @@ header {
         right: -250%;
       }
 
-      @media screen and (max-width: 400px) {
-        width: 700px;
-        height: 700px;
-      }
       .search-box-modal-container {
         display: flex;
         justify-content: center;
@@ -146,58 +140,66 @@ header {
         opacity: 0;
         transition: opacity 250ms;
 
-        .search-box-modal-input {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: row;
-          padding: 0 2rem 0 1.5rem;
+        .search-box-modal-wrapper {
+          width: 100%;
 
-          input {
-            @include input_reset();
-            font-size: 5rem;
-            color: $color-text;
-
-            @media screen and (max-width: 900px) {
-              font-size: 3rem;
-            }
-
-            @media screen and (max-width: 500px) {
-              font-size: 2rem;
-              padding: 0 !important;
-            }
+          @media screen and (max-width: 500px) {
+            width: 80%;
           }
+          .search-box-modal-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            padding: 0 2rem 0 1.5rem;
+            width: 100%;
 
-          button {
-            @include input_reset();
-            position: relative;
-            bottom: -20px;
-            opacity: 0;
-            font-size: 2rem;
-            transition: bottom 250ms, opacity 250ms;
+            input {
+              @include input_reset();
+              font-size: 5rem;
+              color: $color-text;
 
-            @media screen and (max-width: 500px) {
-              font-size: 1.4rem;
+              @media screen and (max-width: 900px) {
+                font-size: 3rem;
+              }
+
+              @media screen and (max-width: 500px) {
+                font-size: 2rem;
+                padding: 0 !important;
+              }
             }
 
-            span {
-              color: darken($color-text, 30%);
-              float: right;
+            button {
+              @include input_reset();
+              position: relative;
+              bottom: -20px;
+              opacity: 0;
+              font-size: 2rem;
+              transition: bottom 250ms, opacity 250ms;
 
-              &:hover {
-                color: $color-text;
+              @media screen and (max-width: 500px) {
+                font-size: 1.4rem;
+              }
+
+              span {
+                color: darken($color-text, 30%);
+                float: right;
+
+                &:hover {
+                  color: $color-text;
+                }
               }
             }
           }
-        }
 
-        .search-box-modal-line {
-          display: block;
-          width: 0;
-          height: 2px;
-          background-image: linear-gradient(90deg, #500a10, #b4372b);
-          border-radius: 3px;
-          transition: width 500ms;
+          .search-box-modal-line {
+            display: block;
+            width: 0;
+            height: 2px;
+            background-image: linear-gradient(90deg, #500a10, #b4372b);
+            border-radius: 3px;
+            transition: width 500ms;
+          }
         }
       }
     }
@@ -241,17 +243,18 @@ header {
           color: #e02e2e;
         }
       }
+
       .navbar-menu-mobile-hamburger-menu {
         position: relative;
         z-index: 90;
         button {
           @include input_reset();
-          color: $color-text;
+
           font-size: 32px;
           transition: color 250ms;
 
           &:hover {
-            color: #db7b7b;
+            color: #db7b7b !important;
           }
         }
       }

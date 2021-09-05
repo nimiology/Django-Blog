@@ -10,7 +10,15 @@ var navbarMenuMWrapper = document.getElementsByClassName(
 )[0];
 
 navbarMenuMButton.addEventListener("click", function () {
-  navbarMenuMWrapper.classList.toggle("navbar-menu-mobile-wrapper-active");
+  if (
+    !navbarMenuMWrapper.classList.contains("navbar-menu-mobile-wrapper-active")
+  ) {
+    lockScroll();
+    navbarMenuMWrapper.classList.add("navbar-menu-mobile-wrapper-active");
+  } else {
+    unLockScroll();
+    navbarMenuMWrapper.classList.remove("navbar-menu-mobile-wrapper-active");
+  }
 });
 
 function setMobileHeader() {

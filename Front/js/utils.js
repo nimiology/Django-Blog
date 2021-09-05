@@ -18,3 +18,11 @@ function deviceIsMobile() {
     return false;
   }
 }
+
+function lockScroll() {
+  document.getElementsByTagName("body")[0].style.overflow = "hidden";
+}
+
+function unLockScroll() {
+  document.getElementsByTagName("body")[0].style.overflow = "scroll";
+}

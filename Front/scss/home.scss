@@ -1,6 +1,9 @@
 @import "./includes/variabels";
 @import "./includes/utils";
 
+$menuSearchBtnColor: $color-text;
+$mobileMenuBtnColor: $color-text;
+
 @import "header";
 
 header {
@@ -9,8 +12,15 @@ header {
   .navbar-search-btn {
     color: $color-text;
   }
+
   .navbar-menu ul a {
     color: $color-text;
+  }
+
+  .navbar-menu-mobile-hamburger-menu {
+    button {
+      color: $color-text;
+    }
   }
 }
 

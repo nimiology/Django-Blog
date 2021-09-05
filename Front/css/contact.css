@@ -56,13 +56,13 @@ header {
         cursor: pointer;
         transition: color 150ms; }
         header nav .navbar-menu .navbar-search .navbar-search-btn, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn {
-          position: relative;
-          z-index: 70;
           border: none;
           outline: none;
           background: transparent;
           padding: 0;
           margin: 0;
+          position: relative;
+          z-index: 70;
           transition: color 250ms; }
           header nav .navbar-menu .navbar-search .navbar-search-btn:focus, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn:focus {
             border: none;
@@ -109,10 +109,6 @@ header {
           height: 900px;
           top: -160%;
           right: -250%; } }
-      @media screen and (max-width: 400px) {
-        header nav .search-box-modal {
-          width: 700px;
-          height: 700px; } }
       header nav .search-box-modal .search-box-modal-container {
         display: flex;
         justify-content: center;
@@ -120,67 +116,73 @@ header {
         flex-direction: column;
         opacity: 0;
         transition: opacity 250ms; }
-        header nav .search-box-modal .search-box-modal-container .search-box-modal-input {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: row;
-          padding: 0 2rem 0 1.5rem; }
-          header nav .search-box-modal .search-box-modal-container .search-box-modal-input input {
-            border: none;
-            outline: none;
-            background: transparent;
-            padding: 0;
-            margin: 0;
-            font-size: 5rem;
-            color: #ffffff; }
-            header nav .search-box-modal .search-box-modal-container .search-box-modal-input input:focus {
+        header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper {
+          width: 100%; }
+          @media screen and (max-width: 500px) {
+            header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper {
+              width: 80%; } }
+          header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            padding: 0 2rem 0 1.5rem;
+            width: 100%; }
+            header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input {
               border: none;
-              outline: none; }
-              header nav .search-box-modal .search-box-modal-container .search-box-modal-input input:focus:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-input input:focus:before {
+              outline: none;
+              background: transparent;
+              padding: 0;
+              margin: 0;
+              font-size: 5rem;
+              color: #ffffff; }
+              header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:focus {
+                border: none;
+                outline: none; }
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:focus:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:focus:before {
+                  content: ''; }
+              header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:before {
                 content: ''; }
-            header nav .search-box-modal .search-box-modal-container .search-box-modal-input input:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-input input:before {
-              content: ''; }
-            @media screen and (max-width: 900px) {
-              header nav .search-box-modal .search-box-modal-container .search-box-modal-input input {
-                font-size: 3rem; } }
-            @media screen and (max-width: 500px) {
-              header nav .search-box-modal .search-box-modal-container .search-box-modal-input input {
-                font-size: 2rem;
-                padding: 0 !important; } }
-          header nav .search-box-modal .search-box-modal-container .search-box-modal-input button {
-            border: none;
-            outline: none;
-            background: transparent;
-            padding: 0;
-            margin: 0;
-            position: relative;
-            bottom: -20px;
-            opacity: 0;
-            font-size: 2rem;
-            transition: bottom 250ms, opacity 250ms; }
-            header nav .search-box-modal .search-box-modal-container .search-box-modal-input button:focus {
+              @media screen and (max-width: 900px) {
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input {
+                  font-size: 3rem; } }
+              @media screen and (max-width: 500px) {
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input {
+                  font-size: 2rem;
+                  padding: 0 !important; } }
+            header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button {
               border: none;
-              outline: none; }
-              header nav .search-box-modal .search-box-modal-container .search-box-modal-input button:focus:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-input button:focus:before {
+              outline: none;
+              background: transparent;
+              padding: 0;
+              margin: 0;
+              position: relative;
+              bottom: -20px;
+              opacity: 0;
+              font-size: 2rem;
+              transition: bottom 250ms, opacity 250ms; }
+              header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:focus {
+                border: none;
+                outline: none; }
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:focus:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:focus:before {
+                  content: ''; }
+              header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:before {
                 content: ''; }
-            header nav .search-box-modal .search-box-modal-container .search-box-modal-input button:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-input button:before {
-              content: ''; }
-            @media screen and (max-width: 500px) {
-              header nav .search-box-modal .search-box-modal-container .search-box-modal-input button {
-                font-size: 1.4rem; } }
-            header nav .search-box-modal .search-box-modal-container .search-box-modal-input button span {
-              color: #b3b3b3;
-              float: right; }
-              header nav .search-box-modal .search-box-modal-container .search-box-modal-input button span:hover {
-                color: #ffffff; }
-        header nav .search-box-modal .search-box-modal-container .search-box-modal-line {
-          display: block;
-          width: 0;
-          height: 2px;
-          background-image: linear-gradient(90deg, #500a10, #b4372b);
-          border-radius: 3px;
-          transition: width 500ms; }
+              @media screen and (max-width: 500px) {
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button {
+                  font-size: 1.4rem; } }
+              header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button span {
+                color: #b3b3b3;
+                float: right; }
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button span:hover {
+                  color: #ffffff; }
+          header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-line {
+            display: block;
+            width: 0;
+            height: 2px;
+            background-image: linear-gradient(90deg, #500a10, #b4372b);
+            border-radius: 3px;
+            transition: width 500ms; }
     header nav .search-box-modal-active {
       top: 50% !important;
       right: 50% !important;
@@ -227,7 +229,6 @@ header {
         background: transparent;
         padding: 0;
         margin: 0;
-        color: #ffffff;
         font-size: 32px;
         transition: color 250ms; }
         header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:focus {
@@ -238,7 +239,7 @@ header {
         header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:after, header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:before {
           content: ''; }
         header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:hover {
-          color: #db7b7b; }
+          color: #db7b7b !important; }
     header nav .navbar-menu-mobile .navbar-menu-mobile-wrapper {
       display: flex;
       justify-content: space-evenly;
@@ -380,12 +381,19 @@ footer {
   footer .footer-logo {
     margin: 2rem;
     font-size: 3rem; }
+    @media screen and (max-width: 400px) {
+      footer .footer-logo {
+        margin: 1.25rem;
+        font-size: 2.5rem; } }
   footer .footer-navbar {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 3.5rem 0; }
+    @media screen and (max-width: 550px) {
+      footer .footer-navbar {
+        margin: 1.5rem 0; } }
     footer .footer-navbar .footer-navbar-menu ul {
       padding: 0;
       margin: 0;
@@ -412,6 +420,9 @@ footer {
           transform: translateY(-3px);
           color: #db7b7b;
           border-bottom-color: #e3a7a7; }
+        @media screen and (max-width: 550px) {
+          footer .footer-navbar .footer-navbar-menu ul li {
+            font-size: 0.9rem; } }
   footer .footer-social ul {
     padding: 0;
     margin: 0;
@@ -423,9 +434,29 @@ footer {
       padding: 0.5rem 1rem;
       font-size: 1.3rem;
       color: #000000; }
+      @media screen and (max-width: 550px) {
+        footer .footer-social ul li {
+          font-size: 1.3rem;
+          padding: 0.5rem 0.5rem; } }
+      @media screen and (max-width: 380px) {
+        footer .footer-social ul li {
+          font-size: 1.1rem;
+          padding: 0.5rem 0.5rem; } }
   footer .footer-copyright {
     margin-bottom: 5rem;
     color: #4d4d4d;
     letter-spacing: 4px;
     font-size: 17px;
     font-weight: 400; }
+    @media screen and (max-width: 550px) {
+      footer .footer-copyright {
+        font-size: 14px;
+        margin-bottom: 2rem; } }
+    @media screen and (max-width: 450px) {
+      footer .footer-copyright {
+        font-size: 12px;
+        letter-spacing: 3px; } }
+    @media screen and (max-width: 400px) {
+      footer .footer-copyright {
+        font-size: 10px;
+        letter-spacing: 2px; } }

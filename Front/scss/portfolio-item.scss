@@ -13,6 +13,10 @@ header {
   .navbar-menu ul a {
     color: $color-text;
   }
+
+  $menuItemColor: $color-black;
+  $mobileMenuBtnColor: $color-black;
+  $menuSearchBtnColor: $color-text;
 }
 
 main {
