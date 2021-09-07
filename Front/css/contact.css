@@ -271,12 +271,21 @@ header {
     color: #ffffff; }
   header .navbar-menu ul a, header nav .navbar-menu-mobile ul a {
     color: #ffffff; }
+  header .navbar-menu-mobile-hamburger-menu button {
+    color: #ffffff; }
 
 .contact-container .contact-top-image {
+  position: relative;
   height: 100vh;
   overflow: hidden; }
+  @media screen and (max-width: 800px) {
+    .contact-container .contact-top-image {
+      height: 50vh; } }
   .contact-container .contact-top-image img {
-    width: 100%; }
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%; }
 
 .contact-container .contact-content {
   display: flex;
@@ -286,8 +295,24 @@ header {
   margin: 8rem 0;
   padding: 0 2rem 0 7rem;
   height: 800px; }
+  @media screen and (max-width: 1199px) {
+    .contact-container .contact-content {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      padding: 0 3rem; } }
+  @media screen and (max-width: 650px) {
+    .contact-container .contact-content {
+      margin: 4rem 0; } }
+  @media screen and (max-width: 580px) {
+    .contact-container .contact-content {
+      padding: 0 1.5rem; } }
   .contact-container .contact-content .contact-content-text {
     padding-right: 5rem; }
+    @media screen and (max-width: 1200px) {
+      .contact-container .contact-content .contact-content-text {
+        padding-right: 0;
+        padding: 0 0rem; } }
     .contact-container .contact-content .contact-content-text h1 {
       color: #000000;
       font-family: "Rajdhani", "sans-serif";
@@ -296,8 +321,25 @@ header {
       line-height: 79px;
       padding: 0;
       margin: 0 0 1.5rem 0; }
+      @media screen and (max-width: 1300px) {
+        .contact-container .contact-content .contact-content-text h1 {
+          font-size: 80px; } }
+      @media screen and (max-width: 1120px) {
+        .contact-container .contact-content .contact-content-text h1 {
+          font-size: 70px;
+          line-height: 59px; } }
+      @media screen and (max-width: 1000px) {
+        .contact-container .contact-content .contact-content-text h1 {
+          font-size: 60px; } }
+      @media screen and (max-width: 750px) {
+        .contact-container .contact-content .contact-content-text h1 {
+          font-size: 50px;
+          line-height: 49px; } }
+      @media screen and (max-width: 650px) {
+        .contact-container .contact-content .contact-content-text h1 {
+          font-size: 40px; } }
     .contact-container .contact-content .contact-content-text div {
-      width: 80px;
+      width: 70px;
       height: 7px;
       background-color: #3d7ddb;
       margin-left: 5px;
@@ -307,10 +349,17 @@ header {
       font-size: 20px;
       font-weight: 300;
       line-height: 29px; }
+      @media screen and (max-width: 650px) {
+        .contact-container .contact-content .contact-content-text p {
+          font-size: 16px;
+          line-height: 23px; } }
   .contact-container .contact-content .contact-content-form {
     height: 100%; }
     .contact-container .contact-content .contact-content-form form {
       margin-top: 4rem; }
+      @media screen and (max-width: 460px) {
+        .contact-container .contact-content .contact-content-form form {
+          margin-top: 2rem; } }
       .contact-container .contact-content .contact-content-form form input,
       .contact-container .contact-content .contact-content-form form textarea,
       .contact-container .contact-content .contact-content-form form button {
@@ -349,6 +398,10 @@ header {
         padding: 0.75rem 1.25rem;
         width: 49%;
         font-weight: 300; }
+        @media screen and (max-width: 460px) {
+          .contact-container .contact-content .contact-content-form form input {
+            font-size: 14px;
+            padding: 0.5rem 0.75rem; } }
       .contact-container .contact-content .contact-content-form form > div {
         display: flex;
         justify-content: space-between;
@@ -357,16 +410,25 @@ header {
         margin-top: 0.3rem;
         padding: 0.75rem 1.25rem;
         font-weight: 300; }
+        @media screen and (max-width: 460px) {
+          .contact-container .contact-content .contact-content-form form textarea {
+            font-size: 14px;
+            padding: 0.5rem 0.75rem; } }
       .contact-container .contact-content .contact-content-form form button {
         border-color: #3d7ddb;
         font-weight: 700;
         padding: 0.8rem 0;
-        color: #3d7ddb; }
+        color: #3d7ddb;
+        margin-top: 4px; }
         .contact-container .contact-content .contact-content-form form button:focus {
           border: 2px solid #3d7ddb; }
         .contact-container .contact-content .contact-content-form form button:hover {
           color: #ffffff;
           background-color: #3d7ddb; }
+        @media screen and (max-width: 460px) {
+          .contact-container .contact-content .contact-content-form form button {
+            font-size: 14px;
+            padding: 0.5rem 0; } }
 
 footer {
   display: flex;
