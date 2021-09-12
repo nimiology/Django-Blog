@@ -14,10 +14,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem 3rem 2rem 3rem; }
+    margin: 2rem 3rem; }
     @media screen and (max-width: 800px) {
       header nav {
-        margin: 1rem 2rem 1rem 2rem; } }
+        margin: 1rem 2rem; } }
     @media screen and (max-width: 700px) {
       header nav {
         margin: 1rem; } }
@@ -47,10 +47,12 @@ header {
           @media screen and (max-width: 1100px) {
             header nav .navbar-menu ul li, header nav .navbar-menu-mobile ul li {
               font-size: 15px; } }
-          header nav .navbar-menu ul li:active, header nav .navbar-menu-mobile ul li:active, header nav .navbar-menu ul li:hover, header nav .navbar-menu-mobile ul li:hover {
+          header nav .navbar-menu ul li:hover, header nav .navbar-menu-mobile ul li:hover {
             transform: translateY(-3px);
             color: #db7b7b;
             border-bottom-color: #e3a7a7; }
+        header nav .navbar-menu ul .active, header nav .navbar-menu-mobile ul .active {
+          color: #db7b7b; }
       header nav .navbar-menu .navbar-search, header nav .navbar-menu-mobile .navbar-search {
         font-size: 1.25rem;
         cursor: pointer;
