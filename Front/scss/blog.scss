@@ -1,19 +1,12 @@
 @import "./includes/variabels";
 @import "./includes/utils";
 
-$menuSearchBtnColor: $color-text;
-$mobileMenuBtnColor: $color-text;
-
 @import "header";
 
 header {
   color: $color-text;
   background-color: $color-dark;
   position: fixed;
-
-  nav {
-    margin: 1.5rem 2.5rem;
-  }
 
   .navbar-search-btn {
     color: $color-text;
@@ -55,10 +48,6 @@ main {
     flex-direction: column;
     padding: 0 2rem 0 1rem;
 
-    // @media screen and (max-width: 870px) {
-    //   padding: 0 2rem 0 1rem;
-    // }
-
     @media screen and (max-width: 768px) {
       padding: 0;
     }
@@ -67,8 +56,7 @@ main {
       overflow: hidden;
       border-radius: 10px;
       background-color: darken($color: $color-dark, $amount: 2%);
-      box-shadow: 0px 15px 25px 0.1px
-        transparentize($color: rgb(0, 0, 0), $amount: 0.3);
+      box-shadow: 0px 15px 25px 0.1px rgb(0, 0, 0);
       margin-bottom: 7rem;
       animation-name: fadeInUp;
       animation-duration: 0.5s;
@@ -360,9 +348,18 @@ main {
 footer {
   background-color: $color-dark;
 
-  * {
-    color: $color-text !important;
+  .footer-navbar-menu {
+    ul a {
+      color: $color-text;
+    }
   }
+
+  .footer-social {
+    ul li {
+      color: $color-text;
+    }
+  }
+
   .footer-copyright {
     color: lighten($color: $color-black, $amount: 50%) !important;
   }

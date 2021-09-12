@@ -1,4 +1,10 @@
 @import "./includes/variabels" l;
+.active {
+  color: #db7b7b !important; }
+
+.active {
+  color: #db7b7b !important; }
+
 .header-faded-in {
   top: 0;
   opacity: 1; }
@@ -14,7 +20,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem 3rem; }
+    margin: 1.5rem 3rem; }
     @media screen and (max-width: 800px) {
       header nav {
         margin: 1rem 2rem; } }
@@ -51,8 +57,6 @@ header {
             transform: translateY(-3px);
             color: #db7b7b;
             border-bottom-color: #e3a7a7; }
-        header nav .navbar-menu ul .active, header nav .navbar-menu-mobile ul .active {
-          color: #db7b7b; }
       header nav .navbar-menu .navbar-search, header nav .navbar-menu-mobile .navbar-search {
         font-size: 1.25rem;
         cursor: pointer;
@@ -70,9 +74,9 @@ header {
             border: none;
             outline: none; }
             header nav .navbar-menu .navbar-search .navbar-search-btn:focus:after, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn:focus:after, header nav .navbar-menu .navbar-search .navbar-search-btn:focus:before, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn:focus:before {
-              content: ''; }
+              content: ""; }
           header nav .navbar-menu .navbar-search .navbar-search-btn:after, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn:after, header nav .navbar-menu .navbar-search .navbar-search-btn:before, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn:before {
-            content: ''; }
+            content: ""; }
           @media screen and (max-width: 1100px) {
             header nav .navbar-menu .navbar-search .navbar-search-btn, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn {
               font-size: 18px; } }
@@ -142,9 +146,9 @@ header {
                 border: none;
                 outline: none; }
                 header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:focus:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:focus:before {
-                  content: ''; }
+                  content: ""; }
               header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:before {
-                content: ''; }
+                content: ""; }
               @media screen and (max-width: 900px) {
                 header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input {
                   font-size: 3rem; } }
@@ -167,9 +171,9 @@ header {
                 border: none;
                 outline: none; }
                 header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:focus:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:focus:before {
-                  content: ''; }
+                  content: ""; }
               header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:before {
-                content: ''; }
+                content: ""; }
               @media screen and (max-width: 500px) {
                 header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button {
                   font-size: 1.4rem; } }
@@ -212,9 +216,9 @@ header {
           border: none;
           outline: none; }
           header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn:focus:after, header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn:focus:before {
-            content: ''; }
+            content: ""; }
         header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn:after, header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn:before {
-          content: ''; }
+          content: ""; }
         @media screen and (max-width: 1100px) {
           header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn {
             font-size: 18px; } }
@@ -237,9 +241,9 @@ header {
           border: none;
           outline: none; }
           header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:focus:after, header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:focus:before {
-            content: ''; }
+            content: ""; }
         header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:after, header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:before {
-          content: ''; }
+          content: ""; }
         header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:hover {
           color: #db7b7b !important; }
     header nav .navbar-menu-mobile .navbar-menu-mobile-wrapper {
@@ -293,6 +297,9 @@ body {
   animation-name: fadeInDown;
   animation-duration: 1s; }
 
+.active {
+  color: #db7b7b !important; }
+
 footer {
   display: flex;
   justify-content: center;
@@ -339,15 +346,14 @@ footer {
         font-weight: 200;
         transition: color 150ms, border-bottom-color 150ms, transform 150ms;
         border-bottom: 2px solid transparent;
-        margin: 0.5rem 2rem;
-        color: #000000; }
-        footer .footer-navbar .footer-navbar-menu ul li:active, footer .footer-navbar .footer-navbar-menu ul li:hover {
-          transform: translateY(-3px);
-          color: #db7b7b;
-          border-bottom-color: #e3a7a7; }
+        margin: 0.5rem 2rem; }
         @media screen and (max-width: 550px) {
           footer .footer-navbar .footer-navbar-menu ul li {
             font-size: 0.9rem; } }
+        footer .footer-navbar .footer-navbar-menu ul li:hover {
+          transform: translateY(-3px);
+          color: #db7b7b;
+          border-bottom-color: #e3a7a7; }
   footer .footer-social ul {
     padding: 0;
     margin: 0;

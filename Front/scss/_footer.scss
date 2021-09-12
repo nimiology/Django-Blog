@@ -32,6 +32,7 @@ footer {
     @media screen and (max-width: 550px) {
       margin: 1.5rem 0;
     }
+
     .footer-navbar-menu {
       ul {
         @include list_reset();
@@ -58,17 +59,14 @@ footer {
           transition: color 150ms, border-bottom-color 150ms, transform 150ms;
           border-bottom: 2px solid transparent;
           margin: 0.5rem 2rem;
-          color: $color-black;
 
-          &:active,
+          @media screen and (max-width: 550px) {
+            font-size: 0.9rem;
+          }
           &:hover {
             transform: translateY(-3px);
             color: #db7b7b;
             border-bottom-color: #e3a7a7;
-          }
-
-          @media screen and (max-width: 550px) {
-            font-size: 0.9rem;
           }
         }
       }
