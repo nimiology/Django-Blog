@@ -28,7 +28,11 @@ body {
 }
 
 main {
-  margin: 10rem 0;
+  margin: 10rem 0 2rem 0;
+
+  @media screen and (max-width: 900px) {
+    margin: 7rem 0 2rem 0;
+  }
 }
 
 .blog-container {
@@ -50,6 +54,10 @@ main {
 
     @media screen and (max-width: 768px) {
       padding: 0;
+    }
+    
+    @media screen and (max-width: 900px) {
+      margin-bottom: 2rem;
     }
 
     .blog-article {
@@ -116,7 +124,12 @@ main {
           padding: 2rem 1rem 1.5rem 1rem;
         }
 
-        h1 {
+        a {
+          color: $color-text;
+          text-decoration: none;
+        }
+
+        a > h1 {
           font-family: "Rajdhani", "sans-serif";
           font-size: 45px;
           font-weight: 700;
@@ -232,10 +245,6 @@ main {
           li {
             margin: 0 2rem;
             color: $color-text;
-          }
-
-          .active {
-            border-bottom: 2px solid #db7b7b;
           }
         }
       }
