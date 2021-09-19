@@ -1,0 +1,532 @@
+@import "./includes/variabels" l;
+.active {
+  color: #db7b7b !important; }
+
+.active {
+  color: #db7b7b !important; }
+
+.header-faded-in {
+  top: 0;
+  opacity: 1; }
+
+header {
+  position: absolute;
+  z-index: 40;
+  top: -10%;
+  opacity: 0;
+  transition: 1s;
+  font-family: "Rajdhani", sans-serif; }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 3rem; }
+    @media screen and (max-width: 800px) {
+      header nav {
+        margin: 1rem 2rem; } }
+    @media screen and (max-width: 700px) {
+      header nav {
+        margin: 1rem; } }
+    header nav .navbar-logo {
+      font-size: 2rem; }
+    header nav .navbar-menu, header nav .navbar-menu-mobile {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; }
+      header nav .navbar-menu ul, header nav .navbar-menu-mobile ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        header nav .navbar-menu ul a, header nav .navbar-menu-mobile ul a {
+          text-decoration: none; }
+        header nav .navbar-menu ul li, header nav .navbar-menu-mobile ul li {
+          cursor: pointer;
+          letter-spacing: 2px;
+          margin-right: 3rem;
+          font-size: 18px;
+          font-weight: 200;
+          transition: color 150ms, border-bottom-color 150ms, transform 150ms;
+          border-bottom: 2px solid transparent; }
+          @media screen and (max-width: 1100px) {
+            header nav .navbar-menu ul li, header nav .navbar-menu-mobile ul li {
+              font-size: 15px; } }
+          header nav .navbar-menu ul li:hover, header nav .navbar-menu-mobile ul li:hover {
+            transform: translateY(-3px);
+            color: #db7b7b;
+            border-bottom-color: #e3a7a7; }
+      header nav .navbar-menu .navbar-search, header nav .navbar-menu-mobile .navbar-search {
+        font-size: 1.25rem;
+        cursor: pointer;
+        transition: color 150ms; }
+        header nav .navbar-menu .navbar-search .navbar-search-btn, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn {
+          border: none;
+          outline: none;
+          background: transparent;
+          padding: 0;
+          margin: 0;
+          position: relative;
+          z-index: 70;
+          transition: color 250ms; }
+          header nav .navbar-menu .navbar-search .navbar-search-btn:focus, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn:focus {
+            border: none;
+            outline: none; }
+            header nav .navbar-menu .navbar-search .navbar-search-btn:focus:after, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn:focus:after, header nav .navbar-menu .navbar-search .navbar-search-btn:focus:before, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn:focus:before {
+              content: ""; }
+          header nav .navbar-menu .navbar-search .navbar-search-btn:after, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn:after, header nav .navbar-menu .navbar-search .navbar-search-btn:before, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn:before {
+            content: ""; }
+          @media screen and (max-width: 1100px) {
+            header nav .navbar-menu .navbar-search .navbar-search-btn, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn {
+              font-size: 18px; } }
+          header nav .navbar-menu .navbar-search .navbar-search-btn:hover, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn:hover {
+            color: #db7b7b; }
+        header nav .navbar-menu .navbar-search .navbar-search-btn-active, header nav .navbar-menu-mobile .navbar-search .navbar-search-btn-active {
+          color: #e02e2e; }
+    header nav .search-box-modal {
+      position: fixed;
+      background-color: #0c0909;
+      top: -250%;
+      right: -150%;
+      width: 1700px;
+      height: 1700px;
+      border-radius: 50%;
+      transition: top 750ms, right 750ms, transform 750ms;
+      z-index: 60;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      @media screen and (max-width: 1200px) {
+        header nav .search-box-modal {
+          width: 1400px;
+          height: 1400px;
+          top: -200%;
+          right: -160%; } }
+      @media screen and (max-width: 830px) {
+        header nav .search-box-modal {
+          width: 1200px;
+          height: 1200px;
+          right: -180%; } }
+      @media screen and (max-width: 510px) {
+        header nav .search-box-modal {
+          width: 900px;
+          height: 900px;
+          top: -160%;
+          right: -250%; } }
+      header nav .search-box-modal .search-box-modal-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        opacity: 0;
+        transition: opacity 250ms; }
+        header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper {
+          width: 100%; }
+          @media screen and (max-width: 500px) {
+            header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper {
+              width: 80%; } }
+          header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            padding: 0 2rem 0 1.5rem;
+            width: 100%; }
+            header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input {
+              border: none;
+              outline: none;
+              background: transparent;
+              padding: 0;
+              margin: 0;
+              font-size: 5rem;
+              color: #ffffff; }
+              header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:focus {
+                border: none;
+                outline: none; }
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:focus:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:focus:before {
+                  content: ""; }
+              header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:before {
+                content: ""; }
+              @media screen and (max-width: 900px) {
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input {
+                  font-size: 3rem; } }
+              @media screen and (max-width: 500px) {
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input {
+                  font-size: 2rem;
+                  padding: 0 !important; } }
+            header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button {
+              border: none;
+              outline: none;
+              background: transparent;
+              padding: 0;
+              margin: 0;
+              position: relative;
+              bottom: -20px;
+              opacity: 0;
+              font-size: 2rem;
+              transition: bottom 250ms, opacity 250ms; }
+              header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:focus {
+                border: none;
+                outline: none; }
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:focus:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:focus:before {
+                  content: ""; }
+              header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:after, header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button:before {
+                content: ""; }
+              @media screen and (max-width: 500px) {
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button {
+                  font-size: 1.4rem; } }
+              header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button span {
+                color: #b3b3b3;
+                float: right; }
+                header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button span:hover {
+                  color: #ffffff; }
+          header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-line {
+            display: block;
+            width: 0;
+            height: 2px;
+            background-image: linear-gradient(90deg, #500a10, #b4372b);
+            border-radius: 3px;
+            transition: width 500ms; }
+    header nav .search-box-modal-active {
+      top: 50% !important;
+      right: 50% !important;
+      transform: translate(50%, -50%); }
+    header nav .navbar-menu-mobile .navbar-search-mobile {
+      position: relative;
+      z-index: 70;
+      display: none;
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: color 150ms;
+      margin-right: 1rem;
+      margin-bottom: 0.25rem; }
+      @media screen and (max-width: 700px) {
+        header nav .navbar-menu-mobile .navbar-search-mobile {
+          display: block; } }
+      header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn {
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        transition: color 250ms; }
+        header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn:focus {
+          border: none;
+          outline: none; }
+          header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn:focus:after, header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn:focus:before {
+            content: ""; }
+        header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn:after, header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn:before {
+          content: ""; }
+        @media screen and (max-width: 1100px) {
+          header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn {
+            font-size: 18px; } }
+        header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn:hover {
+          color: #db7b7b; }
+      header nav .navbar-menu-mobile .navbar-search-mobile .navbar-search-btn-active {
+        color: #e02e2e; }
+    header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu {
+      position: relative;
+      z-index: 90; }
+      header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button {
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        font-size: 32px;
+        transition: color 250ms; }
+        header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:focus {
+          border: none;
+          outline: none; }
+          header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:focus:after, header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:focus:before {
+            content: ""; }
+        header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:after, header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:before {
+          content: ""; }
+        header nav .navbar-menu-mobile .navbar-menu-mobile-hamburger-menu button:hover {
+          color: #db7b7b !important; }
+    header nav .navbar-menu-mobile .navbar-menu-mobile-wrapper {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+      position: fixed;
+      z-index: 80;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: #050101c2;
+      transition: opacity 0.5s, top 0.5s; }
+      header nav .navbar-menu-mobile .navbar-menu-mobile-wrapper ul {
+        justify-content: space-evenly;
+        flex-direction: column;
+        height: 60%; }
+        header nav .navbar-menu-mobile .navbar-menu-mobile-wrapper ul li {
+          margin-right: 0;
+          font-size: 15px; }
+    header nav .navbar-menu-mobile .navbar-menu-mobile-wrapper-active {
+      top: 0;
+      opacity: 1; }
+
+header {
+  color: #ffffff; }
+  header .navbar-search-btn {
+    color: #ffffff; }
+  header .navbar-menu ul a, header nav .navbar-menu-mobile ul a {
+    color: #ffffff; }
+  header .navbar-menu-mobile-hamburger-menu button {
+    color: #ffffff; }
+
+.contact-container .contact-top-image {
+  position: relative;
+  height: 100vh;
+  overflow: hidden; }
+  @media screen and (max-width: 800px) {
+    .contact-container .contact-top-image {
+      height: 50vh; } }
+  .contact-container .contact-top-image img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%; }
+
+.contact-container .contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 8rem 0;
+  padding: 0 2rem 0 7rem;
+  height: 800px; }
+  @media screen and (max-width: 1199px) {
+    .contact-container .contact-content {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      padding: 0 3rem; } }
+  @media screen and (max-width: 650px) {
+    .contact-container .contact-content {
+      margin: 4rem 0; } }
+  @media screen and (max-width: 580px) {
+    .contact-container .contact-content {
+      padding: 0 1.5rem; } }
+  .contact-container .contact-content .contact-content-text {
+    padding-right: 5rem; }
+    @media screen and (max-width: 1200px) {
+      .contact-container .contact-content .contact-content-text {
+        padding-right: 0;
+        padding: 0 0rem; } }
+    .contact-container .contact-content .contact-content-text h1 {
+      color: #000000;
+      font-family: "Rajdhani", "sans-serif";
+      font-size: 90px;
+      font-weight: 700;
+      line-height: 79px;
+      padding: 0;
+      margin: 0 0 1.5rem 0; }
+      @media screen and (max-width: 1300px) {
+        .contact-container .contact-content .contact-content-text h1 {
+          font-size: 80px; } }
+      @media screen and (max-width: 1120px) {
+        .contact-container .contact-content .contact-content-text h1 {
+          font-size: 70px;
+          line-height: 59px; } }
+      @media screen and (max-width: 1000px) {
+        .contact-container .contact-content .contact-content-text h1 {
+          font-size: 60px; } }
+      @media screen and (max-width: 750px) {
+        .contact-container .contact-content .contact-content-text h1 {
+          font-size: 50px;
+          line-height: 49px; } }
+      @media screen and (max-width: 650px) {
+        .contact-container .contact-content .contact-content-text h1 {
+          font-size: 40px; } }
+    .contact-container .contact-content .contact-content-text div {
+      width: 70px;
+      height: 7px;
+      background-color: #3d7ddb;
+      margin-left: 5px;
+      margin-bottom: 2.5rem; }
+    .contact-container .contact-content .contact-content-text p {
+      font-family: "Roboto", "sans-serif";
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 29px; }
+      @media screen and (max-width: 650px) {
+        .contact-container .contact-content .contact-content-text p {
+          font-size: 16px;
+          line-height: 23px; } }
+  .contact-container .contact-content .contact-content-form {
+    height: 100%; }
+    .contact-container .contact-content .contact-content-form form {
+      margin-top: 4rem; }
+      @media screen and (max-width: 460px) {
+        .contact-container .contact-content .contact-content-form form {
+          margin-top: 2rem; } }
+      .contact-container .contact-content .contact-content-form form input,
+      .contact-container .contact-content .contact-content-form form textarea,
+      .contact-container .contact-content .contact-content-form form button {
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        border: 2px solid #000000;
+        font-family: "Roboto", "sans-serif";
+        font-size: 16px;
+        transition: border-color 0.25s, background-color 0.25s; }
+        .contact-container .contact-content .contact-content-form form input:focus,
+        .contact-container .contact-content .contact-content-form form textarea:focus,
+        .contact-container .contact-content .contact-content-form form button:focus {
+          border: none;
+          outline: none; }
+          .contact-container .contact-content .contact-content-form form input:focus:after, .contact-container .contact-content .contact-content-form form input:focus:before,
+          .contact-container .contact-content .contact-content-form form textarea:focus:after,
+          .contact-container .contact-content .contact-content-form form textarea:focus:before,
+          .contact-container .contact-content .contact-content-form form button:focus:after,
+          .contact-container .contact-content .contact-content-form form button:focus:before {
+            content: ""; }
+        .contact-container .contact-content .contact-content-form form input:after, .contact-container .contact-content .contact-content-form form input:before,
+        .contact-container .contact-content .contact-content-form form textarea:after,
+        .contact-container .contact-content .contact-content-form form textarea:before,
+        .contact-container .contact-content .contact-content-form form button:after,
+        .contact-container .contact-content .contact-content-form form button:before {
+          content: ""; }
+        .contact-container .contact-content .contact-content-form form input:focus,
+        .contact-container .contact-content .contact-content-form form textarea:focus,
+        .contact-container .contact-content .contact-content-form form button:focus {
+          border: 2px solid #000000;
+          border-bottom-color: orangered; }
+      .contact-container .contact-content .contact-content-form form input {
+        padding: 0.75rem 1.25rem;
+        width: 49%;
+        font-weight: 300; }
+        @media screen and (max-width: 460px) {
+          .contact-container .contact-content .contact-content-form form input {
+            font-size: 14px;
+            padding: 0.5rem 0.75rem; } }
+      .contact-container .contact-content .contact-content-form form > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+      .contact-container .contact-content .contact-content-form form textarea {
+        margin-top: 0.3rem;
+        padding: 0.75rem 1.25rem;
+        font-weight: 300; }
+        @media screen and (max-width: 460px) {
+          .contact-container .contact-content .contact-content-form form textarea {
+            font-size: 14px;
+            padding: 0.5rem 0.75rem; } }
+      .contact-container .contact-content .contact-content-form form button {
+        border-color: #3d7ddb;
+        font-weight: 700;
+        padding: 0.8rem 0;
+        color: #3d7ddb;
+        margin-top: 4px; }
+        .contact-container .contact-content .contact-content-form form button:focus {
+          border: 2px solid #3d7ddb; }
+        .contact-container .contact-content .contact-content-form form button:hover {
+          color: #ffffff;
+          background-color: #3d7ddb; }
+        @media screen and (max-width: 460px) {
+          .contact-container .contact-content .contact-content-form form button {
+            font-size: 14px;
+            padding: 0.5rem 0; } }
+
+.active {
+  color: #db7b7b !important; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 25;
+  font-family: "Rajdhani", sans-serif;
+  background-color: #fff;
+  border-top: 2px solid #ec4e00; }
+  footer .footer-logo {
+    margin: 2rem;
+    font-size: 3rem; }
+    @media screen and (max-width: 400px) {
+      footer .footer-logo {
+        margin: 1.25rem;
+        font-size: 2.5rem; } }
+  footer .footer-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3.5rem 0; }
+    @media screen and (max-width: 550px) {
+      footer .footer-navbar {
+        margin: 1.5rem 0; } }
+    footer .footer-navbar .footer-navbar-menu ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      @media screen and (max-width: 720px) {
+        footer .footer-navbar .footer-navbar-menu ul {
+          flex-direction: column; } }
+      footer .footer-navbar .footer-navbar-menu ul a {
+        text-decoration: none;
+        color: #000000; }
+      footer .footer-navbar .footer-navbar-menu ul li {
+        cursor: pointer;
+        letter-spacing: 2px;
+        font-size: 1.1rem;
+        font-weight: 200;
+        transition: color 150ms, border-bottom-color 150ms, transform 150ms;
+        border-bottom: 2px solid transparent;
+        margin: 0.5rem 2rem; }
+        @media screen and (max-width: 550px) {
+          footer .footer-navbar .footer-navbar-menu ul li {
+            font-size: 0.9rem; } }
+        footer .footer-navbar .footer-navbar-menu ul li:hover {
+          transform: translateY(-3px);
+          color: #db7b7b;
+          border-bottom-color: #e3a7a7; }
+  footer .footer-social ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    footer .footer-social ul li {
+      padding: 0.5rem 1rem;
+      font-size: 1.3rem;
+      color: #000000; }
+      @media screen and (max-width: 550px) {
+        footer .footer-social ul li {
+          font-size: 1.3rem;
+          padding: 0.5rem 0.5rem; } }
+      @media screen and (max-width: 380px) {
+        footer .footer-social ul li {
+          font-size: 1.1rem;
+          padding: 0.5rem 0.5rem; } }
+  footer .footer-copyright {
+    margin-bottom: 5rem;
+    color: #4d4d4d;
+    letter-spacing: 4px;
+    font-size: 17px;
+    font-weight: 400; }
+    @media screen and (max-width: 550px) {
+      footer .footer-copyright {
+        font-size: 14px;
+        margin-bottom: 2rem; } }
+    @media screen and (max-width: 450px) {
+      footer .footer-copyright {
+        font-size: 12px;
+        letter-spacing: 3px; } }
+    @media screen and (max-width: 400px) {
+      footer .footer-copyright {
+        font-size: 10px;
+        letter-spacing: 2px; } }

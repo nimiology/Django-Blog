@@ -1,0 +1,222 @@
+@import "includes/variabels";
+@import "includes/utils";
+
+@import "header";
+
+header {
+  background-color: #161616;
+  color: $color-text;
+
+  .navbar-search-btn {
+    color: $color-text;
+  }
+  .navbar-menu ul a {
+    color: $color-text;
+  }
+  .navbar-menu-mobile-hamburger-menu {
+    button {
+      color: $color-text;
+    }
+  }
+}
+
+main {
+  margin-top: 7rem;
+
+  @media screen and (max-width: 800px) {
+    margin-top: 5rem;
+  }
+}
+
+.portfolio-item-container {
+  .portfolio-item-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #4d4d4d;
+    padding: 5rem 2rem;
+
+    @media screen and (max-width: 400px) {
+      padding: 3rem 2rem;
+    }
+
+    h1 {
+      font-family: Rajdhani, sans-serif;
+      font-size: 45px;
+      font-weight: 700;
+      color: $color-text;
+      text-align: center;
+
+      @media screen and (max-width: 768px) {
+        font-size: 35px;
+      }
+
+      @media screen and (max-width: 600px) {
+        font-size: 25px;
+      }
+    }
+  }
+
+  .portfolio-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8rem 0;
+    padding: 0 3rem;
+    height: 700px;
+
+    @media screen and (max-width: 1200px) {
+      flex-direction: column;
+      height: auto;
+      padding: 0 2rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0 1rem;
+      margin: 5rem 0;
+    }
+
+    @media screen and (max-width: 400px) {
+      padding: 0 0.25rem;
+    }
+
+    .portfolio-item-images {
+      padding: 0 1rem;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (max-width: 1200px) {
+        height: 50%;
+        padding: 0;
+      }
+
+      @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+      }
+
+      img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+      }
+
+      .item-tall-1 {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+
+        @media screen and (max-width: 1200px) {
+          height: 400px;
+        }
+
+        @media screen and (max-width: 768px) {
+          height: 300px;
+        }
+      }
+
+      .item-tall-2 {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+
+        @media screen and (max-width: 1200px) {
+          height: 400px;
+        }
+        @media screen and (max-width: 768px) {
+          height: 300px;
+        }
+      }
+
+      div {
+        height: 100%;
+        @media screen and (max-width: 1200px) {
+          height: 50%;
+        }
+      }
+    }
+
+    .portfolio-item-content {
+      margin: 2rem 0;
+      padding-right: 1rem;
+      padding-left: 2rem;
+      height: 100%;
+
+      @media screen and (max-width: 1200px) {
+        height: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 1rem;
+      }
+
+      & > div {
+        padding-top: 1rem;
+        position: sticky;
+        top: 0;
+
+        @media screen and (max-width: 1200px) {
+          position: static;
+        }
+
+        .portfolio-item-content-title {
+          h1 {
+            padding: 0;
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+            font-family: "Rajdhani", sans-serif;
+
+            @media screen and (max-width: 570px) {
+              font-size: 25px;
+            }
+          }
+        }
+
+        .portfolio-item-content-date {
+          margin-top: 1rem;
+          font-size: 16px;
+          font-family: "Roboto Condensed", sans-serif;
+          font-weight: 700;
+        }
+
+        .portfolio-item-content-text {
+          margin-top: 1rem;
+
+          p {
+            font-size: 20px;
+            font-family: "Roboto Condensed", sans-serif;
+            font-weight: 300;
+
+            @media screen and (max-width: 570px) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Masonry codes ...
+.container-grid {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 150px);
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 3rem 0;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@import "footer";
