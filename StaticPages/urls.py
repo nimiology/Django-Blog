@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import Home,SocialMedia
+from .views import Home, SocialMedia, NotFound
 
 app_name = 'StaticPages'
 urlpatterns = [
-    path("",Home, name="main"),
-    path("about", SocialMedia, name="About"),
+    path("", Home, name="home"),
+    path("about", SocialMedia, name="about"),
+    path('404', NotFound, name="notFound")
 ]

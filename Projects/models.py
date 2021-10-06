@@ -1,22 +1,39 @@
 from django.db import models
+from django.db.models.signals import pre_save
 from django.utils import timezone
+
 # Create your models here.
+from Blog.utils import slug_genrator, upload_project_picture
+
+
 class Project(models.Model):
     STATUS_CHOICES = (
-        ("d","Draft"),
-        ("p","Published")
+        ("d", "Draft"),
+        ("p", "Published")
     )
-    Title = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True)
-    Github = models.CharField(max_length=1024)
-    Thumbnail = models.ImageField(upload_to="Images",default="")
-    Text = models.TextField()
-    WhatIsNew = models.TextField(blank=True,null=True)
-    Publish = models.DateTimeField(auto_now_add=timezone.now)
-    Created = models.DateTimeField(auto_now_add=True)
-    Updated = models.DateTimeField(auto_now=True)
-    Status = models.CharField(max_length=1,choices=STATUS_CHOICES)
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True, blank=True)
+    github = models.URLField()
+    thumbnail1 = models.ImageField(upload_to=upload_project_picture, default="")
+    thumbnail2 = models.ImageField(upload_to=upload_project_picture, default="")
+    thumbnail3 = models.ImageField(upload_to=upload_project_picture, default="")
+    text = models.TextField()
+    whatIsNew = models.TextField(blank=True, null=True)
+    publish = models.DateTimeField(auto_now_add=timezone.now)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+
     class Meta:
-        ordering = ['-Publish']
+        ordering = ['-publish']
+
     def __str__(self):
-        return self.Title
+        return self.title
+
+
+def ProjectPreSave(sender, instance, *args, **kwargs):
+    if instance.slug == '':
+        instance.slug = slug_genrator()
+
+
+pre_save.connect(ProjectPreSave, sender=Project)

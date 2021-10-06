@@ -1,0 +1,64 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+{% block custom-css %}<link rel="stylesheet" href="{% static 'css/contact.css' %}" />{% endblock %}
+{% block main %}
+  <body>
+    <main class="wow fadeInDown contact-container">
+      <figure class="contact-top-image">
+        <img src="../../static/assets/img/homeBackground.jpg" alt="contact bg" />
+      </figure>
+      <article class="contact-content col-12">
+        <section class="contact-content-text col-sm-12 col-xl-6">
+          <h1>REACH OUT. CONTACT ME.</h1>
+          <div></div>
+          <p>
+            Starting in a country where music is highly restricted, HEEN
+            courageously continues to pursue his passion. He continuously
+            performed DJ sets in various underground shows in Iran, and with
+            each project, he constantly refined his work, striving for
+            perfection to master his craft. Throughout this journey, he connects
+            with Iran’s best hip hop artists and finally starts collaborating
+            with one of Iran’s most renowned artists: Mehrad Hidden Together,
+            they have taken on many projects such as planning album marketing
+            strategies, organizing Iran’s very first Electronic Music Seminar
+            and creating motivational documentaries, and many more. After years
+            of production and hard work, he built his path and created his
+            record label ``Lighthouse Records`` with one of Iran's most talented
+            and expert in the dance music scene MJoobi who had many hits in the
+            Iranian/ Worldwide market. Contact: heen7music(at)gmail.com
+          </p>
+        </section>
+        <figure class="contact-content-form col-sm-12 col-xl-6">
+          <form class="col-12">
+            <div class="col-12">
+              <input type="text" placeholder="Name" class="col-6" />
+              <input type="email" placeholder="Email" class="col-6" />
+            </div>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="8"
+              placeholder="Message"
+              class="col-12"
+            ></textarea>
+            <button type="submit" class="col-12">SEND</button>
+          </form>
+        </figure>
+      </article>
+    </main>
+  </body>
+  <script src="../../static/js/wow.min.js"></script>
+  <script>
+    // Run wow js scroll animation
+    new WOW().init();
+  </script>
+  <script src="../../static/js/utils.js"></script>
+  <script>
+    const WITH_DELAY = true;
+    const DELAY_LENGTH = 800;
+  </script>
+  <script src="../../static/js/showHeader.js"></script>
+{% endblock %}
+

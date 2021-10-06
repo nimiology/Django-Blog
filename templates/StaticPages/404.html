@@ -1,0 +1,27 @@
+{% extends "Base.html" %}
+{% load static %}
+{% block title %}Not Found!{% endblock %}
+{% block custom-css %}<link rel="stylesheet" href="{% static 'css/404.css' %}" />{% endblock %}
+{% block main %}
+<body>
+    <main class="notfound-container wow">
+      <div class="notfound-image-gradient"></div>
+      <div class="notfound-content">
+        <img class="wow" src="../../static/assets/img/404.png" alt="404 not found image" />
+        <p class="wow">Hey dude, You went the wrong way <span>:/</span></p>
+        <a href="home.html"><button class="wow">Back Home</button></a>
+      </div>
+    </main>
+
+</body>
+  <script src="{% static 'js/wow.min.js' %}"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/utils.js' %}"></script>
+  <script>
+    const WITH_DELAY = false;
+  </script>
+  <script src="{% static 'js/showHeader.js' %}"></script>
+{% endblock %}

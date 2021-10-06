@@ -5,5 +5,5 @@ app_name = 'Projects'
 urlpatterns = [
     path('', Projects, name='projects'),
     path("page/<int:page>", Projects, name='projects'),
-    path("<slug:slug>", Projectgetter, name='project'),
+    path("<slug>", Projectgetter, name='project'),
 ]

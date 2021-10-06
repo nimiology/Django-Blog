@@ -1,12 +1,14 @@
 from django.contrib import admin
 from .models import Project
 
+
 # Register your models here.
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ("Title","slug","Publish","Status")
-    list_filter = ("Publish","Status")
-    search_fields = ("Title","Text")
-    prepopulated_fields = {"slug":("Title",)}
-    ordering = ["Status","Publish"]
+    list_display = ("title", "slug", "publish", "status")
+    list_filter = ("title", "status")
+    search_fields = ("title", "text")
+    prepopulated_fields = {"slug": ("title",)}
+    ordering = ["status", "publish"]
+
 
 admin.site.register(Project, ProjectAdmin)

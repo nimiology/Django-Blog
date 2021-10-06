@@ -1,77 +1,102 @@
 {% load static %}
 <!DOCTYPE html>
-<html style="font-size: 16px;">
-  <head>
-    <link rel="icon" href="{% static 'Blog/images/840039-200.png' %}">
-    <title>{% block title %}{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Post 1 Headline">
-    <meta name="description" content="">
-    <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <link rel="stylesheet" href="{% static 'Blog/nicepage.css' %}" media="screen">
-{% block custom-css %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/rajdhani-font.css' %}" />
+        {% block custom-css %}
 
-{% endblock %}
-    <script class="u-script" type="text/javascript" src="{% static 'Blog/jquery.js' %}" defer=""></script>
-    <script class="u-script" type="text/javascript" src="{% static 'Blog/nicepage.js' %}" defer=""></script>
-    <meta name="generator" content="Nicepage 3.12.1, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-
-
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"url": "index.html"
-}</script>
-    <meta property="og:title" content="Post">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#478ac9">
-    <link rel="canonical" href="index.html">
-    <meta property="og:url" content="index.html">
-  </head>
-
-  <body class="{% block Body%}{% endblock %}">
-
-  <header class="u-clearfix u-grey-5 u-header u-sticky u-header" id="sec-dbbf"><div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</symbol>
-</defs></svg>
-            </a>
+        {% endblock %}
+    </head>
+    <header class="col-12">
+      <nav>
+        <div class="navbar-logo col-6">
+          <span class="bi-card-image"></span>
+        </div>
+        <div class="navbar-menu-mobile col-6">
+          <div class="navbar-search-mobile">
+            <button class="navbar-search-btn">
+              <span class="bi-search"></span>
+            </button>
           </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-2-base u-text-hover-palette-2-base" href="{% url 'StaticPages:main' %}" style="padding: 10px 24px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-2-base u-text-hover-palette-2-base" href="{% url 'Projects:projects' %}" style="padding: 10px 24px;">Projects</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-2-base u-text-hover-palette-2-base" href="{% url 'Blog:blog' %}"style="padding: 10px 24px;">Blog</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-2-base u-text-hover-palette-2-base" href="{% url 'StaticPages:About' %}" style="padding: 10px 24px;">Social Media</a>
-</li></ul>
+          <div class="navbar-menu-mobile-hamburger-menu">
+            <button><span class="bi bi-list"></span></button>
           </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'StaticPages:main' %}" style="padding: 10px 24px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'Projects:projects' %}" style="padding: 10px 24px;">Projects</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'Blog:blog' %}" style="padding: 10px 24px;">Blog</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'StaticPages:About' %}" style="padding: 10px 24px;">Social Media</a>
-</li></ul>
+          <div class="navbar-menu-mobile-wrapper">
+            <ul>
+              <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
+              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
+              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+              <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
+            </ul>
+          </div>
+        </div>
+        <div class="navbar-menu col-6">
+          <ul>
+              <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
+              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
+              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+              <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
+          </ul>
+          <div class="navbar-search">
+            <button class="navbar-search-btn">
+              <span class="bi-search"></span>
+            </button>
+          </div>
+        </div>
+        <div class="search-box-modal">
+          <div class="col-5 col-md-6 col-lg-7 search-box-modal-container">
+            <div class="search-box-modal-wrapper">
+              <div class="search-box-modal-input">
+                <input class="col-9" type="text" placeholder="SEARCH_" />
+                <button class="col-3">
+                  <span class="bi-search"></span>
+                </button>
               </div>
+              <div class="search-box-modal-line"></div>
             </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
-        </nav>
-        <h5 class="u-custom-font u-font-arial u-text u-text-1"><a href="{% url 'StaticPages:About' %}">NIMA</a></h5>
-      </div></header>
-
+        </div>
+      </nav>
+    </header>
 {% block main %}
 
-
 {% endblock %}
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-6036"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">:)</p>
-      </div></footer>
+<footer>
+      <div class="footer-logo">
+        <span class="bi-card-image"></span>
+      </div>
+      <div class="footer-social">
+        <ul>
+          <li><span class="bi-whatsapp"></span></li>
+          <li><span class="bi-instagram"></span></li>
+          <li><span class="bi-facebook"></span></li>
+          <li><span class="bi-linkedin"></span></li>
+          <li><span class="bi-twitch"></span></li>
+          <li><span class="bi-github"></span></li>
+          <li><span class="bi-google"></span></li>
+        </ul>
+      </div>
+      <nav class="footer-navbar">
+        <div class="footer-navbar-menu">
+          <ul>
+              <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
+              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
+              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+              <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
+          </ul>
+        </div>
+      </nav>
+      <div class="footer-copyright">
+        ALL RIGHTS RESERVED FOR Nima ©2021
+      </div>
+    </footer>

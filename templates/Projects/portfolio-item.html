@@ -1,0 +1,48 @@
+{% extends "Base.html" %}
+{% load static %}
+{% block custom-css %}<link rel="stylesheet" href="{% static 'css/portfolio-item.css' %}" />{% endblock %}
+{% block main %}
+    <main class="portfolio-item-container">
+      <article>
+        <section>
+          <div class="portfolio-item-title animated fadeInDown">
+            <h1>{{ project.title }}</h1>
+          </div>
+          <div class="portfolio-item col-12 animated fadeInDown">
+            <div class="portfolio-item-images col-12 col-xl-8">
+              <div class="item-tall-1 col-12 col-md-6">
+                <img src="{{ project.thumbnail1.url }}" alt="img" />
+              </div>
+              <div class="item-tall-2 col-12 col-md-6">
+                <img src="{{ project.thumbnail2.url }}" alt="img" />
+              </div>
+            </div>
+            <div class="portfolio-item-content col-md-12 col-xl-4">
+              <div class="col-sm-8 col-xl-12">
+                <div class="portfolio-item-content-title">
+                  <h1>{{ project.title }}</h1>
+                </div>
+                <div class="portfolio-item-content-date">{{ project.updated }}</div>
+                <div class="portfolio-item-content-text">
+                  <p>
+                    {{ project.text|linebreaks }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+<script src="../../static/js/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>
+<script src="../../static/js/jquery-3.4.1.min.js"></script>
+<script src="../../static/js/utils.js"></script>
+<script>
+const WITH_DELAY = false;
+</script>
+<script src="../../static/js/showHeader.js"></script>
+{% endblock %}
+

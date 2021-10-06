@@ -1,0 +1,62 @@
+{% extends "Base.html" %}
+{% load static %}
+{% block title %}Portfolio{% endblock %}
+{% block custom-css %}<link rel="stylesheet" href="{% static 'css/portfolio.css' %}" />{% endblock %}
+{% block main %}
+<body>
+    <main class="wow portfolio-container">
+        {% for project in projects %}
+            <section class="{% cycle 'portfolio-card portfolio-card-left col-12' 'portfolio-card portfolio-card-right col-12' %}">
+                <div class="portfolio-card-images col-6">
+                  <div class="wow">
+                    <img src="{{ project.thumbnail1.url }}" alt="portfolio-image" />
+                  </div>
+                  <div class="wow">
+                    <img src="{{ project.thumbnail2.url }}" alt="portfolio-image" />
+                  </div>
+                  <div class="wow">
+                    <img src="{{ project.thumbnail3.url }}" alt="portfolio-image" />
+                  </div>
+                </div>
+
+                <img
+                  class="portfolio-card-image-mobile"
+                  src="../../static/assets/img/testImg6.png"
+                  alt="article-image"
+                />
+                <div class="portfolio-card-content col-6 wow">
+                  <div class="portfolio-card-content-wrapper">
+                    <div class="portfolio-card-content-title col-12">
+                      <h1>{{ project.title }}</h1>
+                      <div></div>
+                    </div>
+                    <div class="portfolio-card-content-text col-12">
+                      <p>
+                          {{ project.text|truncatewords:15 }}
+                      </p>
+                    </div>
+                    <div class="portfolio-card-content-btn col-12 col-lg-8 col-xl-4">
+                      <a href="{% url 'Projects:project' project.slug %}"><button>VIEW PROJECT</button></a>
+                      <div class="portfolio-card-content-btn-bg"></div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+        {% endfor %}
+    <div class="portfolio-container-center-line"></div>
+    </main>
+</body>
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script>
+// Run wow js scroll animation
+new WOW().init();
+</script>
+<script src="{% static 'js/utils.js' %}"></script>
+<script>
+const WITH_DELAY = true;
+const DELAY_LENGTH = 0;
+</script>
+<script src="{% static 'js/showHeader.js' %}"></script>
+{% endblock %}
+
