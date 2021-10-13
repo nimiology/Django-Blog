@@ -1,20 +1,23 @@
 from django.contrib import admin
-from .models import Article,Category
+from .models import Article, Category
+
+
 # Register your models here.
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ("Title","slug","Publish","Status","Category_to_str")
-    list_filter = ("Publish","Status")
-    search_fields = ("Title","Text")
-    prepopulated_fields = {"slug":("Title",)}
-    ordering = ["Status","Publish"]
-    def Category_to_str(self, obj):
-        return " ".join([category.Title for category in obj.category_Publish()])
+    list_display = ("title", "slug", "publishDate", "published")
+    list_filter = ("publishDate", "published")
+    search_fields = ("title", "text")
+    prepopulated_fields = {"slug": ("title",)}
+    ordering = ["published", "publishDate"]
+
+
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('Position',"Title", "slug", "Status")
-    list_filter = (["Status"])
-    search_fields = ("Title",'slug')
-    prepopulated_fields = {"slug": ("Title",)}
+    list_display = ("title", "slug", "status")
+    list_filter = (["status"])
+    search_fields = ("title", 'slug')
+    prepopulated_fields = {"slug": ("title",)}
+
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Article, ArticleAdmin)

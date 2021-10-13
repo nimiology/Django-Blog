@@ -2,7 +2,6 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.utils import timezone
 
-# Create your models here.
 from Blog.utils import slug_genrator, upload_project_picture
 
 

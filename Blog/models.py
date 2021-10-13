@@ -1,46 +1,41 @@
 from django.db import models
+from django.db.models.signals import pre_save
 from django.utils import timezone
 
-# Create your models here.
-class ArticleManager(models.Manager):
-    def Published(self):
-        return self.filter(Status='p')
+from Blog.utils import slug_genrator, upload_project_picture
+
 
 class Category(models.Model):
-
-    Title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
-    Status = models.BooleanField(default=True)
-    Position = models.IntegerField()
-
-    class Meta:
-        ordering = ['Position']
+    status = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.Title
+        return self.title
 
 
 class Article(models.Model):
-    STATUS_CHOICES = (
-        ("d","Draft"),
-        ("p","Published")
-    )
-    Title = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True)
-    Text = models.TextField()
-    Category = models.ManyToManyField(Category,related_name="Article")
-    Thumbnail = models.ImageField(upload_to="Images")
-    Publish = models.DateTimeField(default=timezone.now)
-    Created = models.DateTimeField(auto_now_add=True)
-    Updated = models.DateTimeField(auto_now=True)
-    Status = models.CharField(max_length=1,choices=STATUS_CHOICES)
-    class Meta:
-        ordering = ['-Publish']
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(blank=True)
+    text = models.TextField()
+    categories = models.ManyToManyField(Category, related_name="article")
+    thumbnail = models.ImageField(upload_to=upload_project_picture)
+    writer = models.CharField(max_length=200, default='Nima')
+    publishDate = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    published = models.BooleanField()
 
     def __str__(self):
-        return self.Title
+        return self.title
 
     def category_Publish(self):
-        return self.Category.filter(Status=True)
+        return self.categories.filter(Status=True)
 
-    objects = ArticleManager()
+
+def ArticlePreSave(sender, instance, *args, **kwargs):
+    if instance.slug == '':
+        instance.slug = slug_genrator()
+
+
+pre_save.connect(ArticlePreSave, sender=Article)
