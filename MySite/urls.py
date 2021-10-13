@@ -23,8 +23,6 @@ urlpatterns = [
     path('Projects/',include('Projects.urls'),),
     path('Blog/', include('Blog.urls')),
     path('', include('StaticPages.urls')),
-    path('Diary/', include('Diary.urls'))
-
 ]
 if settings.DEBUG:
     # add root static files

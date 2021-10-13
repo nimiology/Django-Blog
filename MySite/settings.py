@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'Blog.apps.BlogConfig',
     'Projects.apps.ProjectsConfig',
     'StaticPages.apps.StaticpagesConfig',
-    'Diary.apps.DiaryConfig'
 ]
 
 MIDDLEWARE = [
