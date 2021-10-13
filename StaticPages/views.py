@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from .models import SocialMedias
 
 
 def Home(request):
@@ -7,8 +6,11 @@ def Home(request):
 
 
 def SocialMedia(request):
-    return render(request, "StaticPages/contact.html", {'SocialMedias': SocialMedias.objects.order_by('Title')})
+    return render(request, "StaticPages/contact.html")
 
 
-def NotFound(request):
-    return render(request, "StaticPages/404.html")
+def Error404(request, exception=None):
+    context = {}
+    response = render(request, "StaticPages/404.html", context=context)
+    response.status_code = 404
+    return response

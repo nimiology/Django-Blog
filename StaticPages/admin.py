@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import SocialMedias
-# Register your models here.
 
-class ScoialMediaAdmin(admin.ModelAdmin):
-    list_display = ("Title","Link",)
+from StaticPages.models import Setting
 
-admin.site.register(SocialMedias,ScoialMediaAdmin)
+admin.site.register(Setting)

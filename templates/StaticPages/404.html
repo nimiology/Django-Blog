@@ -3,11 +3,12 @@
 {% block title %}Not Found!{% endblock %}
 {% block custom-css %}<link rel="stylesheet" href="{% static 'css/404.css' %}" />{% endblock %}
 {% block main %}
+
 <body>
     <main class="notfound-container wow">
       <div class="notfound-image-gradient"></div>
       <div class="notfound-content">
-        <img class="wow" src="../../static/assets/img/404.png" alt="404 not found image" />
+        <img class="wow" src="{% static 'assets/img/404.png' %}" alt="404 not found image" />
         <p class="wow">Hey dude, You went the wrong way <span>:/</span></p>
         <a href="home.html"><button class="wow">Back Home</button></a>
       </div>
