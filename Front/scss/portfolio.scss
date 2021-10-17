@@ -310,17 +310,16 @@ main {
 
           .portfolio-card-content-btn-bg {
             position: absolute;
-            left: -280px;
-            width: 250px;
-            height: 150px;
+            left: -130%;
+            width: 120%;
+            height: 320px;
             background-color: $color-black;
             transform: rotateZ(15deg);
             z-index: 10;
             transition: left 0.7s cubic-bezier(0.27, 0.12, 0, 1.01);
 
             @media screen and (max-width: 890px) {
-              left: -350px;
-              width: 300px;
+              transition-duration: 1.2s !important;
               background-color: transparentize(
                 $color: $color-text,
                 $amount: 0.1

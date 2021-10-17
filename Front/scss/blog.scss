@@ -4,34 +4,32 @@
 @import "header";
 
 header {
-  color: $color-text;
-  background-color: $color-dark;
-  position: fixed;
+  color: $color-black;
 
   .navbar-search-btn {
-    color: $color-text;
+    color: $color-black;
   }
 
   .navbar-menu ul a {
-    color: $color-text;
+    color: $color-black;
+
+    @media screen and (max-width: 700px) {
+      color: $color-text;
+    }
   }
 
   .navbar-menu-mobile-hamburger-menu {
     button {
-      color: $color-text;
+      color: $color-black;
     }
   }
 }
 
-body {
-  background-color: $color-dark;
-}
-
 main {
-  margin: 10rem 0 2rem 0;
+  margin-top: 7rem;
 
-  @media screen and (max-width: 900px) {
-    margin: 7rem 0 2rem 0;
+  @media screen and (max-width: 800px) {
+    margin-top: 5rem;
   }
 }
 
@@ -55,7 +53,7 @@ main {
     @media screen and (max-width: 768px) {
       padding: 0;
     }
-    
+
     @media screen and (max-width: 900px) {
       margin-bottom: 2rem;
     }
@@ -64,7 +62,7 @@ main {
       overflow: hidden;
       border-radius: 10px;
       background-color: darken($color: $color-dark, $amount: 2%);
-      box-shadow: 0px 15px 25px 0.1px rgb(0, 0, 0);
+      box-shadow: 0px 15px 25px 0.1px $color-shadow;
       margin-bottom: 7rem;
       animation-name: fadeInUp;
       animation-duration: 0.5s;
@@ -233,7 +231,7 @@ main {
         align-items: center;
         button {
           @include input_reset();
-          color: #db7b7b;
+          color: #c95454;
           font-size: 26px;
         }
         ul {
@@ -244,7 +242,7 @@ main {
           align-items: center;
           li {
             margin: 0 2rem;
-            color: $color-text;
+            color: $color-black;
           }
         }
       }
@@ -270,10 +268,11 @@ main {
     }
 
     section {
-      background-color: darken($color: $color-dark, $amount: 2.5%);
+      background-color: $color-dark;
       border-radius: 10px;
       margin-bottom: 2rem;
       padding: 2rem 2rem 1rem 2rem;
+      // border: 1px solid $color-black;
 
       @media screen and (max-width: 900px) {
         padding: 1.25rem 2rem 1rem 1.5rem;
@@ -336,7 +335,7 @@ main {
 
         li {
           background-color: lighten($color: $color-dark, $amount: 5%);
-          padding: 0.25rem;
+          padding: 0.35rem;
           border-radius: 5px;
           font-size: 14px;
           margin: 0.25rem 0.25rem 0.2rem 0;
@@ -353,23 +352,3 @@ main {
 }
 
 @import "footer";
-
-footer {
-  background-color: $color-dark;
-
-  .footer-navbar-menu {
-    ul a {
-      color: $color-text;
-    }
-  }
-
-  .footer-social {
-    ul li {
-      color: $color-text;
-    }
-  }
-
-  .footer-copyright {
-    color: lighten($color: $color-black, $amount: 50%) !important;
-  }
-}

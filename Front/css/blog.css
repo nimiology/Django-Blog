@@ -272,24 +272,22 @@ header {
       opacity: 1; }
 
 header {
-  color: #ffffff;
-  background-color: #141414;
-  position: fixed; }
+  color: #000000; }
   header .navbar-search-btn {
-    color: #ffffff; }
+    color: #000000; }
   header .navbar-menu ul a, header nav .navbar-menu-mobile ul a {
-    color: #ffffff; }
+    color: #000000; }
+    @media screen and (max-width: 700px) {
+      header .navbar-menu ul a, header nav .navbar-menu-mobile ul a {
+        color: #ffffff; } }
   header .navbar-menu-mobile-hamburger-menu button {
-    color: #ffffff; }
-
-body {
-  background-color: #141414; }
+    color: #000000; }
 
 main {
-  margin: 10rem 0 2rem 0; }
-  @media screen and (max-width: 900px) {
+  margin-top: 7rem; }
+  @media screen and (max-width: 800px) {
     main {
-      margin: 7rem 0 2rem 0; } }
+      margin-top: 5rem; } }
 
 .blog-container {
   padding: 0 2rem;
@@ -315,7 +313,7 @@ main {
       overflow: hidden;
       border-radius: 10px;
       background-color: #0f0f0f;
-      box-shadow: 0px 15px 25px 0.1px black;
+      box-shadow: 0px 15px 25px 0.1px #949494;
       margin-bottom: 7rem;
       animation-name: fadeInUp;
       animation-duration: 0.5s; }
@@ -443,7 +441,7 @@ main {
         background: transparent;
         padding: 0;
         margin: 0;
-        color: #db7b7b;
+        color: #c95454;
         font-size: 26px; }
         .blog-container .blog-articles .blog-articles-pagination div button:focus {
           border: none;
@@ -462,7 +460,7 @@ main {
         align-items: center; }
         .blog-container .blog-articles .blog-articles-pagination div ul li {
           margin: 0 2rem;
-          color: #ffffff; }
+          color: #000000; }
   .blog-container .blog-sidebar {
     padding: 0 1rem 0 2rem;
     animation-name: fadeIn;
@@ -478,7 +476,7 @@ main {
         margin-top: 5rem;
         padding: 0; } }
     .blog-container .blog-sidebar section {
-      background-color: #0e0e0e;
+      background-color: #141414;
       border-radius: 10px;
       margin-bottom: 2rem;
       padding: 2rem 2rem 1rem 2rem; }
@@ -524,7 +522,7 @@ main {
       margin-top: 1rem; }
       .blog-container .blog-sidebar .blog-sidebar-tags ul li {
         background-color: #212121;
-        padding: 0.25rem;
+        padding: 0.35rem;
         border-radius: 5px;
         font-size: 14px;
         margin: 0.25rem 0.25rem 0.2rem 0;
@@ -627,12 +625,3 @@ footer {
       footer .footer-copyright {
         font-size: 10px;
         letter-spacing: 2px; } }
-
-footer {
-  background-color: #141414; }
-  footer .footer-navbar-menu ul a {
-    color: #ffffff; }
-  footer .footer-social ul li {
-    color: #ffffff; }
-  footer .footer-copyright {
-    color: gray !important; }
