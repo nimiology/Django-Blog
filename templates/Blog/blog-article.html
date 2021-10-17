@@ -2,6 +2,18 @@
 {% load static %}
 {% block title %}Blog | {{ article.title }}{% endblock %}
 {% block custom-css %}<link rel="stylesheet" href="{% static 'css/blog-article.css' %}" />{% endblock %}
+{% block header %}
+              <a href="{% url "StaticPages:home" %}"><li>HOME</li></a>
+              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
+              <a href="{% url "Blog:blog" %}" class="active"><li>BLOG</li></a>
+              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+{% endblock %}
+{% block header-mobile %}
+              <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
+              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
+              <a href="{% url "Blog:blog" %}" class="active"><li>BLOG</li></a>
+              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+{% endblock %}
 {% block main %}
 <!DOCTYPE html>
 <html lang="en">
@@ -90,4 +102,10 @@
   </script>
   <script src="{% static 'js/showHeader.js' %}"></script>
 </html>
+{% endblock %}
+{% block footer %}
+      <a href="{% url "StaticPages:home" %}"></a><li>HOME</li></a>
+      <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
+      <a href="{% url "Blog:blog" %}" class="active"><li>BLOG</li></a>
+      <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
 {% endblock %}

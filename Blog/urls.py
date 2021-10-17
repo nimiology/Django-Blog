@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import articles,Blog,Categorygetter
+from .views import articles, Blog, Categorygetter
+
 app_name = 'Blog'
 urlpatterns = [
     path("", articles, name="blog"),

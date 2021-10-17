@@ -33,19 +33,20 @@
           </div>
           <div class="navbar-menu-mobile-wrapper">
             <ul>
-              <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
-              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
-              <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
+                {% block header-mobile %}
+
+                {% endblock %}
             </ul>
           </div>
         </div>
         <div class="navbar-menu col-6">
           <ul>
-              <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
-              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
-              <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
+              {% block header %}
+                  <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
+                  <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
+                  <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+                  <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
+              {% endblock %}
           </ul>
           <div class="navbar-search">
             <button class="navbar-search-btn">
@@ -89,10 +90,9 @@
       <nav class="footer-navbar">
         <div class="footer-navbar-menu">
           <ul>
-              <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
-              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
-              <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
+              {% block footer %}
+
+              {% endblock %}
           </ul>
         </div>
       </nav>

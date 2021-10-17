@@ -14,6 +14,15 @@ class Category(models.Model):
         return self.title
 
 
+class Tag(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True)
+    status = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
+
 class Article(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(blank=True)

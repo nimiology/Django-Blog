@@ -19,7 +19,7 @@ def articles(request, page=1):
         "articles": article
     }
 
-    return render(request, "Blog/Blog.html", context)
+    return render(request, "Blog/blog.html", context)
 
 
 def Categorygetter(request, slug, page=1):
