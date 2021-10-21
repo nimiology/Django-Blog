@@ -4,27 +4,25 @@
 @import "header";
 
 header {
-  color: $color-text;
-  background-color: $color-dark;
-  position: fixed;
+  color: $color-black;
 
   .navbar-search-btn {
-    color: $color-text;
+    color: $color-black;
   }
 
   .navbar-menu ul a {
-    color: $color-text;
+    color: $color-black;
+
+    @media screen and (max-width: 700px) {
+      color: $color-text;
+    }
   }
 
   .navbar-menu-mobile-hamburger-menu {
     button {
-      color: $color-text;
+      color: $color-black;
     }
   }
-}
-
-body {
-  background-color: $color-dark;
 }
 
 main {
@@ -102,7 +100,7 @@ main {
         font-weight: 700;
         letter-spacing: 1px;
         line-height: 3rem;
-        color: $color-text;
+        color: $color-black;
         transition: color 0.25s;
         cursor: pointer;
         margin-bottom: 1.5rem;
@@ -126,7 +124,7 @@ main {
         font-family: "Roboto Condensed", sans-serif;
         font-size: 16px;
         font-weight: 300;
-        color: $color-text;
+        color: $color-black;
 
         @media screen and (max-width: 500px) {
           font-size: 14px;
@@ -143,61 +141,10 @@ main {
           );
 
         p {
-          color: $color-text;
+          color: $color-black;
 
           @media screen and (max-width: 500px) {
             font-size: 14px;
-          }
-        }
-      }
-    }
-
-    .article-data {
-      font-size: 16px;
-      font-weight: 300;
-      color: darken($color: $color-text, $amount: 50%);
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-
-      .article-data-text-author {
-        span {
-          cursor: pointer;
-          transition: color 0.25s;
-          padding: 0 0.25rem;
-          &:hover {
-            color: #db7b7b;
-          }
-        }
-      }
-
-      .article-data-text-comment-btn {
-        @include input_reset();
-        color: darken($color: $color-text, $amount: 50%);
-        margin-left: 1.5rem;
-        white-space: nowrap;
-        span {
-          display: inline-block;
-          transition: transform 0.25s, color 0.25s;
-        }
-
-        @media screen and (max-width: 530px) {
-          margin-left: 1rem;
-        }
-
-        &:hover {
-          span {
-            color: $color-text;
-            transform: translateY(-2px);
-          }
-        }
-      }
-
-      .article-data-text-like-btn {
-        @extend .article-data-text-comment-btn;
-        &:hover {
-          span {
-            color: rgb(184, 49, 49);
           }
         }
       }
@@ -210,7 +157,7 @@ main {
       margin-top: 3rem;
 
       h3 {
-        color: $color-text;
+        color: $color-black;
         font-size: 25px;
         font-weight: 700;
         font-family: "Rajdhani", "sans-serif";
@@ -226,7 +173,7 @@ main {
         padding-bottom: 0.3rem;
 
         a {
-          color: $color-text;
+          color: $color-black;
           transition: color 0.25s;
 
           &:hover {
@@ -263,7 +210,7 @@ main {
     }
 
     section {
-      background-color: darken($color: $color-dark, $amount: 2.5%);
+      background-color: darken($color: $color-text, $amount: 10%);
       border-radius: 10px;
       margin-bottom: 2rem;
       padding: 2rem 2rem 1rem 2rem;
@@ -283,7 +230,7 @@ main {
 
     .blog-sidebar-title {
       h1 {
-        color: $color-text;
+        color: $color-black;
         padding: 0;
         margin: 0;
         font-size: 38px;
@@ -328,12 +275,12 @@ main {
         margin-top: 1rem;
 
         li {
-          background-color: lighten($color: $color-dark, $amount: 5%);
+          background-color: darken($color: $color-text, $amount: 18%);
           padding: 0.25rem;
           border-radius: 5px;
           font-size: 14px;
           margin: 0.25rem 0.25rem 0.2rem 0;
-          color: darken($color: $color-text, $amount: 50%);
+          color: $color-black;
           font-family: "Roboto Condensed", sans-serif;
 
           &:hover {
@@ -346,23 +293,3 @@ main {
 }
 
 @import "footer";
-
-footer {
-  background-color: $color-dark;
-
-  .footer-navbar-menu {
-    ul a {
-      color: $color-text;
-    }
-  }
-
-  .footer-social {
-    ul li {
-      color: $color-text;
-    }
-  }
-
-  .footer-copyright {
-    color: lighten($color: $color-black, $amount: 50%) !important;
-  }
-}

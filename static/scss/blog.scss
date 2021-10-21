@@ -4,27 +4,25 @@
 @import "header";
 
 header {
-  color: $color-text;
-  background-color: $color-dark;
-  position: fixed;
+  color: $color-black;
 
   .navbar-search-btn {
-    color: $color-text;
+    color: $color-black;
   }
 
   .navbar-menu ul a {
-    color: $color-text;
+    color: $color-black;
+
+    @media screen and (max-width: 700px) {
+      color: $color-text;
+    }
   }
 
   .navbar-menu-mobile-hamburger-menu {
     button {
-      color: $color-text;
+      color: $color-black;
     }
   }
-}
-
-body {
-  background-color: $color-dark;
 }
 
 main {
@@ -55,7 +53,7 @@ main {
     @media screen and (max-width: 768px) {
       padding: 0;
     }
-    
+
     @media screen and (max-width: 900px) {
       margin-bottom: 2rem;
     }
@@ -64,7 +62,7 @@ main {
       overflow: hidden;
       border-radius: 10px;
       background-color: darken($color: $color-dark, $amount: 2%);
-      box-shadow: 0px 15px 25px 0.1px rgb(0, 0, 0);
+      box-shadow: 0px 15px 20px 0.1px $color-shadow;
       margin-bottom: 7rem;
       animation-name: fadeInUp;
       animation-duration: 0.5s;
@@ -244,7 +242,7 @@ main {
           align-items: center;
           li {
             margin: 0 2rem;
-            color: $color-text;
+            color: $color-black;
           }
         }
       }
@@ -270,7 +268,7 @@ main {
     }
 
     section {
-      background-color: darken($color: $color-dark, $amount: 2.5%);
+      background-color: darken($color: $color-text, $amount: 10%);
       border-radius: 10px;
       margin-bottom: 2rem;
       padding: 2rem 2rem 1rem 2rem;
@@ -290,7 +288,7 @@ main {
 
     .blog-sidebar-title {
       h1 {
-        color: $color-text;
+        color: $color-black;
         padding: 0;
         margin: 0;
         font-size: 38px;
@@ -335,12 +333,12 @@ main {
         margin-top: 1rem;
 
         li {
-          background-color: lighten($color: $color-dark, $amount: 5%);
-          padding: 0.25rem;
+          background-color: darken($color: $color-text, $amount: 18%);
+          padding: 0.25rem 0.5rem;
           border-radius: 5px;
           font-size: 14px;
           margin: 0.25rem 0.25rem 0.2rem 0;
-          color: darken($color: $color-text, $amount: 50%);
+          color: $color-black;
           font-family: "Roboto Condensed", sans-serif;
 
           &:hover {
@@ -353,23 +351,3 @@ main {
 }
 
 @import "footer";
-
-footer {
-  background-color: $color-dark;
-
-  .footer-navbar-menu {
-    ul a {
-      color: $color-text;
-    }
-  }
-
-  .footer-social {
-    ul li {
-      color: $color-text;
-    }
-  }
-
-  .footer-copyright {
-    color: lighten($color: $color-black, $amount: 50%) !important;
-  }
-}
