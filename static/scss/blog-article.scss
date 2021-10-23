@@ -262,6 +262,9 @@ main {
           color: darken($color: $color-text, $amount: 50%);
           font-family: "Roboto Condensed", sans-serif;
         }
+        a {
+          text-decoration: none;
+        }
       }
     }
 

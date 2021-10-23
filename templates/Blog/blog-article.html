@@ -65,11 +65,13 @@
           </div>
           <ul>
             {% for category in article.categories.all %}
-                <li>
-                    <a href="{% url 'Blog:category' category.slug %}">
-                        {{ category.title }}
-                    </a>
-                </li>
+
+            <a href="{% url 'Blog:category' category.slug %}">
+              <li>
+                {{ category.title }}
+              </li>
+          </a>
+           
             {% endfor %}
           </ul>
         </section>

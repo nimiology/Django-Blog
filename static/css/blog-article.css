@@ -455,6 +455,8 @@ main {
       margin: 1rem 0;
       color: gray;
       font-family: "Roboto Condensed", sans-serif; }
+    .article-container .blog-sidebar .blog-sidebar-categories ul a {
+      text-decoration: none; }
     .article-container .blog-sidebar .blog-sidebar-tags ul {
       display: flex;
       justify-content: flex-start;
