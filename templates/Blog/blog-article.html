@@ -81,13 +81,13 @@
             <div></div>
           </div>
           <ul>
-            <li>Technology 1</li>
-            <li>Technologasdady 2</li>
-            <li>Technology 3</li>
-            <li>Techn4</li>
-            <li>Technoadlogy 5</li>
-            <li>Tech</li>
-            <li>Technsdfsdfology 6</li>
+              {% for tag in article.tags.all %}
+                <a href="{% url 'Blog:tag' tag.slug %}">
+                  <li>
+                    {{ tag.title }}
+                  </li>
+                </a>
+              {% endfor %}
           </ul>
         </section>
       </aside>

@@ -66,10 +66,13 @@
             <div></div>
           </div>
           <ul>
-            <li>Technology 1</li>
-            <li>Technology 2</li>
-            <li>Technology 3</li>
-            <li>Technology 4</li>
+          {% for category in categories %}
+            <a href="{% url 'Blog:category' category.slug %}">
+              <li>
+                {{ category.title }}
+              </li>
+            </a>
+          {% endfor %}
           </ul>
         </section>
         <section class="blog-sidebar-tags">
@@ -78,13 +81,13 @@
             <div></div>
           </div>
           <ul>
-            <li>Technology 1</li>
-            <li>Technologasdady 2</li>
-            <li>Technology 3</li>
-            <li>Techn4</li>
-            <li>Technoadlogy 5</li>
-            <li>Tech</li>
-            <li>Technsdfsdfology 6</li>
+              {% for tag in tags %}
+                <a href="{% url 'Blog:tag' tag.slug %}">
+                  <li>
+                    {{ tag.title }}
+                  </li>
+                </a>
+              {% endfor %}
           </ul>
         </section>
       </aside>
