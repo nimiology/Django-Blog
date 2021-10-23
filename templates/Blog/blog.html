@@ -51,11 +51,29 @@
           <div>
             <button><span class="bi-ceft"></span></button>
             <ul>
-              <li class="active">1</li>
-              <li>2</li>
-              <li>3</li>
+              <li class="active">
+                  <a href="">{{ articles.number }}</a>
+              </li>
+                {% if articles.number != articles.paginator.num_pages%}
+                    <li>
+                        .
+                    </li>
+                    <li>
+                        <a href="{% url 'Blog:blog' articles.paginator.num_pages %}">
+                        {{ articles.paginator.num_pages }}
+                        </a>
+                    </li>
+                {% endif %}
+
             </ul>
-            <button><span class="bi-caret-right"></span></button>
+            {% if articles.has_next %}
+                <button>
+                    <a href="{% url 'Blog:blog' articles.next_page_number %}">
+                        <span class="bi-caret-right">
+                        </span>
+                    </a>
+                </button>
+            {% endif %}
           </div>
         </section>
       </section>
