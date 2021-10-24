@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from StaticPages.forms import MessageForm
-from StaticPages.models import About, Message
+from StaticPages.models import Setting, Message
 
 
 def Home(request):
@@ -11,7 +11,7 @@ def Home(request):
 def About(request):
     messageForm = MessageForm(request.POST or None)
     context = {
-        'setting': About.objects.all().order_by('-id')[0],
+        'setting': Setting.objects.all().order_by('-id')[0],
         'form': messageForm
     }
     if messageForm.is_valid():
