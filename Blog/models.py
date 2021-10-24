@@ -33,7 +33,6 @@ class Article(models.Model):
     writer = models.CharField(max_length=200, default='Nima')
     publishDate = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
     published = models.BooleanField()
 
     def __str__(self):

@@ -81,12 +81,13 @@
             <div></div>
           </div>
           <ul>
-            <a href="#"><li>Technology 1</li></a>
-            <a href="#"><li>Technology 1</li></a>
-            <a href="#"><li>Technology 1</li></a>
-            <a href="#"><li>Technology 1</li></a>
-            <a href="#"><li>Technology 1</li></a>
-            <a href="#"><li>Technology 1</li></a>
+            {% for tag in tags %}
+                <a href="{% url 'Blog:tag' tag.slug %}">
+                  <li>
+                    {{ tag.title }}
+                  </li>
+                </a>
+            {% endfor %}
           </ul>
         </section>
       </aside>

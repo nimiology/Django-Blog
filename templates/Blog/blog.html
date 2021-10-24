@@ -48,18 +48,32 @@
             </article>
           {% endfor%}
         <section class="blog-articles-pagination col-12">
-          <div>         
-              <button disabled>                  
-                  <span class="bi-caret-left"></span>   
-              </button>      
+          <div>
+            {% if articles.has_previous %}
+
+                <button>
+                    <a href="{% url 'Blog:blog' articles.previous_page_number %}">
+                    <span class="bi-caret-left"></span>
+                  </a>
+                </button>
+
+            {% endif %}
             <ul>
-              <!-- Test -->
-              <a href="#"><li class="active">1</li></a>
+              <a href="">
+                  <li class="active">
+                      {{ articles.number }}
+                  </li>
+              </a>
+            {% if boolean %}
+                <li>
+                    .
+                </li>
+            {% endif %}
 
                 {% if articles.number != articles.paginator.num_pages%}  
                 <a href="{% url 'Blog:blog' articles.paginator.num_pages %}" class="active">
                   <li>
-                    {{ articles.paginator.num_pages }}
+                    {{ articles.paginator.num_pages  }}
                   </li>  
                 </a>
                 {% endif %}
