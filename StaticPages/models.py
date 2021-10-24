@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Setting(models.Model):
+class About(models.Model):
     about = models.TextField()
 
 
