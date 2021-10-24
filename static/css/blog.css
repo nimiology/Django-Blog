@@ -431,40 +431,46 @@ main {
               transform: translateY(-2px); }
           .blog-container .blog-articles .blog-article .blog-article-text > div .blog-article-text-like-btn:hover span {
             color: #b83131; }
-    .blog-container .blog-articles .blog-articles-pagination div {
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-      .blog-container .blog-articles .blog-articles-pagination div a {
-        text-decoration: none; }
-      .blog-container .blog-articles .blog-articles-pagination div button {
-        border: none;
-        outline: none;
-        background: transparent;
-        padding: 0;
-        margin: 0;
-        color: #db7b7b;
-        font-size: 26px; }
-        .blog-container .blog-articles .blog-articles-pagination div button:focus {
-          border: none;
-          outline: none; }
-          .blog-container .blog-articles .blog-articles-pagination div button:focus:after, .blog-container .blog-articles .blog-articles-pagination div button:focus:before {
-            content: ""; }
-        .blog-container .blog-articles .blog-articles-pagination div button:after, .blog-container .blog-articles .blog-articles-pagination div button:before {
-          content: ""; }
-      .blog-container .blog-articles .blog-articles-pagination div ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        padding: 0 1rem;
+    .blog-container .blog-articles .blog-articles-pagination {
+      margin-bottom: 3rem; }
+      .blog-container .blog-articles .blog-articles-pagination div {
         display: flex;
         justify-content: center;
         align-items: center; }
-        .blog-container .blog-articles .blog-articles-pagination div ul li {
-          margin: 0 2rem;
-          color: #000000; }
-          .blog-container .blog-articles .blog-articles-pagination div ul li:hover {
+        .blog-container .blog-articles .blog-articles-pagination div button {
+          border: none;
+          outline: none;
+          background: transparent;
+          padding: 0;
+          margin: 0;
+          font-size: 26px; }
+          .blog-container .blog-articles .blog-articles-pagination div button:focus {
+            border: none;
+            outline: none; }
+            .blog-container .blog-articles .blog-articles-pagination div button:focus:after, .blog-container .blog-articles .blog-articles-pagination div button:focus:before {
+              content: ""; }
+          .blog-container .blog-articles .blog-articles-pagination div button:after, .blog-container .blog-articles .blog-articles-pagination div button:before {
+            content: ""; }
+          .blog-container .blog-articles .blog-articles-pagination div button a {
+            text-decoration: none;
             color: #db7b7b; }
+          .blog-container .blog-articles .blog-articles-pagination div button:disabled a {
+            color: #949494; }
+        .blog-container .blog-articles .blog-articles-pagination div ul {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          padding: 0 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .blog-container .blog-articles .blog-articles-pagination div ul a {
+            text-decoration: none; }
+          .blog-container .blog-articles .blog-articles-pagination div ul li {
+            margin: 0 2rem;
+            color: #000000; }
+            .blog-container .blog-articles .blog-articles-pagination div ul li:hover {
+              color: #db7b7b; }
   .blog-container .blog-sidebar {
     padding: 0 1rem 0 2rem;
     animation-name: fadeIn;

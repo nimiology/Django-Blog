@@ -225,27 +225,38 @@ main {
     }
 
     .blog-articles-pagination {
+      margin-bottom: 3rem;
       div {
         display: flex;
         justify-content: center;
         align-items: center;
 
-        a {
-          text-decoration: none;
-        }
-
         button {
           @include input_reset();
-          color: #db7b7b;
           font-size: 26px;
+
+          a {
+            text-decoration: none;
+            color: #db7b7b;
+          }
+
+          &:disabled {
+            a {
+              color: lighten($color: $color-dark, $amount: 50%);
+            }
+          }
         }
-        
+
         ul {
           @include list_reset();
           padding: 0 1rem;
           display: flex;
           justify-content: center;
           align-items: center;
+
+          a {
+            text-decoration: none;
+          }
 
           li {
             margin: 0 2rem;

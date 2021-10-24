@@ -48,36 +48,36 @@
             </article>
           {% endfor%}
         <section class="blog-articles-pagination col-12">
-          <div>
-            <a href="#"><button><span class="bi-ceft"></span></button></a>
+          <div>         
+              <button disabled>                  
+                  <span class="bi-caret-left"></span>   
+              </button>      
             <ul>
-              <li class="active">
-                  <a href="">{{ articles.number }}</a>
-              </li>
-                {% if articles.number != articles.paginator.num_pages%}
-                    <li>
-                        .
-                    </li>
-                    <li>
-                        <a href="{% url 'Blog:blog' articles.paginator.num_pages %}">
-                        {{ articles.paginator.num_pages }}
-                        </a>
-                    </li>
+              <!-- Test -->
+              <a href="#"><li class="active">1</li></a>
+
+                {% if articles.number != articles.paginator.num_pages%}  
+                <a href="{% url 'Blog:blog' articles.paginator.num_pages %}" class="active">
+                  <li>
+                    {{ articles.paginator.num_pages }}
+                  </li>  
+                </a>
                 {% endif %}
 
             </ul>
-            {% if articles.has_next %}
-                <button>
+            {% if articles.has_next %}    
+            
+                <button>  
                     <a href="{% url 'Blog:blog' articles.next_page_number %}">
-                        <span class="bi-caret-right">
-                        </span>
-                    </a>
-                </button>
+                    <span class="bi-caret-right"></span>   
+                  </a>
+                </button>      
+           
             {% endif %}
           </div>
         </section>
       </section>
-      <aside class="blog-sidebar col-sm-12 col-md-4 wow">
+      <aside class="blog-sidebar col-12 col-md-4 wow">
         <section class="blog-sidebar-categories">
           <div class="blog-sidebar-title">
             <h1>Categories</h1>
