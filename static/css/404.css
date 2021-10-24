@@ -418,10 +418,13 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    footer .footer-social ul a {
+      text-decoration: none; }
     footer .footer-social ul li {
       padding: 0.5rem 1rem;
       font-size: 1.3rem;
-      color: #000000; }
+      color: #000000;
+      transition: color 150ms; }
       @media screen and (max-width: 550px) {
         footer .footer-social ul li {
           font-size: 1.3rem;
@@ -430,6 +433,8 @@ footer {
         footer .footer-social ul li {
           font-size: 1.1rem;
           padding: 0.5rem 0.5rem; } }
+      footer .footer-social ul li:hover {
+        color: #db7b7b; }
   footer .footer-copyright {
     margin-bottom: 5rem;
     color: #4d4d4d;

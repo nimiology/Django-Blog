@@ -19,7 +19,7 @@
 <html lang="en">
   <body>
     <main class="article-container">
-      <article class="article col-sm-12 col-md-8 wow">
+      <article class="article col-12 col-md-8 wow">
         <div class="article-image col-12">
           <img src="{{article.thumbnail.url}}" alt="article-image" />
         </div>
@@ -81,13 +81,12 @@
             <div></div>
           </div>
           <ul>
-              {% for tag in article.tags.all %}
-                <a href="{% url 'Blog:tag' tag.slug %}">
-                  <li>
-                    {{ tag.title }}
-                  </li>
-                </a>
-              {% endfor %}
+            <a href="#"><li>Technology 1</li></a>
+            <a href="#"><li>Technology 1</li></a>
+            <a href="#"><li>Technology 1</li></a>
+            <a href="#"><li>Technology 1</li></a>
+            <a href="#"><li>Technology 1</li></a>
+            <a href="#"><li>Technology 1</li></a>
           </ul>
         </section>
       </aside>
@@ -97,7 +96,6 @@
   <script>
     new WOW().init();
   </script>
-  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
   <script src="{% static 'js/utils.js' %}"></script>
   <script>
     const WITH_DELAY = false;

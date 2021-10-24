@@ -79,10 +79,16 @@ footer {
       justify-content: space-between;
       align-items: center;
 
+      a {
+        text-decoration: none;
+      }
+
       li {
         padding: 0.5rem 1rem;
         font-size: 1.3rem;
         color: $color-black;
+        transition: color 150ms;
+
         @media screen and (max-width: 550px) {
           font-size: 1.3rem;
           padding: 0.5rem 0.5rem;
@@ -91,6 +97,10 @@ footer {
         @media screen and (max-width: 380px) {
           font-size: 1.1rem;
           padding: 0.5rem 0.5rem;
+        }
+
+        &:hover {
+          color: #db7b7b;
         }
       }
     }

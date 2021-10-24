@@ -1,0 +1,110 @@
+.blog-sidebar {
+  padding: 0 1rem 0 2rem;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+
+  @media screen and (max-width: 1000px) {
+    padding: 0 1rem 0 1rem;
+  }
+
+  @media screen and (max-width: 870px) {
+    padding: 0 0 0 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: 5rem;
+    padding: 0;
+  }
+
+  section {
+    background-color: darken($color: $color-text, $amount: 10%);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    padding: 2rem 2rem 1rem 2rem;
+
+    @media screen and (max-width: 900px) {
+      padding: 1.25rem 2rem 1rem 1.5rem;
+    }
+
+    ul {
+      @include list_reset();
+      li {
+        cursor: pointer;
+        transition: color 0.25s;
+      }
+    }
+  }
+
+  .blog-sidebar-title {
+    h1 {
+      color: $color-black;
+      padding: 0;
+      margin: 0;
+      font-size: 38px;
+      font-weight: 700;
+      font-family: "Rajdhani", sans-serif;
+
+      @media screen and (max-width: 1100px) {
+        font-size: 28px;
+      }
+
+      @media screen and (max-width: 900px) {
+        font-size: 22px;
+      }
+    }
+
+    div {
+      margin-top: 0.5rem;
+      width: 30px;
+      height: 3px;
+      background-color: #db7b7b;
+    }
+  }
+
+  .blog-sidebar-categories {
+    ul {
+      a {
+        text-decoration: none;
+      }
+      li {
+        font-size: 20px;
+        margin: 1rem 0;
+        color: darken($color: $color-text, $amount: 50%);
+        font-family: "Roboto Condensed", sans-serif;
+
+        &:hover {
+          color: #db7b7b;
+        }
+      }
+    }
+  }
+
+  .blog-sidebar-tags {
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      margin-top: 1rem;
+
+      a {
+        text-decoration: none;
+      }
+
+      li {
+        background-color: darken($color: $color-text, $amount: 18%);
+        padding: 0.25rem 0.5rem;
+        border-radius: 5px;
+        font-size: 14px;
+        margin: 0.25rem 0.25rem 0.2rem 0;
+        color: $color-black;
+        font-family: "Roboto Condensed", sans-serif;
+
+        &:hover {
+          color: #db7b7b;
+        }
+      }
+    }
+  }
+}

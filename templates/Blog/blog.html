@@ -49,7 +49,7 @@
           {% endfor%}
         <section class="blog-articles-pagination col-12">
           <div>
-            <button><span class="bi-ceft"></span></button>
+            <a href="#"><button><span class="bi-ceft"></span></button></a>
             <ul>
               <li class="active">
                   <a href="">{{ articles.number }}</a>
@@ -115,7 +115,6 @@
   <script>
     new WOW().init();
   </script>
-  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
   <script src="{% static 'js/utils.js' %}"></script>
   <script>
     const WITH_DELAY = false;

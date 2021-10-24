@@ -435,6 +435,8 @@ main {
       display: flex;
       justify-content: center;
       align-items: center; }
+      .blog-container .blog-articles .blog-articles-pagination div a {
+        text-decoration: none; }
       .blog-container .blog-articles .blog-articles-pagination div button {
         border: none;
         outline: none;
@@ -461,6 +463,8 @@ main {
         .blog-container .blog-articles .blog-articles-pagination div ul li {
           margin: 0 2rem;
           color: #000000; }
+          .blog-container .blog-articles .blog-articles-pagination div ul li:hover {
+            color: #db7b7b; }
   .blog-container .blog-sidebar {
     padding: 0 1rem 0 2rem;
     animation-name: fadeIn;
@@ -508,11 +512,15 @@ main {
       width: 30px;
       height: 3px;
       background-color: #db7b7b; }
+    .blog-container .blog-sidebar .blog-sidebar-categories ul a {
+      text-decoration: none; }
     .blog-container .blog-sidebar .blog-sidebar-categories ul li {
       font-size: 20px;
       margin: 1rem 0;
       color: gray;
       font-family: "Roboto Condensed", sans-serif; }
+      .blog-container .blog-sidebar .blog-sidebar-categories ul li:hover {
+        color: #db7b7b; }
     .blog-container .blog-sidebar .blog-sidebar-tags ul {
       display: flex;
       justify-content: flex-start;
@@ -520,6 +528,8 @@ main {
       flex-wrap: wrap;
       align-content: flex-start;
       margin-top: 1rem; }
+      .blog-container .blog-sidebar .blog-sidebar-tags ul a {
+        text-decoration: none; }
       .blog-container .blog-sidebar .blog-sidebar-tags ul li {
         background-color: #d1d1d1;
         padding: 0.25rem 0.5rem;
@@ -595,10 +605,13 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    footer .footer-social ul a {
+      text-decoration: none; }
     footer .footer-social ul li {
       padding: 0.5rem 1rem;
       font-size: 1.3rem;
-      color: #000000; }
+      color: #000000;
+      transition: color 150ms; }
       @media screen and (max-width: 550px) {
         footer .footer-social ul li {
           font-size: 1.3rem;
@@ -607,6 +620,8 @@ footer {
         footer .footer-social ul li {
           font-size: 1.1rem;
           padding: 0.5rem 0.5rem; } }
+      footer .footer-social ul li:hover {
+        color: #db7b7b; }
   footer .footer-copyright {
     margin-bottom: 5rem;
     color: #4d4d4d;
