@@ -24,9 +24,11 @@
           <img src="{{article.thumbnail.url}}" alt="article-image" />
         </div>
         <div class="article-text col-12 wow">
-          <h1>
+          <a href="#">
+            <h1>
               {{ article.title }}
-          </h1>
+            </h1>
+          </a>
           <p>
           {% autoescape on %}
               {{ article.text|linebreaks }}
@@ -57,7 +59,7 @@
         </div>
       </article>
 
-      <aside class="blog-sidebar col-sm-12 col-md-4 wow">
+      <aside class="blog-sidebar col-12 col-md-4 wow">
         <section class="blog-sidebar-categories">
           <div class="blog-sidebar-title">
             <h1>Categories</h1>

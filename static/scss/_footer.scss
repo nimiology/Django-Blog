@@ -14,7 +14,11 @@ footer {
 
   .footer-logo {
     margin: 2rem;
-    font-size: 3rem;
+
+    img {
+      width: 70px;
+      height: auto;
+    }
 
     @media screen and (max-width: 400px) {
       margin: 1.25rem;
