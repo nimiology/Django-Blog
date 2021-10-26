@@ -8,7 +8,7 @@
               <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 {% block header-mobile %}
-              <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
+              <a href="{% url "StaticPages:home" %}"><li>HOME</li></a>
               <a href="{% url "Projects:projects" %}" class="active"><li>PORTFOLIO</li></a>
               <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
               <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
@@ -32,7 +32,7 @@
             <div class="portfolio-item-content col-12 col-xl-4">
               <div class="col-sm-8 col-xl-12">
                 <div class="portfolio-item-content-title">
-                  <h1>{{ project.title }}</h1>
+                    <h1><a href="{{ project.github }}">{{ project.title }}</a></h1>
                 </div>
                 <div class="portfolio-item-content-date">{{ project.updated }}</div>
                 <div class="portfolio-item-content-text">
