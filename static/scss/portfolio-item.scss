@@ -45,9 +45,8 @@ main {
       font-family: Rajdhani, sans-serif;
       font-size: 45px;
       font-weight: 700;
-      color: $color-text;
       text-align: center;
-
+      color: $color-text;
       @media screen and (max-width: 768px) {
         font-size: 35px;
       }
@@ -164,15 +163,19 @@ main {
         }
 
         .portfolio-item-content-title {
-          h1 {
-            padding: 0;
-            margin: 0;
-            font-size: 32px;
-            font-weight: 700;
-            font-family: "Rajdhani", sans-serif;
+          a {
+            color: #db7b7b;
+            text-decoration: none;
+            h1 {
+              padding: 0;
+              margin: 0;
+              font-size: 32px;
+              font-weight: 700;
+              font-family: "Rajdhani", sans-serif;
 
-            @media screen and (max-width: 570px) {
-              font-size: 25px;
+              @media screen and (max-width: 570px) {
+                font-size: 25px;
+              }
             }
           }
         }

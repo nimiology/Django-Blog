@@ -302,8 +302,8 @@ main {
     font-family: Rajdhani, sans-serif;
     font-size: 45px;
     font-weight: 700;
-    color: #ffffff;
-    text-align: center; }
+    text-align: center;
+    color: #ffffff; }
     @media screen and (max-width: 768px) {
       .portfolio-item-container .portfolio-item-title h1 {
         font-size: 35px; } }
@@ -393,15 +393,18 @@ main {
       @media screen and (max-width: 1200px) {
         .portfolio-item-container .portfolio-item .portfolio-item-content > div {
           position: static; } }
-      .portfolio-item-container .portfolio-item .portfolio-item-content > div .portfolio-item-content-title h1 {
-        padding: 0;
-        margin: 0;
-        font-size: 32px;
-        font-weight: 700;
-        font-family: "Rajdhani", sans-serif; }
-        @media screen and (max-width: 570px) {
-          .portfolio-item-container .portfolio-item .portfolio-item-content > div .portfolio-item-content-title h1 {
-            font-size: 25px; } }
+      .portfolio-item-container .portfolio-item .portfolio-item-content > div .portfolio-item-content-title a {
+        color: #db7b7b;
+        text-decoration: none; }
+        .portfolio-item-container .portfolio-item .portfolio-item-content > div .portfolio-item-content-title a h1 {
+          padding: 0;
+          margin: 0;
+          font-size: 32px;
+          font-weight: 700;
+          font-family: "Rajdhani", sans-serif; }
+          @media screen and (max-width: 570px) {
+            .portfolio-item-container .portfolio-item .portfolio-item-content > div .portfolio-item-content-title a h1 {
+              font-size: 25px; } }
       .portfolio-item-container .portfolio-item .portfolio-item-content > div .portfolio-item-content-date {
         margin-top: 1rem;
         font-size: 16px;
