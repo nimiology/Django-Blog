@@ -1,5 +1,6 @@
 {% extends "Base.html" %}
 {% load static %}
+{% block title %}Portfolio | {{ project.title }}{% endblock %}
 {% block custom-css %}<link rel="stylesheet" href="{% static 'css/portfolio-item.css' %}" />{% endblock %}
 {% block header %}
               <a href="{% url "StaticPages:home" %}"><li>HOME</li></a>
@@ -14,6 +15,7 @@
               <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 {% block main %}
+<body>
     <main class="portfolio-item-container">
       <article>
         <section>
@@ -46,16 +48,17 @@
         </section>
       </article>
     </main>
-<script src="../../static/js/wow.min.js"></script>
-<script>
-new WOW().init();
-</script>
-<script src="../../static/js/jquery-3.4.1.min.js"></script>
-<script src="../../static/js/utils.js"></script>
-<script>
-const WITH_DELAY = false;
-</script>
-<script src="../../static/js/showHeader.js"></script>
+</body>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/utils.js' %}"></script>
+    <script>
+    const WITH_DELAY = false;
+    </script>
+    <script src="{% static 'js/showHeader.js' %}"></script>
 {% endblock %}
 {% block footer %}
       <a href="{% url "StaticPages:home" %}"></a><li>HOME</li></a>

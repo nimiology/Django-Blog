@@ -1,8 +1,5 @@
 {% extends 'Base.html' %}
-
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 {% block custom-css %}
     <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
 {% endblock %}
@@ -134,7 +131,6 @@
     const WITH_DELAY = false;
   </script>
   <script src="{% static 'js/showHeader.js' %}"></script>
-</html>
 {% endblock %}
 {% block footer %}
       <a href="{% url "StaticPages:home" %}"></a><li>HOME</li></a>
