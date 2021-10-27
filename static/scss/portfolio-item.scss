@@ -80,7 +80,7 @@ main {
       padding: 0 0.25rem;
     }
 
-    .portfolio-item-images {
+    .portfolio-item-image {
       padding: 0 1rem;
       height: 100%;
       display: flex;
@@ -92,10 +92,6 @@ main {
         padding: 0;
       }
 
-      @media screen and (max-width: 768px) {
-        flex-wrap: wrap;
-      }
-
       img {
         position: absolute;
         object-fit: cover;
@@ -104,7 +100,7 @@ main {
         padding: 1rem;
       }
 
-      .item-tall-1 {
+      .image-container {
         position: relative;
         overflow: hidden;
         height: 100%;
@@ -113,19 +109,6 @@ main {
           height: 400px;
         }
 
-        @media screen and (max-width: 768px) {
-          height: 300px;
-        }
-      }
-
-      .item-tall-2 {
-        position: relative;
-        overflow: hidden;
-        height: 100%;
-
-        @media screen and (max-width: 1200px) {
-          height: 400px;
-        }
         @media screen and (max-width: 768px) {
           height: 300px;
         }
