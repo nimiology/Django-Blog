@@ -114,6 +114,14 @@ footer {
     color: lighten($color: $color-black, $amount: 30%);
     letter-spacing: 4px;
 
+    a {
+      color: lighten($color: $color-black, $amount: 30%);
+      text-decoration: none;
+      &:hover {
+        color: #db7b7b;
+      }
+    }
+
     font: {
       size: 17px;
       weight: 400;

@@ -568,6 +568,11 @@ footer {
     letter-spacing: 4px;
     font-size: 17px;
     font-weight: 400; }
+    footer .footer-copyright a {
+      color: #4d4d4d;
+      text-decoration: none; }
+      footer .footer-copyright a:hover {
+        color: #db7b7b; }
     @media screen and (max-width: 550px) {
       footer .footer-copyright {
         font-size: 14px;
