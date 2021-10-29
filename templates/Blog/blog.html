@@ -17,7 +17,6 @@
               <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 {% block main %}
-  <body>
     <main class="blog-container">
       <section class="blog-articles col-sm-12 col-md-8">
           {% for article in articles %}
@@ -121,7 +120,8 @@
         </section>
       </aside>
     </main>
-  </body>
+    {% endblock %}
+    {% block scripts %}    
   <script src="{% static 'js/wow.min.js' %}"></script>
   <script>
     new WOW().init();

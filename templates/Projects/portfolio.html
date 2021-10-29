@@ -15,7 +15,6 @@
               <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 {% block main %}
-<body>
     <main class="wow portfolio-container">
         {% for project in projects %}
             <section class="{% cycle 'portfolio-card portfolio-card-left col-12' 'portfolio-card portfolio-card-right col-12' %}">
@@ -57,7 +56,9 @@
         {% endfor %}
     <div class="portfolio-container-center-line"></div>
     </main>
-</body>
+{% endblock %}
+
+{% block scripts %}
 <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
 <script src="{% static 'js/wow.min.js' %}"></script>
 <script>
@@ -71,6 +72,7 @@ const DELAY_LENGTH = 0;
 </script>
 <script src="{% static 'js/showHeader.js' %}"></script>
 {% endblock %}
+
 {% block footer %}
       <a href="{% url "StaticPages:home" %}"></a><li>HOME</li></a>
       <a href="{% url "Projects:projects" %}" class="active"><li>PORTFOLIO</li></a>

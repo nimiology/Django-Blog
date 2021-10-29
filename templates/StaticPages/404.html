@@ -4,7 +4,7 @@
 {% block custom-css %}<link rel="stylesheet" href="{% static 'css/404.css' %}" />{% endblock %}
 {% block main %}
 
-<body>
+
     <main class="notfound-container wow">
       <div class="notfound-image-gradient"></div>
       <div class="notfound-content">
@@ -14,7 +14,8 @@
       </div>
     </main>
 
-</body>
+    {% endblock %}
+    {% block scripts %}
   <script src="{% static 'js/wow.min.js' %}"></script>
   <script>
     new WOW().init();

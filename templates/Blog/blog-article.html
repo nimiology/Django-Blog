@@ -15,9 +15,6 @@
               <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 {% block main %}
-<!DOCTYPE html>
-<html lang="en">
-  <body>
     <main class="article-container">
       <article class="article col-12 col-md-8 wow">
         <div class="article-image col-12">
@@ -94,7 +91,8 @@
         </section>
       </aside>
     </main>
-  </body>
+    {% endblock %}
+    {% block scripts %}    
   <script src="{% static 'js/wow.min.js' %}"></script>
   <script>
     new WOW().init();

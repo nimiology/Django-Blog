@@ -17,86 +17,93 @@
 
         {% endblock %}
     </head>
-    <header class="col-12">
-      <nav>
-        <div class="navbar-logo col-6">
-          <img src="{% static 'assets/img/Signature.png' %}" alt="logo">
-
+<body>
+  <header class="col-12">
+    <nav>
+      <div class="navbar-logo col-6">
+        <img src="{% static 'assets/img/Signature.png' %}" alt="logo">
+      </div>
+      <div class="navbar-menu-mobile col-6">
+        <div class="navbar-search-mobile">
+          <button class="navbar-search-btn">
+            <span class="bi-search"></span>
+          </button>
         </div>
-        <div class="navbar-menu-mobile col-6">
-          <div class="navbar-search-mobile">
-            <button class="navbar-search-btn">
-              <span class="bi-search"></span>
-            </button>
-          </div>
-          <div class="navbar-menu-mobile-hamburger-menu">
-            <button><span class="bi bi-list"></span></button>
-          </div>
-          <div class="navbar-menu-mobile-wrapper">
-            <ul>
-                {% block header-mobile %}
-
-                {% endblock %}
-            </ul>
-          </div>
+        <div class="navbar-menu-mobile-hamburger-menu">
+          <button><span class="bi bi-list"></span></button>
         </div>
-        <div class="navbar-menu col-6">
+        <div class="navbar-menu-mobile-wrapper">
           <ul>
-              {% block header %}
-                  <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
-                  <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-                <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
-                  <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+              {% block header-mobile %}
+
               {% endblock %}
           </ul>
-          <div class="navbar-search">
-            <button class="navbar-search-btn">
-              <span class="bi-search"></span>
-            </button>
-          </div>
         </div>
-        <div class="search-box-modal">
-          <div class="col-5 col-md-6 col-lg-7 search-box-modal-container">
-            <div class="search-box-modal-wrapper">
-              <form class="search-box-modal-input" action="/Blog" method="GET">
-                <input name="s" class="col-9" type="text" placeholder="SEARCH" />
-                <button class="col-3" type="submit">
-                  <span class="bi-search"></span>
-                </button>
-              </form>
-              <div class="search-box-modal-line"></div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-{% block main %}
-
-{% endblock %}
-<footer>
-      <div class="footer-logo">
       </div>
-      <div class="footer-social">
+      <div class="navbar-menu col-6">
         <ul>
-          <a href="#"><li><span class="bi-whatsapp"></span></li></a>
-          <a href="#"><li><span class="bi-instagram"></span></li></a>
-          <a href="#"><li><span class="bi-twitter"></span></li></a>
-          <a href="https://www.linkedin.com/in/nima-jokar-26976620b/"><li><span class="bi-linkedin"></span></li></a>
-          <a href="https://www.youtube.com/channel/UCKe5HcYi4v14TjF0BwEoM0w"><li><span class="bi-youtube"></span></li></a>
-          <a href="https://github.com/nimiology"><li><span class="bi-github"></span></li></a>
-          <a href="mailto: nimiologyy@gmail.com"><li><span class="bi-google"></span></li></a>
+            {% block header %}
+                <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
+                <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
+              <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
+                <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+            {% endblock %}
+        </ul>
+        <div class="navbar-search">
+          <button class="navbar-search-btn">
+            <span class="bi-search"></span>
+          </button>
+        </div>
+      </div>
+      <div class="search-box-modal">
+        <div class="col-5 col-md-6 col-lg-7 search-box-modal-container">
+          <div class="search-box-modal-wrapper">
+            <form class="search-box-modal-input" action="/Blog" method="GET">
+              <input name="s" class="col-9" type="text" placeholder="SEARCH" />
+              <button class="col-3" type="submit">
+                <span class="bi-search"></span>
+              </button>
+            </form>
+            <div class="search-box-modal-line"></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  {% block main %}
+  
+  {% endblock %}
+  {% block scripts %}
+  
+  {% endblock %}
+  <footer>
+    <div class="footer-logo">       
+      <img src="{% static 'assets/img/Signature.png' %}" alt="logo">
+    </div>
+    <div class="footer-social">
+      <ul>
+        <a href="#"><li><span class="bi-whatsapp"></span></li></a>
+        <a href="#"><li><span class="bi-instagram"></span></li></a>
+        <a href="#"><li><span class="bi-twitter"></span></li></a>
+        <a href="https://www.linkedin.com/in/nima-jokar-26976620b/"><li><span class="bi-linkedin"></span></li></a>
+        <a href="https://www.youtube.com/channel/UCKe5HcYi4v14TjF0BwEoM0w"><li><span class="bi-youtube"></span></li></a>
+        <a href="https://github.com/nimiology"><li><span class="bi-github"></span></li></a>
+        <a href="mailto: nimiologyy@gmail.com"><li><span class="bi-google"></span></li></a>
+      </ul>
+    </div>
+    <nav class="footer-navbar">
+      <div class="footer-navbar-menu">
+        <ul>
+            {% block footer %}
+
+            {% endblock %}
         </ul>
       </div>
-      <nav class="footer-navbar">
-        <div class="footer-navbar-menu">
-          <ul>
-              {% block footer %}
+    </nav>
+    <div class="footer-copyright">
+      Designed By <a href="https://github.com/X-Dark-Coder">Mansour Marzban</a> ©2021
+    </div>
+  </footer>
+</body>
 
-              {% endblock %}
-          </ul>
-        </div>
-      </nav>
-      <div class="footer-copyright">
-        Designed By <a href="https://github.com/X-Dark-Coder">Mansour Marzban</a> ©2021
-      </div>
-    </footer>
+

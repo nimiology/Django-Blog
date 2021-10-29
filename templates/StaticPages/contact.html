@@ -15,7 +15,7 @@
               <a href="{% url "StaticPages:about" %}" class="active"><li>CONTACT</li></a>
 {% endblock %}
 {% block main %}
-  <body>
+ 
     <main class="wow fadeInDown contact-container">
       <figure class="contact-top-image">
         <img src="../../static/assets/img/homeBackground.jpg" alt="contact bg" />
@@ -41,7 +41,8 @@
         </figure>
       </article>
     </main>
-  </body>
+    {% endblock %}
+    {% block scripts %}
   <script src="{% static 'js/wow.min.js' %}"></script>
   <script>
     // Run wow js scroll animation

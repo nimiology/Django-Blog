@@ -1,21 +1,72 @@
-{% extends "Base.html" %}
 {% load static %}
-{% block title %}Portfolio{% endblock %}
-{% block custom-css %}<link rel="stylesheet" href="{% static 'css/home.css' %}" />{% endblock %}
-{% block header %}
-              <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
-              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
-              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
-{% endblock %}
-{% block header-mobile %}
-              <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
-              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
-              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
-{% endblock %}
-{% block main %}
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Home</title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/rajdhani-font.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    </head>
+  <body>    
+    <header class="col-12">
+    <nav>
+      <div class="navbar-logo col-6">
+        <img src="{% static 'assets/img/Signature.png' %}" alt="logo">
+      </div>
+      <div class="navbar-menu-mobile col-6">
+        <div class="navbar-search-mobile">
+          <button class="navbar-search-btn">
+            <span class="bi-search"></span>
+          </button>
+        </div>
+        <div class="navbar-menu-mobile-hamburger-menu">
+          <button><span class="bi bi-list"></span></button>
+        </div>
+        <div class="navbar-menu-mobile-wrapper">
+          <ul>
+            <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
+            <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
+            <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
+            <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-menu col-6">
+        <ul>
+          <a href="{% url "StaticPages:home" %}" class="active"><li>HOME</li></a>
+          <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
+          <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
+          <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+        </ul>
+        <div class="navbar-search">
+          <button class="navbar-search-btn">
+            <span class="bi-search"></span>
+          </button>
+        </div>
+      </div>
+      <div class="search-box-modal">
+        <div class="col-5 col-md-6 col-lg-7 search-box-modal-container">
+          <div class="search-box-modal-wrapper">
+            <form class="search-box-modal-input" action="/Blog" method="GET">
+              <input name="s" class="col-9" type="text" placeholder="SEARCH" />
+              <button class="col-3" type="submit">
+                <span class="bi-search"></span>
+              </button>
+            </form>
+            <div class="search-box-modal-line"></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
     <main class="wow home-container">
       <div class="home-image-container">
         <img src="{% static 'assets/img/homeBackground.jpg' %}" alt="home-background">
@@ -34,6 +85,4 @@
     const DELAY_LENGTH = 800;
   </script>
   <script src="{% static 'js/showHeader.js' %}"></script>
-{% endblock %}
-
-
+</html>
