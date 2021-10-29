@@ -18,4 +18,4 @@ def get_filename_ext(filepath):
 def upload_project_picture(instance, filename):
     name, ext = get_filename_ext(filename)
     final_name = f"{slug_genrator()}{ext}"
-    return f"singleTrack/cover/{final_name}"
+    return f"{final_name}"
