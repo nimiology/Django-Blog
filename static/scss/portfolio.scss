@@ -110,7 +110,7 @@ main {
         &:nth-child(2) {
           width: 394px;
           height: 295px;
-          z-index: 20;
+          z-index: 10;
           animation-delay: 0.2s;
 
           @media screen and (max-width: 1370px) {
@@ -127,7 +127,7 @@ main {
         &:nth-child(3) {
           width: 603px;
           height: 452px;
-          z-index: 10;
+          z-index: 20;
           // background-image: url("../assets/img/testImg.png");
 
           @media screen and (max-width: 1230px) {
