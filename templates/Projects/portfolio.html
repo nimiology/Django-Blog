@@ -3,16 +3,16 @@
 {% block title %}Portfolio{% endblock %}
 {% block custom-css %}<link rel="stylesheet" href="{% static 'css/portfolio.css' %}" />{% endblock %}
 {% block header %}
-              <a href="{% url "StaticPages:home" %}"><li>HOME</li></a>
-              <a href="{% url "Projects:projects" %}" class="active"><li>PORTFOLIO</li></a>
-              <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
-              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
+              <a href="{% url "projects:projects" %}" class="active"><li>PORTFOLIO</li></a>
+              <a href="{% url "blog:blog" %}"><li>BLOG</li></a>
+              <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 {% block header-mobile %}
-              <a href="{% url "StaticPages:home" %}"><li>HOME</li></a>
-              <a href="{% url "Projects:projects" %}" class="active"><li>PORTFOLIO</li></a>
-              <a href="{% url "Blog:blog" %}"><li>BLOG</li></a>
-              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
+              <a href="{% url "projects:projects" %}" class="active"><li>PORTFOLIO</li></a>
+              <a href="{% url "blog:blog" %}"><li>BLOG</li></a>
+              <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 {% block main %}
     <main class="wow portfolio-container">
@@ -47,7 +47,7 @@
                       </p>
                     </div>
                     <div class="portfolio-card-content-btn col-12 col-lg-8 col-xl-4">
-                      <a href="{% url 'Projects:project' project.slug %}"><button>VIEW PROJECT</button></a>
+                      <a href="{% url 'projects:project' project.slug %}"><button>VIEW PROJECT</button></a>
                       <div class="portfolio-card-content-btn-bg"></div>
                     </div>
                   </div>
@@ -74,9 +74,9 @@ const DELAY_LENGTH = 0;
 {% endblock %}
 
 {% block footer %}
-      <a href="{% url "StaticPages:home" %}"></a><li>HOME</li></a>
-      <a href="{% url "Projects:projects" %}" class="active"><li>PORTFOLIO</li></a>
-      <a href="{% url "Blog:blog" %}" ><li>BLOG</li></a>
-      <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+      <a href="{% url "staticpages:home" %}"></a><li>HOME</li></a>
+      <a href="{% url "projects:projects" %}" class="active"><li>PORTFOLIO</li></a>
+      <a href="{% url "blog:blog" %}" ><li>BLOG</li></a>
+      <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 

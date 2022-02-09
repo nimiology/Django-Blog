@@ -3,16 +3,16 @@
 {% block title %}Blog | {{ article.title }}{% endblock %}
 {% block custom-css %}<link rel="stylesheet" href="{% static 'css/blog-article.css' %}" />{% endblock %}
 {% block header %}
-              <a href="{% url "StaticPages:home" %}"><li>HOME</li></a>
-              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "Blog:blog" %}" class="active"><li>BLOG</li></a>
-              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
+              <a href="{% url "projects:projects" %}"><li>PORTFOLIO</li></a>
+              <a href="{% url "blog:blog" %}" class="active"><li>BLOG</li></a>
+              <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 {% block header-mobile %}
-              <a href="{% url "StaticPages:home" %}"><li>HOME</li></a>
-              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "Blog:blog" %}" class="active"><li>BLOG</li></a>
-              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
+              <a href="{% url "projects:projects" %}"><li>PORTFOLIO</li></a>
+              <a href="{% url "blog:blog" %}" class="active"><li>BLOG</li></a>
+              <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 {% block main %}
     <main class="article-container">
@@ -65,7 +65,7 @@
           <ul>
             {% for category in article.categories.all %}
 
-            <a href="{% url 'Blog:category' category.slug %}">
+            <a href="{% url 'blog:category' category.slug %}">
               <li>
                 {{ category.title }}
               </li>
@@ -81,7 +81,7 @@
           </div>
           <ul>
             {% for tag in tags %}
-                <a href="{% url 'Blog:tag' tag.slug %}">
+                <a href="{% url 'blog:tag' tag.slug %}">
                   <li>
                     {{ tag.title }}
                   </li>
@@ -105,8 +105,8 @@
 </html>
 {% endblock %}
 {% block footer %}
-      <a href="{% url "StaticPages:home" %}"></a><li>HOME</li></a>
-      <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-      <a href="{% url "Blog:blog" %}" class="active"><li>BLOG</li></a>
-      <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+      <a href="{% url "staticpages:home" %}"></a><li>HOME</li></a>
+      <a href="{% url "projects:projects" %}"><li>PORTFOLIO</li></a>
+      <a href="{% url "blog:blog" %}" class="active"><li>BLOG</li></a>
+      <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
 {% endblock %}

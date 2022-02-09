@@ -27,9 +27,9 @@
   <script src="{% static 'js/showHeader.js' %}"></script>
 {% endblock %}
 {% block footer %}
-      <a href="{% url "StaticPages:home" %}" class="active"></a><li>HOME</li></a>
-      <a href="{% url "Projects:projects" %}" ><li>PORTFOLIO</li></a>
-      <a href="{% url "Blog:blog" %}" ><li>BLOG</li></a>
-      <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+      <a href="{% url "staticpages:home" %}" class="active"></a><li>HOME</li></a>
+      <a href="{% url "projects:projects" %}" ><li>PORTFOLIO</li></a>
+      <a href="{% url "blog:blog" %}" ><li>BLOG</li></a>
+      <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 

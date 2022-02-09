@@ -5,16 +5,16 @@
 {% endblock %}
 {% block title %}Blog{% endblock %}
 {% block header %}
-              <a href="{% url "StaticPages:home" %}"><li>HOME</li></a>
-              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "Blog:blog" %}" class="active"><li>BLOG</li></a>
-              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
+              <a href="{% url "projects:projects" %}"><li>PORTFOLIO</li></a>
+              <a href="{% url "blog:blog" %}" class="active"><li>BLOG</li></a>
+              <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 {% block header-mobile %}
-              <a href="{% url "StaticPages:home" %}"><li>HOME</li></a>
-              <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "Blog:blog" %}" class="active"><li>BLOG</li></a>
-              <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
+              <a href="{% url "projects:projects" %}"><li>PORTFOLIO</li></a>
+              <a href="{% url "blog:blog" %}" class="active"><li>BLOG</li></a>
+              <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
 {% block main %}
     <main class="blog-container">
@@ -22,12 +22,12 @@
           {% for article in articles %}
             <article class="blog-article col-12 wow">
               <div class="blog-article-image col-12">
-                <a href="{% url 'Blog:article' article.slug %}"><div></div>
+                <a href="{% url 'blog:article' article.slug %}"><div></div>
                   <img src="{{ article.thumbnail.url }}" alt="article-image" />
                 </a>
               </div>
               <div class="blog-article-text col-12 wow">
-                <a href="{% url 'Blog:article' article.slug %}">
+                <a href="{% url 'blog:article' article.slug %}">
                   <h1>
                       {{ article.title}}
                   </h1>
@@ -48,7 +48,7 @@
             {% if articles.has_previous %}
 
                 <button>
-                    <a href="{% url 'Blog:blog' articles.previous_page_number %}">
+                    <a href="{% url 'blog:blog' articles.previous_page_number %}">
                     <span class="bi-caret-left"></span>
                   </a>
                 </button>
@@ -67,7 +67,7 @@
             {% endif %}
 
                 {% if articles.number != articles.paginator.num_pages%}  
-                <a href="{% url 'Blog:blog' articles.paginator.num_pages %}" class="active">
+                <a href="{% url 'blog:blog' articles.paginator.num_pages %}" class="active">
                   <li>
                     {{ articles.paginator.num_pages  }}
                   </li>  
@@ -78,7 +78,7 @@
             {% if articles.has_next %}    
             
                 <button>  
-                    <a href="{% url 'Blog:blog' articles.next_page_number %}">
+                    <a href="{% url 'blog:blog' articles.next_page_number %}">
                     <span class="bi-caret-right"></span>   
                   </a>
                 </button>      
@@ -95,7 +95,7 @@
           </div>
           <ul>
           {% for category in categories %}
-            <a href="{% url 'Blog:category' category.slug %}">
+            <a href="{% url 'blog:category' category.slug %}">
               <li>
                 {{ category.title }}
               </li>
@@ -110,7 +110,7 @@
           </div>
           <ul>
               {% for tag in tags %}
-                <a href="{% url 'Blog:tag' tag.slug %}">
+                <a href="{% url 'blog:tag' tag.slug %}">
                   <li>
                     {{ tag.title }}
                   </li>
@@ -133,8 +133,8 @@
   <script src="{% static 'js/showHeader.js' %}"></script>
 {% endblock %}
 {% block footer %}
-      <a href="{% url "StaticPages:home" %}"></a><li>HOME</li></a>
-      <a href="{% url "Projects:projects" %}"><li>PORTFOLIO</li></a>
-      <a href="{% url "Blog:blog" %}" class="active"><li>BLOG</li></a>
-      <a href="{% url "StaticPages:about" %}"><li>CONTACT</li></a>
+      <a href="{% url "staticpages:home" %}"></a><li>HOME</li></a>
+      <a href="{% url "projects:projects" %}"><li>PORTFOLIO</li></a>
+      <a href="{% url "blog:blog" %}" class="active"><li>BLOG</li></a>
+      <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
 {% endblock %}
