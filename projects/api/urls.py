@@ -7,6 +7,6 @@ app_name = 'project_api'
 urlpatterns = [
     path('', ProjectsAPI.as_view(), name='projects'),
 
-    path('project/', ProjectAPI.as_view(), name='create_project'),
-    path('project/<int:pk>/', ProjectAPI.as_view(), name='project'),
+    path('create/', ProjectAPI.as_view(), name='create_project'),
+    path('<int:pk>/', ProjectAPI.as_view(), name='project'),
 ]
