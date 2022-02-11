@@ -33,6 +33,11 @@
       </div>
         {% for section in article.sections.all %}
             <div class="article-text col-12 wow">
+            {% if section.picture %}
+                <div class="article-text-image">
+                    <img src="{{ section.picture.url }}" alt="article-image">
+                </div>
+            {% endif %}
               <a href="#">
                 <h1>
                   {{ section.title }}
@@ -43,22 +48,11 @@
                       {{ section.text|linebreaks }}
                   {% endautoescape %}
               </p>
-            {% if section.picture %}
-                <div class="article-text-image">
-                    <img src="{{ section.picture.url }}" alt="article-image">
-                </div>
-            {% endif %}
             {% if section.code %}
                 <div class="article-text-code-box">
                     <pre>
                         <code class="hljs python-css">
-                            h1 {
-                                color: red;
-                            }
-
-                            h1 {
-                                color: green;
-                            }
+                            {{ section.code }}
                         </code>
                     </pre>
                 </div>

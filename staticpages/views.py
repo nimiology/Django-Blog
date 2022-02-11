@@ -10,14 +10,14 @@ def Home(request):
 
 def About(request):
     messageForm = MessageForm(request.POST or None)
+    if messageForm.is_valid():
+        data = messageForm.cleaned_data
+        Message.objects.create(name=data['name'], email=data['email'], text=data['text'])
+        messageForm = MessageForm()
     context = {
         'setting': Setting.objects.all().order_by('-id')[0],
         'form': messageForm
     }
-    if messageForm.is_valid():
-        data = messageForm.cleaned_data
-        Message(name=data['name'], email=data['email'], text=data['text']).save()
-
     return render(request, "StaticPages/contact.html", context=context)
 
 

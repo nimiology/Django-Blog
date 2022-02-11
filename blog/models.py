@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.signals import pre_save
+from django.urls import reverse
 from django.utils import timezone
 
 from blog.utils import slug_genrator, upload_project_picture
@@ -45,6 +46,9 @@ class Article(models.Model):
         if qs.exists():
             return qs[0].text
         return ''
+
+    def get_absolute_url(self):
+        return reverse('blog:article', args=(self.slug,))
 
 
 class Section(models.Model):
