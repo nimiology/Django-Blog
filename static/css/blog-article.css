@@ -299,9 +299,9 @@ main {
     .article-container {
       flex-direction: column; } }
   .article-container .article {
-    overflow: hidden;
     border-radius: 10px;
     margin-bottom: 7rem;
+    height: 100%;
     animation-name: fadeInUp;
     animation-duration: 0.5s;
     padding: 0 2rem 0 1rem; }
@@ -374,6 +374,46 @@ main {
           @media screen and (max-width: 500px) {
             .article-container .article .article-text .article-text-box p {
               font-size: 14px; } }
+      .article-container .article .article-text .article-text-image {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        margin: 1.5rem 0; }
+        @media screen and (max-width: 900px) {
+          .article-container .article .article-text .article-text-image {
+            height: 280px; } }
+        @media screen and (max-width: 500px) {
+          .article-container .article .article-text .article-text-image {
+            height: 240px; } }
+        .article-container .article .article-text .article-text-image img {
+          border-radius: 15px;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+      .article-container .article .article-text .article-text-code-box {
+        width: 100%;
+        height: min-content;
+        border-radius: 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #e6e6e6;
+        overflow: hidden;
+        margin: 1.5rem 0; }
+        .article-container .article .article-text .article-text-code-box pre {
+          min-height: 180px;
+          max-height: 300px;
+          margin: 0;
+          width: 100%;
+          padding-left: 1rem;
+          -ms-overflow-style: none;
+          scrollbar-width: none; }
+          .article-container .article .article-text .article-text-code-box pre::-webkit-scrollbar {
+            display: none; }
+          .article-container .article .article-text .article-text-code-box pre code {
+            background-color: #e6e6e6;
+            width: 100%; }
     .article-container .article .article-share {
       display: flex;
       justify-content: flex-start;

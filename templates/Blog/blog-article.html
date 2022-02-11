@@ -1,7 +1,11 @@
 {% extends "Base.html" %}
 {% load static %}
 {% block title %}Blog | {{ article.title }}{% endblock %}
-{% block custom-css %}<link rel="stylesheet" href="{% static 'css/blog-article.css' %}" />{% endblock %}
+{% block custom-css %}
+<link rel="stylesheet" href="{% static 'css/blog-article.css' %}" />
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
+{% endblock %}
 {% block header %}
               <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
               <a href="{% url "projects:projects" %}"><li>PORTFOLIO</li></a>
@@ -20,18 +24,47 @@
         <div class="article-image col-12">
           <img src="{{article.thumbnail.url}}" alt="article-image" />
         </div>
-        <div class="article-text col-12 wow">
-          <a href="#">
-            <h1>
-              {{ article.title }}
-            </h1>
-          </a>
-          <p>
-          {% autoescape on %}
-              {{ article.text|linebreaks }}
-            {% endautoescape %}
-          </p>
-        </div>
+      <div class="article-text col-12 wow">
+              <a href="#">
+                <h1>
+                  {{ article.title }}
+                </h1>
+              </a>
+      </div>
+        {% for section in article.sections.all %}
+            <div class="article-text col-12 wow">
+              <a href="#">
+                <h1>
+                  {{ section.title }}
+                </h1>
+              </a>
+              <p>
+                  {% autoescape on %}
+                      {{ section.text|linebreaks }}
+                  {% endautoescape %}
+              </p>
+            {% if section.picture %}
+                <div class="article-text-image">
+                    <img src="{{ section.picture.url }}" alt="article-image">
+                </div>
+            {% endif %}
+            {% if section.code %}
+                <div class="article-text-code-box">
+                    <pre>
+                        <code class="hljs python-css">
+                            h1 {
+                                color: red;
+                            }
+
+                            h1 {
+                                color: green;
+                            }
+                        </code>
+                    </pre>
+                </div>
+            {% endif %}
+            </div>
+        {% endfor %}
         <div class="article-data">
           <div class="article-data-text-author">
             by <span>{{ article.writer }}</span> <span>{{ article.publishDate }}</span>
@@ -70,7 +103,7 @@
                 {{ category.title }}
               </li>
           </a>
-           
+
             {% endfor %}
           </ul>
         </section>
@@ -92,14 +125,22 @@
       </aside>
     </main>
     {% endblock %}
-    {% block scripts %}    
+    {% block scripts %}
   <script src="{% static 'js/wow.min.js' %}"></script>
   <script>
     new WOW().init();
   </script>
   <script src="{% static 'js/utils.js' %}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
   <script>
     const WITH_DELAY = false;
+    hljs.highlightAll();
+
+    document.querySelectorAll('.article-text-code-box pre code').forEach(elm => {
+        var innerHtml = elm.innerHTML;
+        var pattern = innerHtml.match(/\s*\n[\t\s]*/);
+        elm.innerHTML = innerHtml.replace(new RegExp(pattern, "g"),'\n');
+    })
   </script>
   <script src="{% static 'js/showHeader.js' %}"></script>
 </html>
