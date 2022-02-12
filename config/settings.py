@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'staticpages.apps.StaticpagesConfig',
 ]
 
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -101,8 +100,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'config.urls'
 

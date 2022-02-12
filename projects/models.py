@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.signals import pre_save
+from django.urls import reverse
 from django.utils import timezone
 
 from blog.utils import slug_genrator, upload_project_picture
@@ -20,6 +21,9 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('projects:project', args=(self.slug,))
 
 
 def ProjectPreSave(sender, instance, *args, **kwargs):
