@@ -84,7 +84,8 @@ class ArticleAPITest(APITestCase):
         request = self.client.post(reverse('blog:api:create_article'),
                                    HTTP_AUTHORIZATION=tokenUser,
                                    data={'title': 'test',
-                                         'slug': 'test'})
+                                         'slug': 'test',
+                                         'thumbnail': open('static/assets/img/404.jpg', 'rb')})
         self.assertEqual(request.status_code, status.HTTP_201_CREATED)
 
     def test_get_article(self):
@@ -98,7 +99,9 @@ class ArticleAPITest(APITestCase):
         request = self.client.put(reverse('blog:api:article', args=(article.slug,)),
                                   HTTP_AUTHORIZATION=tokenUser,
                                   data={'title': 'test2',
-                                        'slug': 'test'}
+                                        'slug': 'test',
+                                        'thumbnail': open('static/assets/img/404.jpg', 'rb')
+                                        }
                                   )
         self.assertEqual(request.status_code, status.HTTP_200_OK)
 
