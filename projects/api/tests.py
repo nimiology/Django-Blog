@@ -8,7 +8,7 @@ from projects.models import Project
 
 
 def UserToken(username):
-    user = User(username=username, password='1234')
+    user = User(username=username, password='1234', is_superuser=True)
     user.save()
     refresh = RefreshToken.for_user(user)
     return user, f'Bearer {refresh.access_token}'
@@ -17,7 +17,7 @@ def UserToken(username):
 class ProjectAPITest(APITestCase):
     def test_create_project(self):
         user, tokenUser = UserToken('testman')
-        request = self.client.post(reverse('projects:project_api:create_project'),
+        request = self.client.post(reverse('projects:api:create_project'),
                                    HTTP_AUTHORIZATION=tokenUser,
                                    data={'title': 'test',
                                          'github': 'https://github.com/nimiology',
@@ -29,12 +29,12 @@ class ProjectAPITest(APITestCase):
         project = Project(title='test', publish=True,
                           github='https://google.com/')
         project.save()
-        request = self.client.get(reverse('projects:project_api:project',
+        request = self.client.get(reverse('projects:api:project',
                                           args=(project.pk,)))
         self.assertEqual(request.json()['id'], project.pk)
 
     def test_get_projects(self):
-        request = self.client.get(reverse('projects:project_api:projects'))
+        request = self.client.get(reverse('projects:api:projects'))
         self.assertEqual(request.status_code, status.HTTP_200_OK)
 
     def test_put_project(self):
@@ -42,7 +42,7 @@ class ProjectAPITest(APITestCase):
         project = Project(title='test', publish=True,
                           github='https://google.com/')
         project.save()
-        request = self.client.put(reverse('projects:project_api:project',
+        request = self.client.put(reverse('projects:api:project',
                                           args=(project.pk,)),
                                   HTTP_AUTHORIZATION=tokenUser,
                                   data={'title': 'test',
@@ -56,7 +56,7 @@ class ProjectAPITest(APITestCase):
         project = Project(title='test', publish=True,
                           github='https://google.com/')
         project.save()
-        request = self.client.delete(reverse('projects:project_api:project',
+        request = self.client.delete(reverse('projects:api:project',
                                              args=(project.pk,)),
                                      HTTP_AUTHORIZATION=tokenUser,
                                      )

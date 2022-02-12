@@ -1,15 +1,16 @@
 from rest_framework.generics import ListAPIView
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from blog.utils import CreateRetrieveUpdateDestroyAPIView
+from projects.api.permissions import ReadOnly
 from projects.api.serializers import ProjectSerializer
 from projects.models import Project
+from staticpages.api.permissions import IsSuperUser
 
 
 class ProjectAPI(CreateRetrieveUpdateDestroyAPIView):
     queryset = Project.objects.filter(publish=True)
     serializer_class = ProjectSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [ReadOnly | IsSuperUser]
 
 
 class ProjectsAPI(ListAPIView):
