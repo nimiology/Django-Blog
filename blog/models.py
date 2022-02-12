@@ -29,11 +29,11 @@ class Article(models.Model):
     slug = models.SlugField(blank=True)
     categories = models.ManyToManyField(Category, blank=True, related_name="article")
     tags = models.ManyToManyField(Tag, blank=True, related_name="article")
-    thumbnail = models.ImageField(upload_to=upload_project_picture)
+    thumbnail = models.ImageField(upload_to=upload_project_picture, blank=True, null=True)
     writer = models.CharField(max_length=200, default='Nima')
     publishDate = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
-    published = models.BooleanField()
+    published = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

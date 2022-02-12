@@ -1,8 +1,10 @@
-from django.urls import path
+from django.urls import path, include
 from .views import Blog, Post, CategoryView, TagView
 
 app_name = 'blog'
 urlpatterns = [
+    path('api/', include('blog.api.urls')),
+
     path("", Blog, name="blog"),
     path("page/<int:page>/", Blog, name="blog"),
     path("<slug:slug>/", Post, name="article"),
