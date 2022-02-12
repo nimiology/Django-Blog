@@ -75,7 +75,7 @@ def ArticlePreSave(sender, instance, *args, **kwargs):
 
 
 def section_pre_save(sender, instance, *args, **kwargs):
-    if not instance.position:
+    if instance.position is None:
         project_sections = sender.objects.filter(article=instance.article).order_by('-position')
         if project_sections.exists():
             project_section = project_sections[0]

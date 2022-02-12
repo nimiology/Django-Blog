@@ -30,35 +30,45 @@
                   {{ article.title }}
                 </h1>
               </a>
-      </div>
-        {% for section in article.sections.all %}
-            <div class="article-text col-12 wow">
-            {% if section.picture %}
-                <div class="article-text-image">
-                    <img src="{{ section.picture.url }}" alt="article-image">
+           {% for section in article.sections.all %}
+            <div class="article-text-section">
+                {% if section.picture %}
+                    <div class="article-text-image">
+                        <img src="{{ section.picture.url }}" alt="article-image">
+                    </div>
+                {% endif %}
+                <div class="article-text-paragraph">
+                {% if section.title %}
+                        <h4>
+                          {{ section.title }}
+                        </h4>
+                {% endif %}
+                  <p>
+                      {% autoescape on %}
+                          {{ section.text|linebreaks }}
+                      {% endautoescape %}
+                  </p>
                 </div>
-            {% endif %}
-              <a href="#">
-                <h1>
-                  {{ section.title }}
-                </h1>
-              </a>
-              <p>
-                  {% autoescape on %}
-                      {{ section.text|linebreaks }}
-                  {% endautoescape %}
-              </p>
-            {% if section.code %}
-                <div class="article-text-code-box">
-                    <pre>
-                        <code class="hljs python-css">
-                            {{ section.code }}
-                        </code>
-                    </pre>
-                </div>
-            {% endif %}
+
+
+                {% if section.code %}
+                    <div class="article-text-code-box">
+                        <pre>
+                            <code class="hljs python-css">
+                                {{ section.code }}
+                            </code>
+                        </pre>
+                    </div>
+                {% endif %}
+                {% if section.youtube %}
+                    <div class="article-text-video-box">
+                        <iframe src="{{ section.youtube }}"></iframe>
+                    </div>
+                {% endif %}
             </div>
         {% endfor %}
+      </div>
+
         <div class="article-data">
           <div class="article-data-text-author">
             by <span>{{ article.writer }}</span> <span>{{ article.publishDate }}</span>
