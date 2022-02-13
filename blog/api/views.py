@@ -1,8 +1,6 @@
-from rest_framework.generics import ListAPIView
-
 from blog.api.serializers import TagSerializer, CategorySerializer, ArticleSerializer, SectionSerializer
 from blog.models import Tag, Category, Article, Section
-from blog.utils import CreateRetrieveUpdateDestroyAPIView
+from blog.utils import CreateRetrieveUpdateDestroyAPIView, MyListAPIView
 from projects.api.permissions import ReadOnly
 from staticpages.api.permissions import IsSuperUser
 
@@ -13,13 +11,13 @@ class TagAPI(CreateRetrieveUpdateDestroyAPIView):
     permission_classes = [ReadOnly | IsSuperUser]
 
 
-class TagsAPI(ListAPIView):
+class TagsAPI(MyListAPIView):
     serializer_class = TagSerializer
     queryset = Tag.objects.all()
     filterset_fields = {
         "title": ['exact', 'contains'],
         "slug": ['exact', 'contains'],
-        "status": ['exact'],
+        "published": ['exact'],
     }
     ordering_fields = '__all__'
 
@@ -40,7 +38,7 @@ class ArticleAPI(TagAPI):
     lookup_field = 'slug'
 
 
-class ArticlesAPI(ListAPIView):
+class ArticlesAPI(MyListAPIView):
     serializer_class = ArticleSerializer
     queryset = Article.objects.all()
     filterset_fields = {
@@ -60,8 +58,13 @@ class SectionAPI(TagAPI):
     serializer_class = SectionSerializer
     queryset = Section.objects.all()
 
+    def get_queryset(self):
+        if not (self.request.user and self.request.user.is_superuser):
+            return self.queryset.filter(article__published=True)
+        return self.queryset
 
-class SectionsAPI(ListAPIView):
+
+class SectionsAPI(MyListAPIView):
     serializer_class = SectionSerializer
     queryset = Section.objects.all()
     filterset_fields = {
@@ -74,3 +77,8 @@ class SectionsAPI(ListAPIView):
 
     }
     ordering_fields = '__all__'
+
+    def get_queryset(self):
+        if not (self.request.user and self.request.user.is_superuser):
+            return self.queryset.filter(article__published=True)
+        return self.queryset

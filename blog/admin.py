@@ -12,15 +12,15 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("title", "slug", "status")
-    list_filter = (["status"])
+    list_display = ("title", "slug", "published")
+    list_filter = (["published"])
     search_fields = ("title", 'slug')
     prepopulated_fields = {"slug": ("title",)}
 
 
 class TagAdmin(admin.ModelAdmin):
-    list_display = ("title", "slug", "status")
-    list_filter = (["status"])
+    list_display = ("title", "slug", "published")
+    list_filter = (["published"])
     search_fields = ("title", 'slug')
     prepopulated_fields = {"slug": ("title",)}
 

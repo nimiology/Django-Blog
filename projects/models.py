@@ -17,7 +17,7 @@ class Project(models.Model):
     publishDate = models.DateTimeField(auto_now_add=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    publish = models.BooleanField()
+    published = models.BooleanField()
 
     def __str__(self):
         return self.title

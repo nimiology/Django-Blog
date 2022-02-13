@@ -1,6 +1,4 @@
-from rest_framework.generics import ListAPIView
-
-from blog.utils import CreateRetrieveUpdateDestroyAPIView
+from blog.utils import CreateRetrieveUpdateDestroyAPIView, MyListAPIView
 from projects.api.permissions import ReadOnly
 from projects.api.serializers import ProjectSerializer
 from projects.models import Project
@@ -8,13 +6,13 @@ from staticpages.api.permissions import IsSuperUser
 
 
 class ProjectAPI(CreateRetrieveUpdateDestroyAPIView):
-    queryset = Project.objects.filter(publish=True)
+    queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     permission_classes = [ReadOnly | IsSuperUser]
 
 
-class ProjectsAPI(ListAPIView):
-    queryset = Project.objects.filter(publish=True)
+class ProjectsAPI(MyListAPIView):
+    queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     filterset_fields = {
         "title": ['exact', 'contains'],

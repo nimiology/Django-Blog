@@ -22,11 +22,11 @@ class ProjectAPITest(APITestCase):
                                    data={'title': 'test',
                                          'github': 'https://github.com/nimiology',
                                          'text': 'test',
-                                         'publish': True})
+                                         'published': True})
         self.assertEqual(request.status_code, status.HTTP_201_CREATED)
 
     def test_get_project(self):
-        project = Project(title='test', publish=True,
+        project = Project(title='test', published=True,
                           github='https://google.com/')
         project.save()
         request = self.client.get(reverse('projects:api:project',
@@ -39,7 +39,7 @@ class ProjectAPITest(APITestCase):
 
     def test_put_project(self):
         user, tokenUser = UserToken('testman')
-        project = Project(title='test', publish=True,
+        project = Project(title='test', published=True,
                           github='https://google.com/')
         project.save()
         request = self.client.put(reverse('projects:api:project',
@@ -48,12 +48,12 @@ class ProjectAPITest(APITestCase):
                                   data={'title': 'test',
                                         'github': 'https://github.com/nimiology',
                                         'text': 'test',
-                                        'publish': True})
-        self.assertEqual(request.json()['id'], project.pk)
+                                        'published': True})
+        self.assertEqual(request.json()['id'], project.published)
 
     def test_delete_project(self):
         user, tokenUser = UserToken('testman')
-        project = Project(title='test', publish=True,
+        project = Project(title='test', published=True,
                           github='https://google.com/')
         project.save()
         request = self.client.delete(reverse('projects:api:project',

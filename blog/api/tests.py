@@ -89,7 +89,7 @@ class ArticleAPITest(APITestCase):
         self.assertEqual(request.status_code, status.HTTP_201_CREATED)
 
     def test_get_article(self):
-        article = Article.objects.create(title='test', slug='test')
+        article = Article.objects.create(title='test', slug='test', published=True)
         request = self.client.get(reverse('blog:api:article', args=(article.slug,)))
         self.assertEqual(request.status_code, status.HTTP_200_OK)
 
@@ -119,7 +119,7 @@ class ArticleAPITest(APITestCase):
 
 class SectionAPITest(APITestCase):
     def setUp(self):
-        self.article = Article.objects.create(title='test', slug='test')
+        self.article = Article.objects.create(title='test', slug='test', published=True)
     def test_create_section(self):
         user, tokenUser = UserToken('testman')
         request = self.client.post(reverse('blog:api:create_section'),

@@ -2,7 +2,7 @@ import os
 import random
 import string
 
-from rest_framework.generics import RetrieveUpdateDestroyAPIView, CreateAPIView
+from rest_framework.generics import RetrieveUpdateDestroyAPIView, CreateAPIView, ListAPIView
 
 
 def slug_genrator():
@@ -24,4 +24,14 @@ def upload_project_picture(instance, filename):
 
 
 class CreateRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView, CreateAPIView):
-    pass
+    def get_queryset(self):
+        if not (self.request.user and self.request.user.is_superuser):
+            return self.queryset.filter(published=True)
+        return self.queryset
+
+
+class MyListAPIView(ListAPIView):
+    def get_queryset(self):
+        if not (self.request.user and self.request.user.is_superuser):
+            return self.queryset.filter(published=True)
+        return self.queryset

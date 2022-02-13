@@ -9,7 +9,7 @@ from blog.utils import slug_genrator, upload_project_picture
 class Category(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
-    status = models.BooleanField(default=True)
+    published = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
@@ -18,7 +18,7 @@ class Category(models.Model):
 class Tag(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
-    status = models.BooleanField(default=True)
+    published = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
