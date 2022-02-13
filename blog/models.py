@@ -63,7 +63,7 @@ class Section(models.Model):
     position = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
-        return self.article.title
+        return f'{self.article.title} - {self.position}'
 
     class Meta:
         ordering = ['position']
