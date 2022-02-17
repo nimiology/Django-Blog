@@ -22,7 +22,7 @@ def Blog(request, page=1):
     article_list = Article.objects.filter(**params).order_by('-publishDate')
     search = request.GET.get('s')
     if search:
-        article_list = article_list.filter(Q(title__contains=search) | Q(text__contains=search))
+        article_list = article_list.filter(Q(title__contains=search) | Q(sections__text__contains=search))
     pagintor = Paginator(article_list, 3)
     article = pagintor.get_page(page)
     context = {
