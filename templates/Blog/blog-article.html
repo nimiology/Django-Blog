@@ -117,7 +117,7 @@
             <div></div>
           </div>
           <ul>
-            {% for tag in tags %}
+            {% for tag in article.tags.all %}
                 <a href="{% url 'blog:tag' tag.slug %}">
                   <li>
                     {{ tag.title }}
