@@ -21,9 +21,11 @@
 {% block main %}
     <main class="article-container">
       <article class="article col-12 col-md-8 wow">
+      {% if article.thumbnail %}
         <div class="article-image col-12">
           <img src="{{article.thumbnail.url}}" alt="article-image" />
         </div>
+      {% endif %}
       <div class="article-text col-12 wow">
               <a href="#">
                 <h1>

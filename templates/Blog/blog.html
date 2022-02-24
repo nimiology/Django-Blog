@@ -21,11 +21,15 @@
       <section class="blog-articles col-sm-12 col-md-8">
           {% for article in articles %}
             <article class="blog-article col-12 wow">
+            {% if article.thumbnail %}
               <div class="blog-article-image col-12">
                 <a href="{% url 'blog:article' article.slug %}"><div></div>
-                  <img src="{{ article.thumbnail.url }}" alt="article-image" />
+                        <img src="{{ article.thumbnail.url }}" alt="article-image" />
+{#                    {% else %}#}
+{#                        <img src="https://onlineartdatabase.pythonanywhere.com/random/picture/" alt="article-image" />#}
                 </a>
               </div>
+            {% endif %}
               <div class="blog-article-text col-12 wow">
                 <a href="{% url 'blog:article' article.slug %}">
                   <h1>

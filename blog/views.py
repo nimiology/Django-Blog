@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 # Create your views here.
 def Post(request, slug):
     get_obj_params = {'slug': slug}
-    if not (request.user and request.user.is_superuser):
+    if not (request.user.is_authenticated and request.user.is_superuser):
         get_obj_params['published'] = True
     context = {
         "article": get_object_or_404(Article, **get_obj_params),
@@ -17,8 +17,8 @@ def Post(request, slug):
 
 def Blog(request, page=1):
     params = {}
-    # if not (request.user and request.user.is_superuser):
-    #     params['published'] = True
+    if not (request.user and request.user.is_superuser):
+        params['published'] = True
     article_list = Article.objects.filter(**params).order_by('-publishDate')
     search = request.GET.get('s')
     if search:
