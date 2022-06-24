@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=200)),
                 ('slug', models.SlugField(blank=True)),
-                ('thumbnail', models.ImageField(upload_to=blog.utils.upload_project_picture)),
+                ('thumbnail', models.ImageField(upload_to=blog.utils.upload_article_picture)),
                 ('writer', models.CharField(default='Nima', max_length=200)),
                 ('publishDate', models.DateTimeField(default=django.utils.timezone.now)),
                 ('created', models.DateTimeField(auto_now_add=True)),
@@ -50,7 +50,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(blank=True, max_length=200, null=True)),
-                ('picture', models.ImageField(blank=True, null=True, upload_to=blog.utils.upload_project_picture)),
+                ('picture', models.ImageField(blank=True, null=True, upload_to=blog.utils.upload_article_picture)),
                 ('youtube', models.URLField(blank=True, null=True)),
                 ('text', models.TextField(blank=True, null=True)),
                 ('code', models.TextField(blank=True, null=True)),

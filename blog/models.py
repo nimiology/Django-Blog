@@ -3,7 +3,7 @@ from django.db.models.signals import pre_save
 from django.urls import reverse
 from django.utils import timezone
 
-from blog.utils import slug_genrator, upload_project_picture
+from blog.utils import slug_genrator, upload_article_picture
 
 
 class Category(models.Model):
@@ -29,7 +29,7 @@ class Article(models.Model):
     slug = models.SlugField(blank=True)
     categories = models.ManyToManyField(Category, blank=True, related_name="article")
     tags = models.ManyToManyField(Tag, blank=True, related_name="article")
-    thumbnail = models.ImageField(upload_to=upload_project_picture, null=True, blank=True)
+    thumbnail = models.ImageField(upload_to=upload_article_picture, null=True, blank=True)
     writer = models.CharField(max_length=200, default='Nima')
     publishDate = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
@@ -56,7 +56,7 @@ class Section(models.Model):
 
     article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name=related_name)
     title = models.CharField(max_length=200, null=True, blank=True)
-    picture = models.ImageField(upload_to=upload_project_picture, blank=True, null=True)
+    picture = models.ImageField(upload_to=upload_article_picture, blank=True, null=True)
     youtube = models.URLField(blank=True, null=True)
     text = models.TextField(null=True, blank=True)
     code = models.TextField(null=True, blank=True)

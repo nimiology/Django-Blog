@@ -17,9 +17,9 @@ def get_filename_ext(filepath):
     return name, ext
 
 
-def upload_project_picture(instance, filename):
+def upload_article_picture(instance, filename):
     name, ext = get_filename_ext(filename)
-    final_name = f"{slug_genrator()}{ext}"
+    final_name = f"articles/{instance.id}{ext}"
     return f"{final_name}"
 
 

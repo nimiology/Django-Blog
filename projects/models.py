@@ -3,7 +3,8 @@ from django.db.models.signals import pre_save
 from django.urls import reverse
 from django.utils import timezone
 
-from blog.utils import slug_genrator, upload_project_picture
+from blog.utils import slug_genrator
+from projects.utils import upload_project_picture
 
 
 class Project(models.Model):
