@@ -58,7 +58,15 @@
                 </button>
 
             {% endif %}
+
             <ul>
+            {% if articles.number == articles.paginator.num_pages %}
+                <a href="{% url 'blog:blog' articles.previous_page_number %}" class="active">
+                  <li>
+                    {{ articles.previous_page_number  }}
+                  </li>
+                </a>
+            {% endif %}
               <a href="">
                   <li class="active">
                       {{ articles.number }}
