@@ -68,6 +68,8 @@ class Section(models.Model):
     class Meta:
         ordering = ['position']
 
+    def get_absolute_url(self):
+        return reverse('blog:article', args=(self.article.slug,))
 
 def ArticlePreSave(sender, instance, *args, **kwargs):
     if instance.slug == '':
