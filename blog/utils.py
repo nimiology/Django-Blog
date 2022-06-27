@@ -5,10 +5,10 @@ import string
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, CreateAPIView, ListAPIView
 
 
-def slug_genrator():
+def slug_generator(num):
     letters_str = string.ascii_letters + string.digits
     letters = list(letters_str)
-    return "".join(random.choice(letters) for _ in range(50))
+    return "".join(random.choice(letters) for _ in range(num))
 
 
 def get_filename_ext(filepath):
@@ -17,10 +17,9 @@ def get_filename_ext(filepath):
     return name, ext
 
 
-def upload_article_picture(instance, filename):
+def upload_picture(instance, filename):
     name, ext = get_filename_ext(filename)
-    final_name = f"articles/{instance.id}{ext}"
-    return f"{final_name}"
+    return f"{slug_generator(3)}{ext}"
 
 
 class CreateRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView, CreateAPIView):
