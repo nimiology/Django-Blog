@@ -14,14 +14,29 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-handler404 = 'staticpages.views.Error404'
+from blog.sitemaps import ArticleSitemap, CategorySitemap, TagSitemap
+from projects.sitemaps import ProjectSitemap
+from staticpages.sitemaps import StaticSitemap
 
+handler404 = 'staticpages.views.Error404'
+sitemaps = {
+    'project': ProjectSitemap,
+    'static': StaticSitemap,
+    'article': ArticleSitemap,
+    'category': CategorySitemap,
+    'tag': TagSitemap,
+}
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('sitemap.xml', sitemap,
+         {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap'),
 
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),

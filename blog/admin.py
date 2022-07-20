@@ -6,7 +6,7 @@ from .models import Article, Category, Tag, Section
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ("title", "slug", "publishDate", "published")
     list_filter = ("publishDate", "published")
-    search_fields = ("title", "text")
+    search_fields = ("title", "slug")
     prepopulated_fields = {"slug": ("title",)}
     ordering = ["published", "publishDate"]
 

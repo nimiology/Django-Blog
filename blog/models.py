@@ -14,6 +14,9 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse('blog:category', args=(self.slug,))
+
 
 class Tag(models.Model):
     title = models.CharField(max_length=200)
@@ -22,6 +25,9 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog:tag', args=(self.slug,))
 
 
 class Article(models.Model):
