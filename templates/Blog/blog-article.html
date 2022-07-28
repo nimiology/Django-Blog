@@ -2,158 +2,181 @@
 {% load static %}
 {% block title %}Blog | {{ article.title }}{% endblock %}
 {% block custom-css %}
-<link rel="stylesheet" href="{% static 'css/blog-article.css' %}" />
-<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog-article.css' %}"/>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
 {% endblock %}
 {% block header %}
-              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
-              <a href="{% url "projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "blog:blog" %}" class="active"><li>BLOG</li></a>
-              <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
+    <a href="{% url "staticpages:home" %}">
+        <li>HOME</li>
+    </a>
+    <a href="{% url "projects:projects" %}">
+        <li>PORTFOLIO</li>
+    </a>
+    <a href="{% url "blog:blog" %}" class="active">
+        <li>BLOG</li>
+    </a>
+    <a href="{% url "staticpages:about" %}">
+        <li>CONTACT</li>
+    </a>
 {% endblock %}
 {% block header-mobile %}
-              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
-              <a href="{% url "projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "blog:blog" %}" class="active"><li>BLOG</li></a>
-              <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
+    <a href="{% url "staticpages:home" %}">
+        <li>HOME</li>
+    </a>
+    <a href="{% url "projects:projects" %}">
+        <li>PORTFOLIO</li>
+    </a>
+    <a href="{% url "blog:blog" %}" class="active">
+        <li>BLOG</li>
+    </a>
+    <a href="{% url "staticpages:about" %}">
+        <li>CONTACT</li>
+    </a>
 {% endblock %}
 {% block main %}
     <main class="article-container">
-      <article class="article col-12 col-md-8 wow">
-      {% if article.thumbnail %}
-        <div class="article-image col-12">
-          <img src="{{article.thumbnail.url}}" alt="article-image" />
-        </div>
-      {% endif %}
-      <div class="article-text col-12 wow">
-              <a href="#">
-                <h1>
-                  {{ article.title }}
-                </h1>
-              </a>
-           {% for section in article.sections.all %}
-            <div class="article-text-section">
-                {% if section.picture %}
-                    <div class="article-text-image">
-                        <img src="{{ section.picture.url }}" alt="article-image">
-                    </div>
-                {% endif %}
-                <div class="article-text-paragraph">
-                {% if section.title %}
-                        <h4>
-                          {{ section.title }}
-                        </h4>
-                {% endif %}
-                  <p>
-                      {% autoescape on %}
-                          {{ section.text|linebreaks }}
-                      {% endautoescape %}
-                  </p>
+        <article class="article col-12 col-md-8 wow">
+            {% if article.thumbnail %}
+                <div class="article-image col-12">
+                    <img src="{{ article.thumbnail.url }}" alt="article-image"/>
                 </div>
+            {% endif %}
+            <div class="article-text col-12 wow">
+                <a href="#">
+                    <h1>
+                        {{ article.title }}
+                    </h1>
+                </a>
+                {% for section in article.sections.all %}
+                    <div class="article-text-section">
+                        <div class="article-text-paragraph">
+                            {% if section.title %}
+                                <h4>
+                                    {{ section.title }}
+                                </h4>
+                            {% endif %}
+                            <p>
+                                {% autoescape on %}
+                                    {{ section.text|linebreaks }}
+                                {% endautoescape %}
+                            </p>
+                        </div>
 
-
-                {% if section.code %}
-                    <div class="article-text-code-box">
+                        {% if section.picture %}
+                            <div class="article-text-image">
+                                <img src="{{ section.picture.url }}" alt="article-image">
+                            </div>
+                        {% endif %}
+                        {% if section.code %}
+                            <div class="article-text-code-box">
                         <pre>
                             <code class="hljs python-css">
                                 {{ section.code }}
                             </code>
                         </pre>
+                            </div>
+                        {% endif %}
+                        {% if section.youtube %}
+                            <div class="article-text-video-box">
+                                <iframe src="{{ section.youtube }}"></iframe>
+                            </div>
+                        {% endif %}
                     </div>
-                {% endif %}
-                {% if section.youtube %}
-                    <div class="article-text-video-box">
-                        <iframe src="{{ section.youtube }}"></iframe>
-                    </div>
-                {% endif %}
+                {% endfor %}
             </div>
-        {% endfor %}
-      </div>
 
-        <div class="article-data">
-          <div class="article-data-text-author">
-            by <span>{{ article.writer }}</span> <span>{{ article.publishDate }}</span>
-          </div>
-        </div>
-        <div class="article-share">
-          <h3>SHARE :</h3>
-          <ul>
-            <a href="#">
-              <li><span class="bi-facebook"></span></li>
-            </a>
-            <a href="#">
-              <li><span class="bi-whatsapp"></span></li>
-            </a>
-            <a href="#">
-              <li><span class="bi-linkedin"></span></li>
-            </a>
-            <a href="#">
-              <li><span class="bi-twitter"></span></li>
-            </a>
-          </ul>
-        </div>
-      </article>
+            <div class="article-data">
+                <div class="article-data-text-author">
+                    by <span>{{ article.writer }}</span> <span>{{ article.publishDate }}</span>
+                </div>
+            </div>
+            <div class="article-share">
+                <h3>SHARE :</h3>
+                <ul>
+                    <a href="#">
+                        <li><span class="bi-facebook"></span></li>
+                    </a>
+                    <a href="#">
+                        <li><span class="bi-whatsapp"></span></li>
+                    </a>
+                    <a href="#">
+                        <li><span class="bi-linkedin"></span></li>
+                    </a>
+                    <a href="#">
+                        <li><span class="bi-twitter"></span></li>
+                    </a>
+                </ul>
+            </div>
+        </article>
 
-      <aside class="blog-sidebar col-12 col-md-4 wow">
-        <section class="blog-sidebar-categories">
-          <div class="blog-sidebar-title">
-            <h1>Categories</h1>
-            <div></div>
-          </div>
-          <ul>
-            {% for category in article.categories.all %}
+        <aside class="blog-sidebar col-12 col-md-4 wow">
+            <section class="blog-sidebar-categories">
+                <div class="blog-sidebar-title">
+                    <h1>Categories</h1>
+                    <div></div>
+                </div>
+                <ul>
+                    {% for category in article.categories.all %}
 
-            <a href="{% url 'blog:category' category.slug %}">
-              <li>
-                {{ category.title }}
-              </li>
-          </a>
+                        <a href="{% url 'blog:category' category.slug %}">
+                            <li>
+                                {{ category.title }}
+                            </li>
+                        </a>
 
-            {% endfor %}
-          </ul>
-        </section>
-        <section class="blog-sidebar-tags">
-          <div class="blog-sidebar-title">
-            <h1>Tags</h1>
-            <div></div>
-          </div>
-          <ul>
-            {% for tag in article.tags.all %}
-                <a href="{% url 'blog:tag' tag.slug %}">
-                  <li>
-                    {{ tag.title }}
-                  </li>
-                </a>
-            {% endfor %}
-          </ul>
-        </section>
-      </aside>
+                    {% endfor %}
+                </ul>
+            </section>
+            <section class="blog-sidebar-tags">
+                <div class="blog-sidebar-title">
+                    <h1>Tags</h1>
+                    <div></div>
+                </div>
+                <ul>
+                    {% for tag in article.tags.all %}
+                        <a href="{% url 'blog:tag' tag.slug %}">
+                            <li>
+                                {{ tag.title }}
+                            </li>
+                        </a>
+                    {% endfor %}
+                </ul>
+            </section>
+        </aside>
     </main>
-    {% endblock %}
-    {% block scripts %}
-  <script src="{% static 'js/wow.min.js' %}"></script>
-  <script>
-    new WOW().init();
-  </script>
-  <script src="{% static 'js/utils.js' %}"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-  <script>
-    const WITH_DELAY = false;
-    hljs.highlightAll();
+{% endblock %}
+{% block scripts %}
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="{% static 'js/utils.js' %}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>
+        const WITH_DELAY = false;
+        hljs.highlightAll();
 
-    document.querySelectorAll('.article-text-code-box pre code').forEach(elm => {
-        var innerHtml = elm.innerHTML;
-        var pattern = innerHtml.match(/\s*\n[\t\s]*/);
-        elm.innerHTML = innerHtml.replace(new RegExp(pattern, "g"),'\n');
-    })
-  </script>
-  <script src="{% static 'js/showHeader.js' %}"></script>
-</html>
+        document.querySelectorAll('.article-text-code-box pre code').forEach(elm => {
+            var innerHtml = elm.innerHTML;
+            var pattern = innerHtml.match(/\s*\n[\t\s]*/);
+            elm.innerHTML = innerHtml.replace(new RegExp(pattern, "g"), '\n');
+        })
+    </script>
+    <script src="{% static 'js/showHeader.js' %}"></script>
+    </html>
 {% endblock %}
 {% block footer %}
-      <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
-      <a href="{% url "projects:projects" %}"><li>PORTFOLIO</li></a>
-      <a href="{% url "blog:blog" %}" class="active"><li>BLOG</li></a>
-      <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
+    <a href="{% url "staticpages:home" %}">
+        <li>HOME</li>
+    </a>
+    <a href="{% url "projects:projects" %}">
+        <li>PORTFOLIO</li>
+    </a>
+    <a href="{% url "blog:blog" %}" class="active">
+        <li>BLOG</li>
+    </a>
+    <a href="{% url "staticpages:about" %}">
+        <li>CONTACT</li>
+    </a>
 {% endblock %}
