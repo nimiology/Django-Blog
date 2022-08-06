@@ -72,7 +72,7 @@ class Section(models.Model):
         return f'{self.article.title} - {self.position}'
 
     class Meta:
-        ordering = ['position']
+        ordering = ['article', 'position', 'id']
 
     def get_absolute_url(self):
         return reverse('blog:article', args=(self.article.slug,))
