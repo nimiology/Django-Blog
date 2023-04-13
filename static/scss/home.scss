@@ -24,6 +24,9 @@ header {
   }
 }
 
+body {
+  background: black;
+}
 
 .home-container {
   animation-name: fadeInDown;
@@ -81,22 +84,21 @@ header {
     form {
       margin-top: 25%;
 
-      @media screen and (max-width: 460px) {
-        margin-top: 2rem;
+      *::-webkit-input-placeholder {
+      color:white;
       }
 
-      input,
-      textarea,
-      button {
+      input, textarea, button {
         @include input_reset();
-        border: 2px solid $color-black;
+        border: 2px solid grey;
+        color: white;
         font-family: "Roboto", "sans-serif";
         font-size: 16px;
         transition: border-color 0.25s, background-color 0.25s;
 
         &:focus {
-          border: 2px solid $color-black;
-          border-bottom-color: orangered;
+          border: 2px solid grey;
+          border-bottom-color: $primary-color;
         }
       }
 
@@ -121,7 +123,6 @@ header {
         margin-top: 0.3rem;
         padding: 0.75rem 1.25rem;
         font-weight: 300;
-
         @media screen and (max-width: 460px) {
           font-size: 14px;
           padding: 0.5rem 0.75rem;
@@ -129,19 +130,19 @@ header {
       }
 
       button {
-        border-color: #3d7ddb;
+        border-color: $primary-color;
         font-weight: 700;
         padding: 0.8rem 0;
-        color: #3d7ddb;
+        color: $primary-color;
         margin-top: 4px;
 
         &:focus {
-          border: 2px solid #3d7ddb;
+          border: 2px solid $primary-color;
         }
 
         &:hover {
           color: $color-text;
-          background-color: #3d7ddb;
+          background-color: $primary-color;
         }
 
         @media screen and (max-width: 460px) {

@@ -280,6 +280,9 @@ header {
   header .navbar-menu-mobile-hamburger-menu button {
     color: #ffffff; }
 
+body {
+  background: black; }
+
 .home-container {
   animation-name: fadeInDown;
   animation-duration: 1s;
@@ -323,43 +326,29 @@ header {
     height: 100%; }
     .contact-content .contact-content-form form {
       margin-top: 25%; }
-      @media screen and (max-width: 460px) {
-        .contact-content .contact-content-form form {
-          margin-top: 2rem; } }
-      .contact-content .contact-content-form form input,
-      .contact-content .contact-content-form form textarea,
-      .contact-content .contact-content-form form button {
+      .contact-content .contact-content-form form *::-webkit-input-placeholder {
+        color: white; }
+      .contact-content .contact-content-form form input, .contact-content .contact-content-form form textarea, .contact-content .contact-content-form form button {
         border: none;
         outline: none;
         background: transparent;
         padding: 0;
         margin: 0;
-        border: 2px solid #000000;
+        border: 2px solid grey;
+        color: white;
         font-family: "Roboto", "sans-serif";
         font-size: 16px;
         transition: border-color 0.25s, background-color 0.25s; }
-        .contact-content .contact-content-form form input:focus,
-        .contact-content .contact-content-form form textarea:focus,
-        .contact-content .contact-content-form form button:focus {
+        .contact-content .contact-content-form form input:focus, .contact-content .contact-content-form form textarea:focus, .contact-content .contact-content-form form button:focus {
           border: none;
           outline: none; }
-          .contact-content .contact-content-form form input:focus:after, .contact-content .contact-content-form form input:focus:before,
-          .contact-content .contact-content-form form textarea:focus:after,
-          .contact-content .contact-content-form form textarea:focus:before,
-          .contact-content .contact-content-form form button:focus:after,
-          .contact-content .contact-content-form form button:focus:before {
+          .contact-content .contact-content-form form input:focus:after, .contact-content .contact-content-form form input:focus:before, .contact-content .contact-content-form form textarea:focus:after, .contact-content .contact-content-form form textarea:focus:before, .contact-content .contact-content-form form button:focus:after, .contact-content .contact-content-form form button:focus:before {
             content: ""; }
-        .contact-content .contact-content-form form input:after, .contact-content .contact-content-form form input:before,
-        .contact-content .contact-content-form form textarea:after,
-        .contact-content .contact-content-form form textarea:before,
-        .contact-content .contact-content-form form button:after,
-        .contact-content .contact-content-form form button:before {
+        .contact-content .contact-content-form form input:after, .contact-content .contact-content-form form input:before, .contact-content .contact-content-form form textarea:after, .contact-content .contact-content-form form textarea:before, .contact-content .contact-content-form form button:after, .contact-content .contact-content-form form button:before {
           content: ""; }
-        .contact-content .contact-content-form form input:focus,
-        .contact-content .contact-content-form form textarea:focus,
-        .contact-content .contact-content-form form button:focus {
-          border: 2px solid #000000;
-          border-bottom-color: orangered; }
+        .contact-content .contact-content-form form input:focus, .contact-content .contact-content-form form textarea:focus, .contact-content .contact-content-form form button:focus {
+          border: 2px solid grey;
+          border-bottom-color: #db7b7b; }
       .contact-content .contact-content-form form input {
         padding: 0.75rem 1.25rem;
         width: 49%;
@@ -381,16 +370,16 @@ header {
             font-size: 14px;
             padding: 0.5rem 0.75rem; } }
       .contact-content .contact-content-form form button {
-        border-color: #3d7ddb;
+        border-color: #db7b7b;
         font-weight: 700;
         padding: 0.8rem 0;
-        color: #3d7ddb;
+        color: #db7b7b;
         margin-top: 4px; }
         .contact-content .contact-content-form form button:focus {
-          border: 2px solid #3d7ddb; }
+          border: 2px solid #db7b7b; }
         .contact-content .contact-content-form form button:hover {
           color: #ffffff;
-          background-color: #3d7ddb; }
+          background-color: #db7b7b; }
         @media screen and (max-width: 460px) {
           .contact-content .contact-content-form form button {
             font-size: 14px;
