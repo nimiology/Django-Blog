@@ -5,7 +5,16 @@ from staticpages.models import Setting, Message
 
 
 def Home(request):
-    return render(request, "StaticPages/home.html")
+    messageForm = MessageForm(request.POST or None)
+    if messageForm.is_valid():
+        data = messageForm.cleaned_data
+        Message.objects.create(name=data['name'], email=data['email'], text=data['text'])
+        messageForm = MessageForm()
+    context = {
+        'setting': Setting.objects.all().order_by('-id')[0],
+        'form': messageForm
+    }
+    return render(request, "StaticPages/home.html", context=context)
 
 
 def About(request):

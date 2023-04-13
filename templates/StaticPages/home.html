@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="{% static 'css/rajdhani-font.css' %}" />
         <link rel="stylesheet" href="{% static 'css/home.css' %}" />
     </head>
-  <body>    
+  <body>
     <header class="col-12">
     <nav>
       <div class="navbar-logo col-6">
@@ -79,9 +79,22 @@
          </p>
       </section>
     </main>
+    <article class="contact-content col-12">
+        <figure class="contact-content-form col-sm-12 col-xl-6">
+          <form class="col-12" method="post">
+            <div class="col-12">
+                {{ form.name }}
+                {{ form.email }}
+            </div>
+              {{ form.text }}
+              {% csrf_token %}
+            <button type="submit" class="col-12">SEND</button>
+          </form>
+        </figure>
+      </article>
 
-  </body>  
-  
+  </body>
+
   <script src="{% static 'js/wow.min.js' %}"></script>
   <script>
     // Run wow js scroll animation
