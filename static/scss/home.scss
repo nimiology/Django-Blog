@@ -29,22 +29,37 @@ body {
 }
 
 .home-container {
-  position: fixed;
-  z-index: 5;
-  top: 0;
-  left: 0;
   animation-name: fadeInDown;
   animation-duration: 1s;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  section {
+    width : 100%;
+    height : 100vh;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    z-index: 20;
+    text-align:right;
+    p {
+      width: 50%;
+      margin-left: 300px;
+      color : white;
+      font-size: 50px;
+      font-family: "Rajdhani", sans-serif;
+    }
+  }
+
   .home-image-container {
-    position: relative;
+    position: fixed;
+    top: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    z-index : 10;
+
     img {
       position: absolute;
       width: 100%;
@@ -54,6 +69,6 @@ body {
   }
 }
 
-
-footer{
-display:none;}
+footer {
+  display: none;
+}
