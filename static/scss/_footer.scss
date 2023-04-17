@@ -58,7 +58,7 @@ footer {
           letter-spacing: 2px;
           font: {
             size: 1.1rem;
-            weight: 200;
+            weight: 600;
           }
           transition: color 150ms, border-bottom-color 150ms, transform 150ms;
           border-bottom: 2px solid transparent;
@@ -113,6 +113,7 @@ footer {
     margin-bottom: 5rem;
     color: lighten($color: $color-black, $amount: 30%);
     letter-spacing: 4px;
+    
 
     a {
       color: lighten($color: $color-black, $amount: 30%);
@@ -124,7 +125,7 @@ footer {
 
     font: {
       size: 17px;
-      weight: 400;
+      weight: 500;
     }
 
     @media screen and (max-width: 550px) {

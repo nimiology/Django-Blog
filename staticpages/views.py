@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from staticpages.forms import MessageForm
 from staticpages.models import Setting, Message
-
+from projects.models import Project
 
 def Home(request):
     messageForm = MessageForm(request.POST or None)
@@ -11,8 +11,8 @@ def Home(request):
         Message.objects.create(name=data['name'], email=data['email'], text=data['text'])
         messageForm = MessageForm()
     context = {
-        'setting': Setting.objects.all().order_by('-id')[0],
-        'form': messageForm
+        'project': Project.objects.all().order_by('-id').first,
+        'form': messageForm,
     }
     return render(request, "StaticPages/home.html", context=context)
 
@@ -24,7 +24,6 @@ def About(request):
         Message.objects.create(name=data['name'], email=data['email'], text=data['text'])
         messageForm = MessageForm()
     context = {
-        'setting': Setting.objects.all().order_by('-id')[0],
         'form': messageForm
     }
     return render(request, "StaticPages/contact.html", context=context)

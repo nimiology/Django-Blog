@@ -10,7 +10,7 @@
 
 header {
   position: absolute;
-  z-index: 40;
+  z-index: 200;
   top: -10%;
   opacity: 0;
   transition: 1s;
@@ -47,7 +47,7 @@ header {
           letter-spacing: 2px;
           margin-right: 3rem;
           font-size: 18px;
-          font-weight: 200;
+          font-weight: 600;
           transition: color 150ms, border-bottom-color 150ms, transform 150ms;
           border-bottom: 2px solid transparent; }
           @media screen and (max-width: 1100px) {
@@ -283,107 +283,464 @@ header {
 body {
   background: black; }
 
+.image-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10; }
+  .image-container img {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
 .home-container {
   animation-name: fadeInDown;
   animation-duration: 1s;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  position: relative;
+  z-index: 100; }
   .home-container section {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding-top: 50px;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 20;
-    text-align: right; }
+    z-index: 20; }
     .home-container section p {
       width: 50%;
-      margin-left: 300px;
+      text-align: center;
       color: white;
       font-size: 50px;
-      font-family: "Rajdhani", sans-serif; }
-  .home-container .home-image-container {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 10; }
-    .home-container .home-image-container img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; }
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 600; }
+      @media screen and (max-width: 1100px) {
+        .home-container section p {
+          font-size: 40px;
+          width: 70%; } }
+      @media screen and (max-width: 600px) {
+        .home-container section p {
+          font-size: 35px;
+          width: 80%; } }
+      @media screen and (max-width: 380px) {
+        .home-container section p {
+          font-size: 32px;
+          width: 85%; } }
 
-.contact-content {
+.portfolio-container {
+  position: relative;
+  z-index: 100;
+  background-color: rgba(225, 225, 225, 0.9);
+  padding: 3rem 3rem; }
+  @media screen and (max-width: 890px) {
+    .portfolio-container {
+      padding: 3rem 2rem; } }
+  @media screen and (max-width: 390px) {
+    .portfolio-container {
+      padding: 3rem 1rem; } }
+  .portfolio-container .portfolio-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 4.5rem 0; }
+    @media screen and (max-width: 890px) {
+      .portfolio-container .portfolio-card {
+        flex-direction: column; } }
+    @media screen and (max-width: 390px) {
+      .portfolio-container .portfolio-card {
+        padding: 0; } }
+    .portfolio-container .portfolio-card .portfolio-card-images {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 500px; }
+      @media screen and (max-width: 890px) {
+        .portfolio-container .portfolio-card .portfolio-card-images {
+          min-height: 450px; } }
+      .portfolio-container .portfolio-card .portfolio-card-images div {
+        position: absolute;
+        animation-name: fadeInUp;
+        animation-duration: 0.5s;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat; }
+        .portfolio-container .portfolio-card .portfolio-card-images div img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+        .portfolio-container .portfolio-card .portfolio-card-images div:nth-child(1) {
+          width: 190px;
+          height: 190px;
+          z-index: 30;
+          animation-delay: 0.4s; }
+          @media screen and (max-width: 1370px) {
+            .portfolio-container .portfolio-card .portfolio-card-images div:nth-child(1) {
+              width: 190px;
+              height: 190px; } }
+          @media screen and (max-width: 1230px) {
+            .portfolio-container .portfolio-card .portfolio-card-images div:nth-child(1) {
+              width: 176px;
+              height: 176px; } }
+          @media screen and (max-width: 890px) {
+            .portfolio-container .portfolio-card .portfolio-card-images div:nth-child(1) {
+              width: 140px;
+              height: 140px; } }
+        .portfolio-container .portfolio-card .portfolio-card-images div:nth-child(2) {
+          width: 394px;
+          height: 295px;
+          z-index: 10;
+          animation-delay: 0.2s; }
+          @media screen and (max-width: 1370px) {
+            .portfolio-container .portfolio-card .portfolio-card-images div:nth-child(2) {
+              width: 394px;
+              height: 295px; } }
+          @media screen and (max-width: 1230px) {
+            .portfolio-container .portfolio-card .portfolio-card-images div:nth-child(2) {
+              width: 389px;
+              height: 291px; } }
+          @media screen and (max-width: 890px) {
+            .portfolio-container .portfolio-card .portfolio-card-images div:nth-child(2) {
+              width: 289px;
+              height: 220px; } }
+        .portfolio-container .portfolio-card .portfolio-card-images div:nth-child(3) {
+          width: 603px;
+          height: 452px;
+          z-index: 20; }
+          @media screen and (max-width: 1230px) {
+            .portfolio-container .portfolio-card .portfolio-card-images div:nth-child(3) {
+              width: 389px;
+              height: 291px; } }
+          @media screen and (max-width: 890px) {
+            .portfolio-container .portfolio-card .portfolio-card-images div:nth-child(3) {
+              width: 289px;
+              height: 220px; } }
+    .portfolio-container .portfolio-card .portfolio-card-content {
+      animation-name: fadeInUp;
+      animation-duration: 0.5s; }
+      .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper {
+        width: 100%;
+        height: 100%; }
+        .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-title h1 {
+          padding: 0;
+          margin: 0;
+          font-size: 52px;
+          font-weight: 700;
+          font-family: "Rajdhani", sans-serif;
+          cursor: default; }
+          @media screen and (max-width: 970px) {
+            .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-title h1 {
+              font-size: 42px; } }
+          @media screen and (max-width: 890px) {
+            .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-title h1 {
+              font-size: 32px; } }
+        .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-title div {
+          margin-top: 1rem;
+          width: 60px;
+          height: 5px;
+          background-color: #000000; }
+          @media screen and (max-width: 650px) {
+            .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-title div {
+              height: 4px; } }
+          @media screen and (max-width: 580px) {
+            .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-title div {
+              height: 3px;
+              width: 50px; } }
+        .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-text {
+          margin-top: 1.5rem; }
+          .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-text p {
+            max-height: 250px;
+            overflow: hidden;
+            display: block;
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 16px;
+            font-weight: 300; }
+            @media screen and (max-width: 890px) {
+              .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-text p {
+                max-height: 100px; } }
+        .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn {
+          position: relative;
+          margin-top: 3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden; }
+          .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn:hover button {
+            color: #ffffff; }
+          .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn:hover div {
+            left: 0; }
+          @media screen and (max-width: 890px) {
+            .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn:hover button {
+              color: #000000; } }
+          .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn a {
+            text-decoration: none;
+            width: 100%; }
+          .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn button {
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            border: 2px solid #000000;
+            padding: 0.8rem 0;
+            font-family: "Rajdhani", sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 0.12rem;
+            z-index: 20;
+            width: 100%;
+            transition: color 0.7s cubic-bezier(0.27, 0.12, 0, 1.01); }
+            .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn button:focus {
+              border: none;
+              outline: none; }
+              .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn button:focus:after, .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn button:focus:before {
+                content: ""; }
+            .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn button:after, .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn button:before {
+              content: ""; }
+            .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn button:focus {
+              border: 2px solid #000000; }
+            @media screen and (max-width: 390px) {
+              .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn button {
+                font-size: 14px;
+                padding: 0.7rem 0; } }
+          .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn .portfolio-card-content-btn-bg {
+            position: absolute;
+            left: -130%;
+            width: 120%;
+            height: 300px;
+            background-color: #000000;
+            transform: rotateZ(15deg);
+            z-index: 10;
+            transition: left 0.7s cubic-bezier(0.27, 0.12, 0, 1.01); }
+            @media screen and (max-width: 890px) {
+              .portfolio-container .portfolio-card .portfolio-card-content .portfolio-card-content-wrapper .portfolio-card-content-btn .portfolio-card-content-btn-bg {
+                transition: left 1.2s cubic-bezier(0.27, 0.12, 0, 1.01);
+                background-color: rgba(255, 255, 255, 0.9); } }
+
+@media screen and (max-width: 1420px) {
+  .portfolio-card-left {
+    margin-left: 0;
+    margin-right: 0; } }
+
+.portfolio-card-left .portfolio-card-images {
+  position: relative;
+  width: 50%; }
+  @media screen and (max-width: 700px) {
+    .portfolio-card-left .portfolio-card-images {
+      right: 30px; } }
+  @media screen and (max-width: 540px) {
+    .portfolio-card-left .portfolio-card-images {
+      right: 50px; } }
+  @media screen and (max-width: 480px) {
+    .portfolio-card-left .portfolio-card-images {
+      right: 60px; } }
+  @media screen and (max-width: 450px) {
+    .portfolio-card-left .portfolio-card-images {
+      right: 70px; } }
+  @media screen and (max-width: 410px) {
+    .portfolio-card-left .portfolio-card-images {
+      right: 75px; } }
+  .portfolio-card-left .portfolio-card-images div:nth-child(1) {
+    left: 460px;
+    top: 210px; }
+    @media screen and (max-width: 1370px) {
+      .portfolio-card-left .portfolio-card-images div:nth-child(1) {
+        left: 400px; } }
+    @media screen and (max-width: 1230px) {
+      .portfolio-card-left .portfolio-card-images div:nth-child(1) {
+        left: 300px; } }
+    @media screen and (max-width: 890px) {
+      .portfolio-card-left .portfolio-card-images div:nth-child(1) {
+        top: 260px;
+        left: 175px; } }
+  .portfolio-card-left .portfolio-card-images div:nth-child(2) {
+    left: 20px;
+    top: 130px; }
+    @media screen and (max-width: 1370px) {
+      .portfolio-card-left .portfolio-card-images div:nth-child(2) {
+        left: -35px; } }
+    @media screen and (max-width: 1230px) {
+      .portfolio-card-left .portfolio-card-images div:nth-child(2) {
+        left: -5px; } }
+    @media screen and (max-width: 890px) {
+      .portfolio-card-left .portfolio-card-images div:nth-child(2) {
+        left: -20px;
+        top: 110px; } }
+  .portfolio-card-left .portfolio-card-images div:nth-child(3) {
+    left: 90px;
+    top: -100px; }
+    @media screen and (max-width: 1370px) {
+      .portfolio-card-left .portfolio-card-images div:nth-child(3) {
+        left: 50px; } }
+    @media screen and (max-width: 1230px) {
+      .portfolio-card-left .portfolio-card-images div:nth-child(3) {
+        top: -40px;
+        left: 80px; } }
+    @media screen and (max-width: 1240px) {
+      .portfolio-card-left .portfolio-card-images div:nth-child(3) {
+        left: 50px; } }
+
+.portfolio-card-left .portfolio-card-content-wrapper {
+  padding-left: 7.5rem;
+  direction: ltr;
+  width: 50%; }
+  @media screen and (max-width: 890px) {
+    .portfolio-card-left .portfolio-card-content-wrapper {
+      width: 100%;
+      padding-left: 0; } }
+
+.quotes {
+  position: relative;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
-  height: 100vh; }
-  .contact-content .contact-content-form {
-    height: 100%; }
-    .contact-content .contact-content-form form {
-      margin-top: 25%; }
-      .contact-content .contact-content-form form *::-webkit-input-placeholder {
-        color: white; }
-      .contact-content .contact-content-form form input, .contact-content .contact-content-form form textarea, .contact-content .contact-content-form form button {
-        border: none;
-        outline: none;
-        background: transparent;
-        padding: 0;
-        margin: 0;
-        border: 2px solid grey;
-        color: white;
-        font-family: "Roboto", "sans-serif";
-        font-size: 16px;
-        transition: border-color 0.25s, background-color 0.25s; }
-        .contact-content .contact-content-form form input:focus, .contact-content .contact-content-form form textarea:focus, .contact-content .contact-content-form form button:focus {
-          border: none;
-          outline: none; }
-          .contact-content .contact-content-form form input:focus:after, .contact-content .contact-content-form form input:focus:before, .contact-content .contact-content-form form textarea:focus:after, .contact-content .contact-content-form form textarea:focus:before, .contact-content .contact-content-form form button:focus:after, .contact-content .contact-content-form form button:focus:before {
-            content: ""; }
-        .contact-content .contact-content-form form input:after, .contact-content .contact-content-form form input:before, .contact-content .contact-content-form form textarea:after, .contact-content .contact-content-form form textarea:before, .contact-content .contact-content-form form button:after, .contact-content .contact-content-form form button:before {
-          content: ""; }
-        .contact-content .contact-content-form form input:focus, .contact-content .contact-content-form form textarea:focus, .contact-content .contact-content-form form button:focus {
-          border: 2px solid grey;
-          border-bottom-color: #db7b7b; }
-      .contact-content .contact-content-form form input {
-        padding: 0.75rem 1.25rem;
-        width: 49%;
-        font-weight: 300; }
-        @media screen and (max-width: 460px) {
-          .contact-content .contact-content-form form input {
-            font-size: 14px;
-            padding: 0.5rem 0.75rem; } }
-      .contact-content .contact-content-form form > div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center; }
-      .contact-content .contact-content-form form textarea {
-        margin-top: 0.3rem;
-        padding: 0.75rem 1.25rem;
-        font-weight: 300; }
-        @media screen and (max-width: 460px) {
-          .contact-content .contact-content-form form textarea {
-            font-size: 14px;
-            padding: 0.5rem 0.75rem; } }
-      .contact-content .contact-content-form form button {
-        border-color: #db7b7b;
-        font-weight: 700;
-        padding: 0.8rem 0;
-        color: #db7b7b;
-        margin-top: 4px; }
-        .contact-content .contact-content-form form button:focus {
-          border: 2px solid #db7b7b; }
-        .contact-content .contact-content-form form button:hover {
-          color: #ffffff;
-          background-color: #db7b7b; }
-        @media screen and (max-width: 460px) {
-          .contact-content .contact-content-form form button {
-            font-size: 14px;
-            padding: 0.5rem 0; } }
+  flex-direction: column;
+  background-color: rgba(10, 10, 10, 0.95); }
+  .quotes h3 {
+    position: relative;
+    top: 100px;
+    z-index: 100;
+    color: white;
+    font-family: "Rajdhani", "sans-serif";
+    font-size: 35px;
+    font-weight: 700; }
+    @media screen and (max-width: 480px) {
+      .quotes h3 {
+        top: 60px; } }
+
+.splide__slide {
+  width: 100%;
+  padding: 0 15%; }
+  .splide__slide > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px; }
+    .splide__slide > div > p {
+      text-align: center;
+      max-width: 800px;
+      color: white;
+      font-family: "Rajdhani", "sans-serif";
+      font-weight: 400;
+      font-size: 20px; }
+      @media screen and (max-width: 480px) {
+        .splide__slide > div > p {
+          max-width: 350px; } }
+
+.splide__arrow {
+  opacity: 1;
+  background-color: transparent; }
+  .splide__arrow svg {
+    fill: white;
+    width: 30px;
+    height: 30px;
+    transition: fill 0.2s; }
+    .splide__arrow svg:hover {
+      fill: #db7b7b; }
+
+.splide__pagination {
+  counter-reset: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  height: 70px; }
+  .splide__pagination .is-active {
+    transform: scale(1);
+    height: 35px !important;
+    background-color: #db7b7b !important; }
+
+.splide__pagination__page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 0;
+  width: 4px;
+  height: 12px;
+  transition: all 0.2s; }
+
+.contact {
+  position: relative;
+  z-index: 100;
+  padding-top: 50px;
+  width: 100%;
+  font-family: "Rajdhani", "sans-serif";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(10, 10, 10, 0.95); }
+  .contact figure {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .contact form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; }
+    .contact form > textarea {
+      width: 100%; }
+    @media screen and (max-width: 700px) {
+      .contact form {
+        width: 420px; } }
+    @media screen and (max-width: 480px) {
+      .contact form {
+        width: 100%;
+        padding: 0 15px; } }
+  .contact div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; }
+    .contact div > input {
+      width: 50%; }
+      @media screen and (max-width: 480px) {
+        .contact div > input {
+          width: 100%; } }
+    @media screen and (max-width: 480px) {
+      .contact div {
+        flex-direction: column; } }
+  .contact input,
+  .contact textarea {
+    transition: border-color 0.2s;
+    font-weight: 600;
+    border: 2px solid #464646;
+    padding: 12px 20px;
+    background-color: transparent;
+    outline: none;
+    color: white; }
+    .contact input::placeholder,
+    .contact textarea::placeholder {
+      color: white; }
+    .contact input:focus,
+    .contact textarea:focus {
+      border-bottom-color: #db7b7b; }
+  .contact button {
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: 2px solid #db7b7b;
+    color: #db7b7b;
+    background-color: transparent; }
+    .contact button:hover {
+      background-color: #db7b7b;
+      color: white; }
 
 .footer {
   display: none; }

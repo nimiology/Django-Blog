@@ -13,7 +13,12 @@
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
         <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}" />
         <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/rajdhani-font.css' %}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />        
         {% block custom-css %}
 
         {% endblock %}
@@ -101,7 +106,7 @@
       </div>
     </nav>
     <div class="footer-copyright">
-      Designed By <a href="https://github.com/X-Dark-Coder">Mansour Marzban</a> ©{% now "Y" %}
+      Designed By <a href="https://github.com/marzban-dev">Mansour Marzban</a> ©{% now "Y" %}
     </div>
   </footer>
 </body>

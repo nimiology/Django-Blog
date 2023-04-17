@@ -1,0 +1,40 @@
+{% extends 'Base.html' %} 
+{% load static %} 
+{% block title %}Contact{% endblock %} 
+{% block custom-css %}
+<link rel="stylesheet" href="{% static 'css/process.css' %}" />
+{% endblock %} {% block header %}
+<a href="{% url 'staticpages:home' %}"><li>HOME</li></a>
+<a href="{% url 'projects:projects' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:about' %}" class="active"><li>CONTACT</li></a>
+{% endblock %} {% block header-mobile %}
+<a href="{% url 'staticpages:home' %}"><li>HOME</li></a>
+<a href="{% url 'projects:projects' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:about' %}" class="active"><li>CONTACT</li></a>
+{% endblock %} {% block main %}
+
+<main class="wow fadeInDown process-container">
+    <section class="background">
+        <img src="../../static/assets/img/homeBackground.jpg" alt="contact bg" />
+    </section>
+</main>
+{% endblock %} {% block scripts %}
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script>
+    // Run wow js scroll animation
+    new WOW().init();
+</script>
+<script src="{% static 'js/utils.js' %}"></script>
+<script>
+    const WITH_DELAY = true;
+    const DELAY_LENGTH = 800;
+</script>
+<script src="{% static 'js/showHeader.js' %}"></script>
+{% endblock %} {% block footer %}
+<a href="{% url 'staticpages:home' %}"><li>HOME</li></a>
+<a href="{% url 'projects:projects' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:about' %}" class="active"><li>CONTACT</li></a>
+{% endblock %}

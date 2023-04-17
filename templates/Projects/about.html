@@ -1,0 +1,135 @@
+{% extends "Base.html" %} {% load static %} {% block title %}Portfolio | {{ project.title
+}}{%endblock %} {% block custom-css %}<link
+    rel="stylesheet"
+    href="{% static 'css/about.css' %}"
+/>{%endblock %} {% block header %}
+<a href="{% url 'staticpages:home' %}"><li>HOME</li></a>
+<a href="{% url 'projects:projects' %}" class="active"><li>PORTFOLIO</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:about' %}"><li>CONTACT</li></a>
+{% endblock %} {% block header-mobile %}
+<a href="{% url 'staticpages:home' %}"><li>HOME</li></a>
+<a href="{% url 'projects:projects' %}" class="active"><li>PORTFOLIO</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:about' %}"><li>CONTACT</li></a>
+{% endblock %} {% block main %}
+
+<main class="about-container">
+    <section class="about-header wow">
+        <div>
+            <h1>ABOUT US</h1>
+        </div>
+        <img src="{% static 'assets/img/homeBackground.jpg' %}" alt="about-background" />
+    </section>
+    <section>
+        <section class="cards wow">
+            <div class="card">
+                <div class="card-image">
+                    <img
+                        src="{% static 'assets/img/homeBackground.jpg' %}"
+                        alt="skill-background"
+                    />
+                </div>
+                <h3>SOME SKILL NAME</h3>
+                <p>
+                    Lorem Ipsum mhis tospuo uhoy version of. Proin gravida nibh vel velit auctor
+                    aliquet.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img
+                        src="{% static 'assets/img/homeBackground.jpg' %}"
+                        alt="skill-background"
+                    />
+                </div>
+                <h3>SOME SKILL NAME</h3>
+                <p>
+                    Lorem Ipsum mhis tospuo uhoy version of. Proin gravida nibh vel velit auctor
+                    aliquet.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img
+                        src="{% static 'assets/img/homeBackground.jpg' %}"
+                        alt="skill-background"
+                    />
+                </div>
+                <h3>SOME SKILL NAME</h3>
+                <p>
+                    Lorem Ipsum mhis tospuo uhoy version of. Proin gravida nibh vel velit auctor
+                    aliquet.
+                </p>
+            </div>
+        </section>
+        <section class="designers">
+            <div class="designer wow">
+                <div class="designer-image">
+                    <img
+                        src="{% static 'assets/img/homeBackground.jpg' %}"
+                        alt="designer-background"
+                    />
+                </div>
+                <h3>Mansour Marzban</h3>
+                <h4>Designer</h4>
+            </div>
+            <div class="designer wow">
+                <div class="designer-image">
+                    <img
+                        src="{% static 'assets/img/homeBackground.jpg' %}"
+                        alt="designer-background"
+                    />
+                </div>
+                <h3>Nima Jokar</h3>
+                <h4>Designer</h4>
+            </div>
+        </section>
+        <section class="description wow">
+            <div class="description-wrapper">
+                <div class="description-title col-12">
+                    <h1>QUEST FOR THE PERFECT DESIGN</h1>
+                    <div></div>
+                </div>
+                <div class="description-text col-12">
+                    <p>
+                        Lorem ipsum dolor sit amet Lorem Ipsum. Proin gravida nibh vel velit auctor
+                        alique enat sollicitudin, lorem quis bibendum auctor, nisi elit consequat
+                        ipsum, nec sagitu tis sem nibh elut. Duis sed odio sit amet nibh vulputate
+                        cursus a sit amet mauris or bisu accumsan ipsum velit. Nam nec tellus a odio
+                        tincidunt auctor a ornare odio. Sed non mauris vitae erat conse quat auctor
+                        eu in elit. Class aptent taciti sociosqu ad litor uia torquent per conubia
+                        nostri per inceptos himenaeos. Mauris in erat justo nuli amac urna eu felis
+                        dapibus condiment uvsit amet a augue sed non neque elit.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="work-with-us">
+            <p>WANNA WORK WITH ME? JOLLY CO-OPERATION WILL ENSUE!</p>
+            <div class="work-with-us-btn">
+                <a href="{% url 'projects:project' project.slug %}">
+                    <button>WORK WITH US</button>
+                </a>
+                <div class="work-with-us-btn-bg"></div>
+            </div>
+        </section>
+    </section>
+</main>
+{% endblock %} {% block scripts %}
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script>
+    new WOW().init();
+</script>
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/utils.js' %}"></script>
+<script>
+    const WITH_DELAY = false;
+</script>
+<script src="{% static 'js/showHeader.js' %}"></script>
+{% endblock %} {% block footer %}
+<a href="{% url 'staticpages:home' %}"><li>HOME</li></a>
+<a href="{% url 'projects:projects' %}" class="active"><li>PORTFOLIO</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:about' %}"><li>CONTACT</li></a>
+{% endblock %}
