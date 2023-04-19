@@ -4,6 +4,7 @@ from staticpages.forms import MessageForm
 from staticpages.models import Setting, Message
 from projects.models import Project
 
+
 def Home(request):
     messageForm = MessageForm(request.POST or None)
     if messageForm.is_valid():
@@ -29,8 +30,16 @@ def About(request):
     return render(request, "StaticPages/contact.html", context=context)
 
 
-def Error404(request, exception=None):
+def error404(request, exception=None):
     context = {}
     response = render(request, "StaticPages/404.html", context=context)
     response.status_code = 404
     return response
+
+
+def faq(request):
+    return render(request, "StaticPages/faq.html")
+
+
+def process(request):
+    return render(request, "StaticPages/process.html")

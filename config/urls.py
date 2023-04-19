@@ -23,7 +23,7 @@ from blog.sitemaps import ArticleSitemap, CategorySitemap, TagSitemap
 from projects.sitemaps import ProjectSitemap
 from staticpages.sitemaps import StaticSitemap
 
-handler404 = 'staticpages.views.Error404'
+handler404 = 'staticpages.views.error404'
 sitemaps = {
     'project': ProjectSitemap,
     'static': StaticSitemap,

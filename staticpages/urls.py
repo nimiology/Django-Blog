@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import Home, About, Error404
+from .views import Home, About, error404, faq, process
 
 app_name = 'staticpages'
 urlpatterns = [
@@ -7,5 +7,7 @@ urlpatterns = [
 
     path("", Home, name="home"),
     path("about/", About, name="about"),
-    path('404/', Error404, name="notFound")
+    path('404/', error404, name="notFound"),
+    path('faq/', faq, name="faq"),
+    path('process/', process, name="process"),
 ]

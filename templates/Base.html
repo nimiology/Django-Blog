@@ -27,7 +27,9 @@
   <header class="col-12">
     <nav>
       <div class="navbar-logo col-6">
+          {% block header_icon %}
         <img src="{% static 'assets/img/Signature.png' %}" alt="logo">
+          {% endblock %}
       </div>
       <div class="navbar-menu-mobile col-6">
         <div class="navbar-search-mobile">
@@ -80,10 +82,10 @@
   
   {% endblock %}
   {% block scripts %}
-  
+
   {% endblock %}
   <footer>
-    <div class="footer-logo">       
+    <div class="footer-logo">
     </div>
     <div class="footer-social">
       <ul>
