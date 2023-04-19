@@ -172,12 +172,13 @@
 
         <section class="contact">
             <figure>
-                <form>
+                <form method="post">
                     <div>
-                        <input type="email" placeholder="Name" />
-                        <input type="email" placeholder="Email" />
+                        {{ form.name }}
+                        {{ form.email }}
                     </div>
-                    <textarea type="email" placeholder="Message" rows="4"></textarea>
+                    {{ form.text }}
+                    {% csrf_token %}
                     <button type="submit" class="col-12">SEND</button>
                 </form>
             </figure>

@@ -4,12 +4,12 @@ from staticpages.models import Message
 
 
 class MessageForm(forms.ModelForm):
-    name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Name', 'class': 'col-6',
+    name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Name',
                                                          'value': ''}))
-    email = forms.CharField(widget=forms.EmailInput(attrs={'placeholder': 'Email', 'class': 'col-6',
+    email = forms.CharField(widget=forms.EmailInput(attrs={'placeholder': 'Email',
                                                            'value': ''}))
-    text = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Message', 'class': 'col-12',
-                                                        'row': '8', 'cols': '30',
+    text = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Message',
+                                                        'row': '4',
                                                         'value': ''}))
 
     class Meta:
