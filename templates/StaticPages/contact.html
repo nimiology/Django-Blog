@@ -1,6 +1,9 @@
 {% extends 'Base.html' %}
 {% load static %}
 {% block title %}Contact{% endblock %}
+{% block header_icon %}
+            <img src="{% static 'assets/img/icon.png' %}" alt="logo">
+{% endblock %}
 {% block custom-css %}<link rel="stylesheet" href="{% static 'css/contact.css' %}" />{% endblock %}
 {% block header %}
               <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
