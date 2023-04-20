@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="{% static 'css/splide.min.css' %}" />
         <link rel="stylesheet" href="{% static 'css/home.css' %}" />
     </head>
-    <body>
+    <body style="overflow-x: hidden">
         <header class="col-12">
             <nav>
                 <div class="navbar-logo col-6">
@@ -113,7 +113,7 @@
                         <div class="portfolio-card-content-text col-12">
                             <p>{{ project.text|truncatewords:15 }}</p>
                         </div>
-                        <div class="portfolio-card-content-btn col-12 col-lg-8 col-xl-4">
+                        <div class="portfolio-card-content-btn col-12 col-lg-8">
                             <a href="{% url 'projects:project' project.slug %}"
                                 ><button>VIEW PROJECT</button></a
                             >
@@ -172,16 +172,73 @@
 
         <section class="contact">
             <figure>
+<<<<<<< Updated upstream
                 <form>
                     <div>
                         <input type="email" placeholder="Name" />
                         <input type="email" placeholder="Email" />
                     </div>
                     <textarea type="email" placeholder="Message" rows="4"></textarea>
+=======
+                <form method="post">
+                    <div>{{ form.name }} {{ form.email }}</div>
+                    {{ form.text }} {% csrf_token %}
+>>>>>>> Stashed changes
                     <button type="submit" class="col-12">SEND</button>
                 </form>
             </figure>
         </section>
+
+        <footer>
+            <div class="footer-logo"></div>
+            <div class="footer-social">
+                <ul>
+                    <a href="#"
+                        ><li><span class="bi-whatsapp"></span></li
+                    ></a>
+                    <a href="#"
+                        ><li><span class="bi-instagram"></span></li
+                    ></a>
+                    <a href="#"
+                        ><li><span class="bi-twitter"></span></li
+                    ></a>
+                    <a href="https://www.linkedin.com/in/nima-jokar-26976620b/"
+                        ><li><span class="bi-linkedin"></span></li
+                    ></a>
+                    <a href=""
+                        ><li><span class="bi-youtube"></span></li
+                    ></a>
+                    <a href="https://github.com/nimiology"
+                        ><li><span class="bi-github"></span></li
+                    ></a>
+                    <a href="mailto: nimiologyy@gmail.com"
+                        ><li><span class="bi-google"></span></li
+                    ></a>
+                </ul>
+            </div>
+            <nav class="footer-navbar">
+                <div class="footer-navbar-menu">
+                    <ul>
+                        <a href="{% url 'staticpages:home' %}">
+                            <li>HOME</li>
+                        </a>
+                        <a href="{% url 'projects:projects' %}" class="active">
+                            <li>PORTFOLIO</li>
+                        </a>
+                        <a href="{% url 'blog:blog' %}">
+                            <li>BLOG</li>
+                        </a>
+                        <a href="{% url 'staticpages:about' %}">
+                            <li>CONTACT</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+            <div class="footer-copyright">
+                Designed By <a href="https://github.com/marzban-dev">Mansour Marzban</a> ©{% now "Y"
+                %}
+            </div>
+        </footer>
     </body>
 
     <script src="{% static 'js/wow.min.js' %}"></script>
