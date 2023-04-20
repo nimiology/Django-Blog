@@ -1,5 +1,7 @@
-{% extends "Base.html" %} {% load static %} {% block title %}Portfolio | {{ project.title
-}}{%endblock %} {% block custom-css %}<link
+{% extends "Base.html" %}
+{% load static %}
+{% block title %}About{%endblock %}
+{% block custom-css %}<link
     rel="stylesheet"
     href="{% static 'css/about.css' %}"
 />{%endblock %} {% block header %}
@@ -108,9 +110,9 @@
         <section class="work-with-us">
             <p>WANNA WORK WITH ME? JOLLY CO-OPERATION WILL ENSUE!</p>
             <div class="work-with-us-btn">
-                <a href="{% url 'projects:project' project.slug %}">
+                <a href="{% url 'projects:projects' %}">
                     <button>WORK WITH US</button>
-                </a>
+{#                </a>#}
                 <div class="work-with-us-btn-bg"></div>
             </div>
         </section>

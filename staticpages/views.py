@@ -18,7 +18,7 @@ def Home(request):
     return render(request, "StaticPages/home.html", context=context)
 
 
-def About(request):
+def contact(request):
     messageForm = MessageForm(request.POST or None)
     if messageForm.is_valid():
         data = messageForm.cleaned_data
@@ -43,3 +43,7 @@ def faq(request):
 
 def process(request):
     return render(request, "StaticPages/process.html")
+
+
+def about(request):
+    return render(request, "StaticPages/about.html")
