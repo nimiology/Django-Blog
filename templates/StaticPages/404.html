@@ -1,35 +1,31 @@
-{% extends "Base.html" %}
-{% load static %}
-{% block title %}Not Found!{% endblock %}
-{% block custom-css %}<link rel="stylesheet" href="{% static 'css/404.css' %}" />{% endblock %}
-{% block main %}
+{% extends "Base.html" %} {% load static %} {% block title %}Not Found!{% endblock %} {% block
+custom-css %}<link rel="stylesheet" href="{% static 'css/404.css' %}" />{% endblock %} {% block main
+%}
 
-
-    <main class="notfound-container wow">
-      <div class="notfound-image-gradient"></div>
-      <div class="notfound-content">
+<main class="notfound-container wow">
+    <div class="notfound-image-gradient"></div>
+    <div class="notfound-content">
         <img class="wow" src="{% static 'assets/img/404.png' %}" alt="404 not found image" />
         <p class="wow">Hey dude, You went the wrong way <span>:/</span></p>
         <a href="home.html"><button class="wow">Back Home</button></a>
-      </div>
-    </main>
+    </div>
+</main>
 
-    {% endblock %}
-    {% block scripts %}
-  <script src="{% static 'js/wow.min.js' %}"></script>
-  <script>
+{% endblock %} {% block scripts %}
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script>
     new WOW().init();
-  </script>
-  <script src="{% static 'js/utils.js' %}"></script>
-  <script>
+</script>
+<script src="{% static 'js/utils.js' %}"></script>
+<script>
     const WITH_DELAY = false;
-  </script>
-  <script src="{% static 'js/showHeader.js' %}"></script>
+</script>
+<script src="{% static 'js/showHeader.js' %}"></script>
+{% endblock %} {% block footer %}
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
 {% endblock %}
-{% block footer %}
-      <a href="{% url "staticpages:home" %}" class="active"><li>HOME</li></a>
-      <a href="{% url "projects:projects" %}" ><li>PORTFOLIO</li></a>
-      <a href="{% url "blog:blog" %}" ><li>BLOG</li></a>
-      <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
-{% endblock %}
-

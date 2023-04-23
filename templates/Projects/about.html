@@ -1,17 +1,18 @@
-{% extends "Base.html" %} {% load static %} {% block title %}Portfolio | {{ project.title
-}}{%endblock %} {% block custom-css %}<link
-    rel="stylesheet"
-    href="{% static 'css/about.css' %}"
-/>{%endblock %} {% block header %}
-<a href="{% url 'staticpages:home' %}"><li>HOME</li></a>
-<a href="{% url 'projects:projects' %}" class="active"><li>PORTFOLIO</li></a>
+{% extends "Base.html" %} {% load static %} {% block title %}About{%endblock %} {% block custom-css
+%}<link rel="stylesheet" href="{% static 'css/about.css' %}" />{%endblock %} {% block header %}
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
 <a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:about' %}"><li>CONTACT</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
 {% endblock %} {% block header-mobile %}
-<a href="{% url 'staticpages:home' %}"><li>HOME</li></a>
-<a href="{% url 'projects:projects' %}" class="active"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
 <a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:about' %}"><li>CONTACT</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
 {% endblock %} {% block main %}
 
 <main class="about-container">
@@ -128,8 +129,10 @@
 </script>
 <script src="{% static 'js/showHeader.js' %}"></script>
 {% endblock %} {% block footer %}
-<a href="{% url 'staticpages:home' %}"><li>HOME</li></a>
-<a href="{% url 'projects:projects' %}" class="active"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
 <a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:about' %}"><li>CONTACT</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
 {% endblock %}

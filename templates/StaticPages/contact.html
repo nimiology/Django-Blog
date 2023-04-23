@@ -1,64 +1,61 @@
-{% extends 'Base.html' %}
-{% load static %}
-{% block title %}Contact{% endblock %}
-{% block custom-css %}<link rel="stylesheet" href="{% static 'css/contact.css' %}" />{% endblock %}
-{% block header %}
-              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
-              <a href="{% url "projects:projects" %}" ><li>PORTFOLIO</li></a>
-              <a href="{% url "blog:blog" %}"><li>BLOG</li></a>
-              <a href="{% url "staticpages:about" %}" class="active"><li>CONTACT</li></a>
-{% endblock %}
-{% block header-mobile %}
-              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
-              <a href="{% url "projects:projects" %}" ><li>PORTFOLIO</li></a>
-              <a href="{% url "blog:blog" %}"><li>BLOG</li></a>
-              <a href="{% url "staticpages:about" %}" class="active"><li>CONTACT</li></a>
-{% endblock %}
-{% block main %}
- 
-    <main class="wow fadeInDown contact-container">
-      <figure class="contact-top-image">
+{% extends 'Base.html' %} {% load static %} {% block title %}Contact{% endblock %} {% block
+header_icon %}
+<img src="{% static 'assets/img/icon.png' %}" alt="logo" />
+{% endblock %} {% block custom-css %}<link
+    rel="stylesheet"
+    href="{% static 'css/contact.css' %}"
+/>{% endblock %} {% block header %}
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
+{% endblock %} {% block header-mobile %}
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
+{% endblock %} {% block main %}
+
+<main class="wow fadeInDown contact-container">
+    <figure class="contact-top-image">
         <img src="../../static/assets/img/homeBackground.jpg" alt="contact bg" />
-      </figure>
-      <article class="contact-content col-12">
+    </figure>
+    <article class="contact-content col-12">
         <section class="contact-content-text col-sm-12 col-xl-6">
-          <h1>REACH OUT. CONTACT ME.</h1>
-          <div></div>
-          <p>
-            {{ setting.about|linebreaks }}
-          </p>
+            <h1>REACH OUT. CONTACT ME.</h1>
+            <div></div>
+            <p>{{ setting.about|linebreaks }}</p>
         </section>
         <figure class="contact-content-form col-sm-12 col-xl-6">
-          <form class="col-12" method="post">
-            <div class="col-12">
-                {{ form.name }}
-                {{ form.email }}
-            </div>
-              {{ form.text }}
-              {% csrf_token %}
-            <button type="submit" class="col-12">SEND</button>
-          </form>
+            <form class="col-12" method="post">
+                <div class="col-12">{{ form.name }} {{ form.email }}</div>
+                {{ form.text }} {% csrf_token %}
+                <button type="submit" class="col-12">SEND</button>
+            </form>
         </figure>
-      </article>
-    </main>
-    {% endblock %}
-    {% block scripts %}
-  <script src="{% static 'js/wow.min.js' %}"></script>
-  <script>
+    </article>
+</main>
+{% endblock %} {% block scripts %}
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script>
     // Run wow js scroll animation
     new WOW().init();
-  </script>
-  <script src="{% static 'js/utils.js' %}"></script>
-  <script>
+</script>
+<script src="{% static 'js/utils.js' %}"></script>
+<script>
     const WITH_DELAY = true;
     const DELAY_LENGTH = 800;
-  </script>
-  <script src="{% static 'js/showHeader.js' %}"></script>
+</script>
+<script src="{% static 'js/showHeader.js' %}"></script>
+{% endblock %} {% block footer %}
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
 {% endblock %}
-{% block footer %}
-      <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
-      <a href="{% url "projects:projects" %}" ><li>PORTFOLIO</li></a>
-      <a href="{% url "blog:blog" %}" ><li>BLOG</li></a>
-      <a href="{% url "staticpages:about" %}" class="active"><li>CONTACT</li></a>
-{% endblock %}
-

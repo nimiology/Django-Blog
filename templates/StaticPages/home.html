@@ -40,18 +40,29 @@
                     <div class="navbar-menu-mobile-wrapper">
                         <ul>
                             <a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-                            <a href="{% url 'projects:projects' %}"><li>PORTFOLIO</li></a>
+                            <a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
                             <a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-                            <a href="{% url 'staticpages:about' %}"><li>CONTACT</li></a>
+                            <a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+                            <a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+                            <a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
                         </ul>
                     </div>
                 </div>
                 <div class="navbar-menu col-6">
                     <ul>
                         <a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-                        <a href="{% url 'projects:projects' %}"><li>PORTFOLIO</li></a>
                         <a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-                        <a href="{% url 'staticpages:about' %}"><li>CONTACT</li></a>
+                        <a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+                        <div id="navbar-menu-button">
+                            <li>ABOUT</li>
+                        </div>
+                        <div class="navbar-menu-sub">
+                            <div>
+                                <a href="{% url 'staticpages:contact' %}"><li>CONTACT</li></a>
+                                <a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+                                <a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+                            </div>
+                        </div>
                     </ul>
                     <div class="navbar-search">
                         <button class="navbar-search-btn">
@@ -172,18 +183,9 @@
 
         <section class="contact">
             <figure>
-<<<<<<< Updated upstream
-                <form>
-                    <div>
-                        <input type="email" placeholder="Name" />
-                        <input type="email" placeholder="Email" />
-                    </div>
-                    <textarea type="email" placeholder="Message" rows="4"></textarea>
-=======
                 <form method="post">
                     <div>{{ form.name }} {{ form.email }}</div>
                     {{ form.text }} {% csrf_token %}
->>>>>>> Stashed changes
                     <button type="submit" class="col-12">SEND</button>
                 </form>
             </figure>
@@ -219,18 +221,12 @@
             <nav class="footer-navbar">
                 <div class="footer-navbar-menu">
                     <ul>
-                        <a href="{% url 'staticpages:home' %}">
-                            <li>HOME</li>
-                        </a>
-                        <a href="{% url 'projects:projects' %}" class="active">
-                            <li>PORTFOLIO</li>
-                        </a>
-                        <a href="{% url 'blog:blog' %}">
-                            <li>BLOG</li>
-                        </a>
-                        <a href="{% url 'staticpages:about' %}">
-                            <li>CONTACT</li>
-                        </a>
+                        <a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+                        <a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+                        <a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+                        <a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+                        <a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+                        <a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
                     </ul>
                 </div>
             </nav>
@@ -252,6 +248,7 @@
             type: "loop",
         }).mount();
     </script>
+    <script src="{% static 'js/showMenu.js' %}"></script>
     <script src="{% static 'js/utils.js' %}"></script>
     <script>
         const WITH_DELAY = true;

@@ -1,66 +1,66 @@
-{% extends "Base.html" %}
-{% load static %}
-{% block title %}Portfolio | {{ project.title }}{% endblock %}
-{% block custom-css %}<link rel="stylesheet" href="{% static 'css/portfolio-item.css' %}" />{% endblock %}
-{% block header %}
-              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
-              <a href="{% url "projects:projects" %}" class="active"><li>PORTFOLIO</li></a>
-              <a href="{% url "blog:blog" %}"><li>BLOG</li></a>
-              <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
-{% endblock %}
-{% block header-mobile %}
-              <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
-              <a href="{% url "projects:projects" %}" class="active"><li>PORTFOLIO</li></a>
-              <a href="{% url "blog:blog" %}"><li>BLOG</li></a>
-              <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
-{% endblock %}
-{% block main %}
+{% extends "Base.html" %} {% load static %} {% block title %}Portfolio | {{ project.title }}{%
+endblock %} {% block custom-css %}<link
+    rel="stylesheet"
+    href="{% static 'css/portfolio-item.css' %}"
+/>{% endblock %} {% block header %}
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
+{% endblock %} {% block header-mobile %}
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
+{% endblock %} {% block main %}
 
-    <main class="portfolio-item-container">
-      <article>
+<main class="portfolio-item-container">
+    <article>
         <section>
-          <div class="portfolio-item-title animated fadeInDown">
-            <h1>{{ project.title }}</h1>
-          </div>
-          <div class="portfolio-item col-12 animated fadeInDown">
-            <div class="portfolio-item-image col-12 col-xl-8">
-              <div class="image-container col-12">
-                <img src="{{ project.thumbnail1.url }}" alt="img" />
-              </div>
+            <div class="portfolio-item-title animated fadeInDown">
+                <h1>{{ project.title }}</h1>
             </div>
-            <div class="portfolio-item-content col-12 col-xl-4">
-              <div class="col-sm-8 col-xl-12">
-                <div class="portfolio-item-content-title">
-                    <a href="{{ project.github }}"><h1>{{ project.title }}</h1></a>
+            <div class="portfolio-item col-12 animated fadeInDown">
+                <div class="portfolio-item-image col-12 col-xl-8">
+                    <div class="image-container col-12">
+                        <img src="{{ project.thumbnail1.url }}" alt="img" />
+                    </div>
                 </div>
-                <div class="portfolio-item-content-date">{{ project.updated }}</div>
-                <div class="portfolio-item-content-text">
-                  <p>
-                    {{ project.text|linebreaks }}
-                  </p>
+                <div class="portfolio-item-content col-12 col-xl-4">
+                    <div class="col-sm-8 col-xl-12">
+                        <div class="portfolio-item-content-title">
+                            <a href="{{ project.github }}"><h1>{{ project.title }}</h1></a>
+                        </div>
+                        <div class="portfolio-item-content-date">{{ project.updated }}</div>
+                        <div class="portfolio-item-content-text">
+                            <p>{{ project.text|linebreaks }}</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </section>
-      </article>
-    </main>
-    {% endblock %}
-    {% block scripts %}    
-    <script src="{% static 'js/wow.min.js' %}"></script>
-    <script>
+    </article>
+</main>
+{% endblock %} {% block scripts %}
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script>
     new WOW().init();
-    </script>
-    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
-    <script src="{% static 'js/utils.js' %}"></script>
-    <script>
+</script>
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/utils.js' %}"></script>
+<script>
     const WITH_DELAY = false;
-    </script>
-    <script src="{% static 'js/showHeader.js' %}"></script>
-{% endblock %}
-{% block footer %}
-      <a href="{% url "staticpages:home" %}"><li>HOME</li></a>
-      <a href="{% url "projects:projects" %}" class="active"><li>PORTFOLIO</li></a>
-      <a href="{% url "blog:blog" %}" ><li>BLOG</li></a>
-      <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
+</script>
+<script src="{% static 'js/showHeader.js' %}"></script>
+{% endblock %} {% block footer %}
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
 {% endblock %}

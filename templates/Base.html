@@ -4,10 +4,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta
-          name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
         />
-        <link rel="icon" href="{% static 'assets/img/icon.png' %}">
+        <link rel="icon" href="{% static 'assets/img/icon.png' %}" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
@@ -18,16 +18,16 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
-        />        
-        {% block custom-css %}
-
-        {% endblock %}
+        />
+        {% block custom-css %} {% endblock %}
     </head>
 <body style="overflow-x:hidden;">
   <header class="col-12">
     <nav>
       <div class="navbar-logo col-6">
+          {% block header_icon %}
         <img src="{% static 'assets/img/Signature.png' %}" alt="logo">
+          {% endblock %}
       </div>
       <div class="navbar-menu-mobile col-6">
         <div class="navbar-search-mobile">
@@ -80,10 +80,10 @@
   
   {% endblock %}
   {% block scripts %}
-  
+
   {% endblock %}
   <footer>
-    <div class="footer-logo">       
+    <div class="footer-logo">
     </div>
     <div class="footer-social">
       <ul>
