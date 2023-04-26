@@ -54,10 +54,42 @@ header {
           @media screen and (max-width: 1100px) {
             header nav .navbar-menu ul li, header nav .navbar-menu-mobile ul li {
               font-size: 15px; } }
+          @media screen and (max-width: 950px) {
+            header nav .navbar-menu ul li, header nav .navbar-menu-mobile ul li {
+              margin-right: 2rem; } }
           header nav .navbar-menu ul li:hover, header nav .navbar-menu-mobile ul li:hover {
             transform: translateY(-3px);
             color: #db7b7b;
             border-bottom-color: #e3a7a7; }
+        header nav .navbar-menu ul #navbar-menu-button, header nav .navbar-menu-mobile ul #navbar-menu-button {
+          position: relative; }
+        header nav .navbar-menu ul .navbar-menu-sub, header nav .navbar-menu-mobile ul .navbar-menu-sub {
+          padding-top: 25px;
+          position: absolute;
+          top: 55px;
+          right: 70px; }
+          @media screen and (max-width: 800px) {
+            header nav .navbar-menu ul .navbar-menu-sub, header nav .navbar-menu-mobile ul .navbar-menu-sub {
+              top: 45px; } }
+          header nav .navbar-menu ul .navbar-menu-sub div, header nav .navbar-menu-mobile ul .navbar-menu-sub div {
+            opacity: 1;
+            background-color: rgba(30, 30, 30, 0.6);
+            border-right: 2px solid #db7b7b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+            margin-right: 3rem;
+            padding: 1.2rem 1.5rem; }
+            @media screen and (max-width: 950px) {
+              header nav .navbar-menu ul .navbar-menu-sub div, header nav .navbar-menu-mobile ul .navbar-menu-sub div {
+                margin-right: 2rem; } }
+            @media screen and (max-width: 800px) {
+              header nav .navbar-menu ul .navbar-menu-sub div, header nav .navbar-menu-mobile ul .navbar-menu-sub div {
+                margin-right: 1rem; } }
+            header nav .navbar-menu ul .navbar-menu-sub div li, header nav .navbar-menu-mobile ul .navbar-menu-sub div li {
+              margin: 0; }
       header nav .navbar-menu .navbar-search, header nav .navbar-menu-mobile .navbar-search {
         font-size: 1.25rem;
         cursor: pointer;

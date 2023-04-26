@@ -7,32 +7,20 @@
           href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
 {% endblock %}
 {% block header %}
-    <a href="{% url "staticpages:home" %}">
-        <li>HOME</li>
-    </a>
-    <a href="{% url "projects:projects" %}">
-        <li>PORTFOLIO</li>
-    </a>
-    <a href="{% url "blog:blog" %}" class="active">
-        <li>BLOG</li>
-    </a>
-    <a href="{% url "staticpages:about" %}">
-        <li>CONTACT</li>
-    </a>
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
 {% endblock %}
 {% block header-mobile %}
-    <a href="{% url "staticpages:home" %}">
-        <li>HOME</li>
-    </a>
-    <a href="{% url "projects:projects" %}">
-        <li>PORTFOLIO</li>
-    </a>
-    <a href="{% url "blog:blog" %}" class="active">
-        <li>BLOG</li>
-    </a>
-    <a href="{% url "staticpages:about" %}">
-        <li>CONTACT</li>
-    </a>
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
 {% endblock %}
 {% block main %}
     <main class="article-container">
@@ -167,16 +155,10 @@
     </html>
 {% endblock %}
 {% block footer %}
-    <a href="{% url "staticpages:home" %}">
-        <li>HOME</li>
-    </a>
-    <a href="{% url "projects:projects" %}">
-        <li>PORTFOLIO</li>
-    </a>
-    <a href="{% url "blog:blog" %}" class="active">
-        <li>BLOG</li>
-    </a>
-    <a href="{% url "staticpages:about" %}">
-        <li>CONTACT</li>
-    </a>
+<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
+<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
+<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
+<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
+<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
+<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
 {% endblock %}
