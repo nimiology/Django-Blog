@@ -40,13 +40,18 @@ header {
         list-style: none;
         display: flex;
         justify-content: space-between;
-        align-items: center; }
+        align-items: center;
+        margin-right: 3rem;
+        gap: 3rem; }
         header nav .navbar-menu ul a, header nav .navbar-menu-mobile ul a {
           text-decoration: none; }
+        @media screen and (max-width: 950px) {
+          header nav .navbar-menu ul, header nav .navbar-menu-mobile ul {
+            margin-right: 2rem;
+            gap: 2rem; } }
         header nav .navbar-menu ul li, header nav .navbar-menu-mobile ul li {
           cursor: pointer;
           letter-spacing: 2px;
-          margin-right: 3rem;
           font-size: 18px;
           font-weight: 600;
           transition: color 150ms, border-bottom-color 150ms, transform 150ms;
@@ -54,24 +59,30 @@ header {
           @media screen and (max-width: 1100px) {
             header nav .navbar-menu ul li, header nav .navbar-menu-mobile ul li {
               font-size: 15px; } }
-          @media screen and (max-width: 950px) {
-            header nav .navbar-menu ul li, header nav .navbar-menu-mobile ul li {
-              margin-right: 2rem; } }
           header nav .navbar-menu ul li:hover, header nav .navbar-menu-mobile ul li:hover {
             transform: translateY(-3px);
             color: #db7b7b;
             border-bottom-color: #e3a7a7; }
         header nav .navbar-menu ul #navbar-menu-button, header nav .navbar-menu-mobile ul #navbar-menu-button {
           position: relative; }
+          header nav .navbar-menu ul #navbar-menu-button li, header nav .navbar-menu-mobile ul #navbar-menu-button li {
+            gap: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            header nav .navbar-menu ul #navbar-menu-button li span, header nav .navbar-menu-mobile ul #navbar-menu-button li span {
+              margin-top: 2px; }
         header nav .navbar-menu ul .navbar-menu-sub, header nav .navbar-menu-mobile ul .navbar-menu-sub {
           padding-top: 25px;
           position: absolute;
           top: 55px;
-          right: 70px; }
+          right: 70px;
+          display: none; }
           @media screen and (max-width: 800px) {
             header nav .navbar-menu ul .navbar-menu-sub, header nav .navbar-menu-mobile ul .navbar-menu-sub {
               top: 45px; } }
           header nav .navbar-menu ul .navbar-menu-sub div, header nav .navbar-menu-mobile ul .navbar-menu-sub div {
+            position: relative;
             opacity: 1;
             background-color: rgba(30, 30, 30, 0.6);
             border-right: 2px solid #db7b7b;
@@ -80,14 +91,14 @@ header {
             align-items: center;
             flex-direction: column;
             gap: 15px;
-            margin-right: 3rem;
+            right: 3rem;
             padding: 1.2rem 1.5rem; }
             @media screen and (max-width: 950px) {
               header nav .navbar-menu ul .navbar-menu-sub div, header nav .navbar-menu-mobile ul .navbar-menu-sub div {
-                margin-right: 2rem; } }
+                right: 2rem; } }
             @media screen and (max-width: 800px) {
               header nav .navbar-menu ul .navbar-menu-sub div, header nav .navbar-menu-mobile ul .navbar-menu-sub div {
-                margin-right: 1rem; } }
+                right: 1rem; } }
             header nav .navbar-menu ul .navbar-menu-sub div li, header nav .navbar-menu-mobile ul .navbar-menu-sub div li {
               margin: 0; }
       header nav .navbar-menu .navbar-search, header nav .navbar-menu-mobile .navbar-search {
@@ -622,13 +633,18 @@ body {
       .portfolio-card-left .portfolio-card-images div:nth-child(3) {
         left: 50px; } }
 
-.portfolio-card-left .portfolio-card-content-wrapper {
-  padding-left: 7.5rem;
-  direction: ltr;
+.portfolio-card-left .portfolio-card-content {
   width: 50%; }
   @media screen and (max-width: 890px) {
-    .portfolio-card-left .portfolio-card-content-wrapper {
+    .portfolio-card-left .portfolio-card-content {
       width: 100%;
+      padding-left: 0; } }
+
+.portfolio-card-left .portfolio-card-content-wrapper {
+  padding-left: 7.5rem;
+  direction: ltr; }
+  @media screen and (max-width: 890px) {
+    .portfolio-card-left .portfolio-card-content-wrapper {
       padding-left: 0; } }
 
 .quotes {

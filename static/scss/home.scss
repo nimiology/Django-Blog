@@ -426,13 +426,20 @@ body {
         }
     }
 
-    .portfolio-card-content-wrapper {
-        padding-left: 7.5rem;
-        direction: ltr;
+    .portfolio-card-content {
         width: 50%;
 
         @media screen and (max-width: 890px) {
             width: 100%;
+            padding-left: 0;
+        }
+    }
+
+    .portfolio-card-content-wrapper {
+        padding-left: 7.5rem;
+        direction: ltr;
+
+        @media screen and (max-width: 890px) {
             padding-left: 0;
         }
     }
