@@ -44,15 +44,21 @@ header {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                margin-right: 3rem;
+                gap: 3rem;
 
                 a {
                     text-decoration: none;
                 }
 
+                @media screen and (max-width: 950px) {
+                    margin-right: 2rem;
+                    gap: 2rem;
+                }
+
                 li {
                     cursor: pointer;
                     letter-spacing: 2px;
-                    margin-right: 3rem;
 
                     font: {
                         size: 18px;
@@ -66,10 +72,6 @@ header {
                         font-size: 15px;
                     }
 
-                    @media screen and (max-width: 950px) {
-                        margin-right: 2rem;
-                    }
-
                     &:hover {
                         transform: translateY(-3px);
                         color: #db7b7b;
@@ -79,6 +81,15 @@ header {
 
                 #navbar-menu-button {
                     position: relative;
+                    li {
+                        gap: 6px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        span {
+                            margin-top: 2px;
+                        }
+                    }
                 }
 
                 .navbar-menu-sub {
@@ -86,12 +97,14 @@ header {
                     position: absolute;
                     top: 55px;
                     right: 70px;
+                    display: none;
 
                     @media screen and (max-width: 800px) {
                         top: 45px;
                     }
 
                     div {
+                        position: relative;
                         opacity: 1;
                         background-color: rgba(30, 30, 30, 0.6);
                         border-right: 2px solid $primary-color;
@@ -100,15 +113,15 @@ header {
                         align-items: center;
                         flex-direction: column;
                         gap: 15px;
-                        margin-right: 3rem;
+                        right: 3rem;
                         padding: 1.2rem 1.5rem;
 
                         @media screen and (max-width: 950px) {
-                            margin-right: 2rem;
+                            right: 2rem;
                         }
 
                         @media screen and (max-width: 800px) {
-                            margin-right: 1rem;
+                            right: 1rem;
                         }
 
                         li {
