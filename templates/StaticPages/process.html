@@ -18,6 +18,11 @@
         <li>PROCESS</li>
     </a>
 {% endblock %}
+{% block process_footer %}
+    <a href="{% url 'staticpages:process' %}" class="active">
+        <li>PROCESS</li>
+    </a>
+{% endblock %}
 {% block main %}
 
     <main class="process-container">
@@ -120,9 +125,4 @@
     <script src="{% static 'js/showHeader.js' %}"></script>
     <script src="{% static 'js/showMenu.js' %}"></script>
 
-{% endblock %}
-{% block process_footer %}
-    <a href="{% url 'staticpages:process' %}" class="active">
-        <li>PROCESS</li>
-    </a>
 {% endblock %}

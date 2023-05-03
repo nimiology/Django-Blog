@@ -6,36 +6,28 @@
             rel="stylesheet"
             href="{% static 'css/faq.css' %}"
     />{% endblock %}
-{% block header_icon %}
-            <img src="{% static 'assets/img/icon.png' %}" alt="logo">
+{% block header_icon %}<img src="{% static 'assets/img/icon.png' %}" alt="logo"/>{% endblock %}
+{% block faq_header %}
+    <a href="{% url 'staticpages:faq' %}" class="active">
+        <li>FAQ</li>
+    </a>
+{% endblock %} {% block about_header %}
+
+    <a href="{% url 'staticpages:about' %}" class="active">
+        <li>ABOUT<span class="bi-caret-down"></span>    </li>
+    </a>
+{% endblock %} {% block faq_mobile_header %}
+    <a href="{% url 'staticpages:faq' %}" class="active">
+        <li>FAQ</li>
+    </a>
 {% endblock %}
-{% block header %}
-    <a href="{% url 'staticpages:home' %}">
-        <li>HOME</li>
+{% block faq_footer %}
+    <a href="{% url 'staticpages:faq' %}" class="active">
+        <li>FAQ</li>
     </a>
-    <a href="{% url 'projects:projects' %}" class="active">
-        <li>PORTFOLIO</li>
-    </a>
-    <a href="{% url 'blog:blog' %}">
-        <li>BLOG</li>
-    </a>
-    <a href="{% url 'staticpages:about' %}">
-        <li>CONTACT</li>
-    </a>
-{% endblock %} {% block header-mobile %}
-    <a href="{% url 'staticpages:home' %}">
-        <li>HOME</li>
-    </a>
-    <a href="{% url 'projects:projects' %}" class="active">
-        <li>PORTFOLIO</li>
-    </a>
-    <a href="{% url 'blog:blog' %}">
-        <li>BLOG</li>
-    </a>
-    <a href="{% url 'staticpages:about' %}">
-        <li>CONTACT</li>
-    </a>
-{% endblock %} {% block main %}
+{% endblock %}
+
+ {% block main %}
 
     <main class="faq-container">
         <section class="faq-header wow">
@@ -144,18 +136,6 @@
         const WITH_DELAY = false;
     </script>
     <script src="{% static 'js/showHeader.js' %}"></script>
+    <script src="{% static 'js/showMenu.js' %}"></script>
 {% endblock %}
-{% block footer %}
-    <a href="{% url 'staticpages:home' %}">
-        <li>HOME</li>
-    </a>
-    <a href="{% url 'projects:projects' %}" class="active">
-        <li>PORTFOLIO</li>
-    </a>
-    <a href="{% url 'blog:blog' %}">
-        <li>BLOG</li>
-    </a>
-    <a href="{% url 'staticpages:about' %}">
-        <li>CONTACT</li>
-    </a>
-{% endblock %}
+
