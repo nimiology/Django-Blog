@@ -1,122 +1,145 @@
-{% extends 'Base.html' %} {% load static %} {% block custom-css %}
+{% extends 'Base.html' %}
+{% load static %}
+{% block custom-css %}
 <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
-{% endblock %} {% block title %}Blog{% endblock %} {% block header %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
-{% endblock %} {% block header-mobile %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
-{% endblock %} {% block main %}
-<main class="blog-container">
-    <section class="blog-articles col-sm-12 col-md-8">
-        {% for article in articles %}
-        <article class="blog-article col-12 wow">
-            {% if article.thumbnail %}
-            <div class="blog-article-image col-12">
-                <a href="{% url 'blog:article' article.slug %}">
-                    <div></div>
-                    <img src="{{ article.thumbnail.url }}" alt="article-image" />
-                    {# {% else %}#} {#
-                    <img
-                        src="https://onlineartdatabase.pythonanywhere.com/random/picture/"
-                        alt="article-image"
-                    />#}
-                </a>
-            </div>
-            {% endif %}
-            <div class="blog-article-text col-12 wow">
-                <a href="{% url 'blog:article' article.slug %}">
-                    <h1>{{ article.title }}</h1>
-                </a>
-                <p>{{ article.preview_text|truncatewords:15 }}</p>
-                <div>
-                    <div class="blog-article-text-author">
-                        by <span>{{ article.writer }}</span> <span>{{ article.publishDate }}</span>
-                    </div>
-                </div>
-            </div>
-        </article>
-        {% endfor %}
-        <section class="blog-articles-pagination col-12">
-            <div>
-                {% if articles.has_previous %}
+{% endblock %}
+{% block title %}Blog{% endblock %}
+{% block blog_header %}
 
-                <button>
-                    <a href="{% url 'blog:blog' articles.previous_page_number %}">
-                        <span class="bi-caret-left"></span>
-                    </a>
-                </button>
-
-                {% endif %}
-
-                <ul>
-                    {% if articles.number == articles.paginator.num_pages %} {% if articles.number
-                    != 1 %} {% comment %}
-                    <a href="{% url 'blog:blog' articles.previous_page_number %}" class="active">
-                        <li>{{ articles.previous_page_number }}</li>
-                    </a>
-                    {% endcomment %} {% endif %}
-                    <a href="">
-                        <li class="active">{{ articles.number }}</li>
-                    </a>
-                    {% if boolean %}
-                    <li>.</li>
-                    {% endif %} {% if articles.number != articles.paginator.num_pages %}
-                    <a href="{% url 'blog:blog' articles.paginator.num_pages %}" class="active">
-                        <li>{{ articles.paginator.num_pages }}</li>
-                    </a>
+    <a href="{% url 'blog:blog' %}" class="active">
+        <li>BLOG</li>
+    </a>
+{% endblock %} {% block blog_mobile_header %}
+    <a href="{% url 'blog:blog' %}" class="active">
+        <li>BLOG</li>
+    </a>
+{% endblock %}
+{% block blog_footer %}
+    <a href="{% url 'blog:blog' %}" class="active">
+        <li>BLOG</li>
+    </a>
+{% endblock %}
+ {% block main %}
+    <main class="blog-container">
+        <section class="blog-articles col-sm-12 col-md-8">
+            {% for article in articles %}
+                <article class="blog-article col-12 wow">
+                    {% if article.thumbnail %}
+                        <div class="blog-article-image col-12">
+                            <a href="{% url 'blog:article' article.slug %}">
+                                <div></div>
+                                <img src="{{ article.thumbnail.url }}" alt="article-image"/>
+                                {#                    {% else %}#}
+                                {#                        <img src="https://onlineartdatabase.pythonanywhere.com/random/picture/" alt="article-image" />#}
+                            </a>
+                        </div>
                     {% endif %}
+                    <div class="blog-article-text col-12 wow">
+                        <a href="{% url 'blog:article' article.slug %}">
+                            <h1>
+                                {{ article.title }}
+                            </h1>
+                        </a>
+                        <p>
+                            {{ article.preview_text|truncatewords:15 }}
+                        </p>
+                        <div>
+                            <div class="blog-article-text-author">
+                                by <span>{{ article.writer }}</span> <span>{{ article.publishDate }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+            <section class="blog-articles-pagination col-12">
+                <div>
+                    {% if articles.has_previous %}
+
+                        <button>
+                            <a href="{% url 'blog:blog' articles.previous_page_number %}">
+                                <span class="bi-caret-left"></span>
+                            </a>
+                        </button>
+
+                    {% endif %}
+
+                    <ul>
+                        {% if articles.number == articles.paginator.num_pages %}
+                            {% if articles.number != 1 %}
+                                <a href="{% url 'blog:blog' articles.previous_page_number %}" class="active">
+                                    <li>
+                                        {{ articles.previous_page_number }}
+                                    </li>
+                                </a>
+                            {% endif %}
+                        {% endif %}
+                        <a href="">
+                            <li class="active">
+                                {{ articles.number }}
+                            </li>
+                        </a>
+                        {% if boolean %}
+                            <li>
+                                .
+                            </li>
+                        {% endif %}
+
+                        {% if articles.number != articles.paginator.num_pages %}
+                            <a href="{% url 'blog:blog' articles.paginator.num_pages %}" class="active">
+                                <li>
+                                    {{ articles.paginator.num_pages }}
+                                </li>
+                            </a>
+                        {% endif %}
+
+                    </ul>
+                    {% if articles.has_next %}
+
+                        <button>
+                            <a href="{% url 'blog:blog' articles.next_page_number %}">
+                                <span class="bi-caret-right"></span>
+                            </a>
+                        </button>
+
+                    {% endif %}
+                </div>
+            </section>
+        </section>
+        <aside class="blog-sidebar col-12 col-md-4 wow">
+            <section class="blog-sidebar-categories">
+                <div class="blog-sidebar-title">
+                    <h1>Categories</h1>
+                    <div></div>
+                </div>
+                <ul>
+                    {% for category in categories %}
+                        <a href="{% url 'blog:category' category.slug %}">
+                            <li>
+                                {{ category.title }}
+                            </li>
+                        </a>
+                    {% endfor %}
                 </ul>
-                {% if articles.has_next %}
-
-                <button>
-                    <a href="{% url 'blog:blog' articles.next_page_number %}">
-                        <span class="bi-caret-right"></span>
-                    </a>
-                </button>
-
-                {% endif %}
-            </div>
-        </section>
-    </section>
-    <aside class="blog-sidebar col-12 col-md-4 wow">
-        <section class="blog-sidebar-categories">
-            <div class="blog-sidebar-title">
-                <h1>Categories</h1>
-                <div></div>
-            </div>
-            <ul>
-                {% for category in categories %}
-                <a href="{% url 'blog:category' category.slug %}">
-                    <li>{{ category.title }}</li>
-                </a>
-                {% endfor %}
-            </ul>
-        </section>
-        <section class="blog-sidebar-tags">
-            <div class="blog-sidebar-title">
-                <h1>Tags</h1>
-                <div></div>
-            </div>
-            <ul>
-                {% for tag in tags %}
-                <a href="{% url 'blog:tag' tag.slug %}">
-                    <li>{{ tag.title }}</li>
-                </a>
-                {% endfor %}
-            </ul>
-        </section>
-    </aside>
-</main>
-{% endblock %} {% block scripts %}
+            </section>
+            <section class="blog-sidebar-tags">
+                <div class="blog-sidebar-title">
+                    <h1>Tags</h1>
+                    <div></div>
+                </div>
+                <ul>
+                    {% for tag in tags %}
+                        <a href="{% url 'blog:tag' tag.slug %}">
+                            <li>
+                                {{ tag.title }}
+                            </li>
+                        </a>
+                    {% endfor %}
+                </ul>
+            </section>
+        </aside>
+    </main>
+{% endblock %}
+{% block scripts %}
 <script src="{% static 'js/wow.min.js' %}"></script>
 <script>
     new WOW().init();
@@ -126,11 +149,5 @@
     const WITH_DELAY = false;
 </script>
 <script src="{% static 'js/showHeader.js' %}"></script>
-{% endblock %} {% block footer %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
+<script src="{% static 'js/showMenu.js' %}"></script>
 {% endblock %}

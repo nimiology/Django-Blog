@@ -6,21 +6,23 @@
     <link rel="stylesheet"
           href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
 {% endblock %}
-{% block header %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
+{% block header_icon %}
+    <img src="{% static 'assets/img/icon.png' %}" alt="logo">
 {% endblock %}
-{% block header-mobile %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
+{% block blog_header %}
+
+    <a href="{% url 'blog:blog' %}" class="active">
+        <li>BLOG</li>
+    </a>
+{% endblock %} {% block blog_mobile_header %}
+    <a href="{% url 'blog:blog' %}" class="active">
+        <li>BLOG</li>
+    </a>
+{% endblock %}
+{% block blog_footer %}
+    <a href="{% url 'blog:blog' %}" class="active">
+        <li>BLOG</li>
+    </a>
 {% endblock %}
 {% block main %}
     <main class="article-container">
@@ -152,13 +154,7 @@
         })
     </script>
     <script src="{% static 'js/showHeader.js' %}"></script>
-    </html>
+    <script src="{% static 'js/showMenu.js' %}"></script>
+
 {% endblock %}
-{% block footer %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
-{% endblock %}
+

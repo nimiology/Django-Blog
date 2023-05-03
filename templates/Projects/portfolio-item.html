@@ -6,6 +6,9 @@
             rel="stylesheet"
             href="{% static 'css/portfolio-item.css' %}"/>
 {% endblock %}
+{% block header_icon %}
+    <img src="{% static 'assets/img/icon.png' %}" alt="logo">
+{% endblock %}
 {% block portfolio_header %}
 
     <a href="{% url 'projects:projects' %}" class="active">
