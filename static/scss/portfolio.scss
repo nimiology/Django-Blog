@@ -10,6 +10,12 @@ header {
     color: $color-black;
   }
 
+  .navbar-menu-sub {
+    div {
+      background-color: rgb(220, 220, 220) !important;
+    }
+  }
+
   .navbar-menu ul a {
     color: $color-black;
 
@@ -160,10 +166,10 @@ main {
         border-radius: 10px;
         animation-delay: 0.5s;
         background: linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 0.6474790599833684) 61%,
-          rgba(255, 255, 255, 0) 100%
+                        0deg,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 0.6474790599833684) 61%,
+                        rgba(255, 255, 255, 0) 100%
         );
       }
 
@@ -173,6 +179,7 @@ main {
         @media screen and (max-width: 890px) {
           padding: 1rem;
         }
+
         .portfolio-card-content-title {
           h1 {
             padding: 0;
@@ -258,6 +265,7 @@ main {
               color: $color-text;
               border-color: $color-text !important;
               border-radius: 4px;
+
               &:focus {
                 border: 2px solid $color-text;
               }
@@ -297,6 +305,7 @@ main {
             z-index: 20;
             width: 100%;
             transition: color 0.7s cubic-bezier(0.27, 0.12, 0, 1.01);
+
             &:focus {
               border: 2px solid $color-black;
             }
@@ -320,8 +329,8 @@ main {
             @media screen and (max-width: 890px) {
               transition: left 1.2s cubic-bezier(0.27, 0.12, 0, 1.01);
               background-color: transparentize(
-                $color: $color-text,
-                $amount: 0.1
+                      $color: $color-text,
+                      $amount: 0.1
               );
             }
           }

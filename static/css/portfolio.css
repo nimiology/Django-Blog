@@ -319,6 +319,8 @@ header {
   color: #000000; }
   header .navbar-search-btn {
     color: #000000; }
+  header .navbar-menu-sub div {
+    background-color: gainsboro !important; }
   header .navbar-menu ul a, header nav .navbar-menu-mobile ul a {
     color: #000000; }
     @media screen and (max-width: 700px) {

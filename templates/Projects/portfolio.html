@@ -1,81 +1,81 @@
-{% extends "Base.html" %} {% load static %} {% block title %}Portfolio{% endblock %} {% block
-custom-css %}<link rel="stylesheet" href="{% static 'css/portfolio.css' %}" />{% endblock %} {%
-block header %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
-{% endblock %} {% block header-mobile %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
-{% endblock %} {% block main %}
-<main class="wow portfolio-container">
-    {% for project in projects %}
-    <section
-        class="{% cycle 'portfolio-card portfolio-card-left col-12' 'portfolio-card portfolio-card-right col-12' %}"
-    >
-        <div class="portfolio-card-images col-6">
-            <div class="wow">
-                <img src="{{ project.thumbnail1.url }}" alt="portfolio-image" />
-            </div>
-            <div class="wow">
-                <img src="{{ project.thumbnail2.url }}" alt="portfolio-image" />
-            </div>
-            <div class="wow">
-                <img src="{{ project.thumbnail3.url }}" alt="portfolio-image" />
-            </div>
-        </div>
+{% extends "Base.html" %}
+{% load static %}
+{% block title %}Portfolio{% endblock %}
+{% block custom-css %}
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}"/>{% endblock %}
+{% block portfolio_header %}
 
-        <img
-            class="portfolio-card-image-mobile"
-            src="{{ project.thumbnail1.url }}"
-            alt="article-image"
-        />
-        <div class="portfolio-card-content col-6 wow">
-            <div class="portfolio-card-content-wrapper">
-                <div class="portfolio-card-content-title col-12">
-                    <h1>{{ project.title }}</h1>
-                    <div></div>
+    <a href="{% url 'projects:projects' %}" class="active">
+        <li>PORTFOLIO</li>
+    </a>
+{% endblock %} {% block portfolio_mobile_header %}
+    <a href="{% url 'projects:projects' %}" class="active">
+        <li>PORTFOLIO</li>
+    </a>
+{% endblock %}
+{% block portfolio_footer %}
+    <a href="{% url 'projects:projects' %}" class="active">
+        <li>PORTFOLIO</li>
+    </a>
+{% endblock %}
+{% block main %}
+    <main class="wow portfolio-container">
+        {% for project in projects %}
+            <section
+                    class="{% cycle 'portfolio-card portfolio-card-left col-12' 'portfolio-card portfolio-card-right col-12' %}"
+            >
+                <div class="portfolio-card-images col-6">
+                    <div class="wow">
+                        <img src="{{ project.thumbnail1.url }}" alt="portfolio-image"/>
+                    </div>
+                    <div class="wow">
+                        <img src="{{ project.thumbnail2.url }}" alt="portfolio-image"/>
+                    </div>
+                    <div class="wow">
+                        <img src="{{ project.thumbnail3.url }}" alt="portfolio-image"/>
+                    </div>
                 </div>
-                <div class="portfolio-card-content-text col-12">
-                    <p>{{ project.text|truncatewords:15 }}</p>
+
+                <img
+                        class="portfolio-card-image-mobile"
+                        src="{{ project.thumbnail1.url }}"
+                        alt="article-image"
+                />
+                <div class="portfolio-card-content col-6 wow">
+                    <div class="portfolio-card-content-wrapper">
+                        <div class="portfolio-card-content-title col-12">
+                            <h1>{{ project.title }}</h1>
+                            <div></div>
+                        </div>
+                        <div class="portfolio-card-content-text col-12">
+                            <p>{{ project.text|truncatewords:15 }}</p>
+                        </div>
+                        <div class="portfolio-card-content-btn col-12 col-lg-8 col-xl-4">
+                            <a href="{% url 'projects:project' project.slug %}"
+                            >
+                                <button>VIEW PROJECT</button>
+                            </a
+                            >
+                            <div class="portfolio-card-content-btn-bg"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="portfolio-card-content-btn col-12 col-lg-8 col-xl-4">
-                    <a href="{% url 'projects:project' project.slug %}"
-                        ><button>VIEW PROJECT</button></a
-                    >
-                    <div class="portfolio-card-content-btn-bg"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {% endfor %}
-    <div class="portfolio-container-center-line"></div>
-</main>
+            </section>
+        {% endfor %}
+        <div class="portfolio-container-center-line"></div>
+    </main>
 {% endblock %} {% block scripts %}
-<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
-<script src="{% static 'js/wow.min.js' %}"></script>
-<script>
-    // Run wow js scroll animation
-    new WOW().init();
-</script>
-<script src="{% static 'js/utils.js' %}"></script>
-<script>
-    const WITH_DELAY = true;
-    const DELAY_LENGTH = 0;
-</script>
-<script src="{% static 'js/showHeader.js' %}"></script>
-{% endblock %} {% block footer %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script>
+        // Run wow js scroll animation
+        new WOW().init();
+    </script>
+    <script src="{% static 'js/utils.js' %}"></script>
+    <script>
+        const WITH_DELAY = true;
+        const DELAY_LENGTH = 0;
+    </script>
+    <script src="{% static 'js/showHeader.js' %}"></script>
+    <script src="{% static 'js/showMenu.js' %}"></script>
 {% endblock %}
