@@ -1,241 +1,207 @@
+{% extends 'Base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Home</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="icon" href="{% static 'assets/img/icon.png' %}" />
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/splide.min.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-    </head>
+{% block custom-css %}
+    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+{% endblock %}
+{% block title %}Nima{% endblock %}
+{% block header_icon %}
+    <img src="{% static 'assets/img/icon.png' %}" alt="logo">
+{% endblock %}
+{% block home_header %}<a href="{% url 'staticpages:home' %}" class="active">
+    <li>HOME</li>
+</a>
+{% endblock %}
+{% block home_mobile_header %}<a href="{% url 'staticpages:home' %}" class="active">
+    <li>HOME</li>
+</a>
+{% endblock %}
+{% block home_footer %}<a href="{% url 'staticpages:home' %}" class="active">
+    <li>HOME</li>
+</a>
+{% endblock %}
+{% block main %}
     <body style="overflow-x: hidden">
-        <header class="col-12">
-            <nav>
-                <div class="navbar-logo col-6">
-                    <img src="{% static 'assets/img/icon.png' %}" alt="logo" />
+    <header class="col-12">
+        <nav>
+            <div class="navbar-logo col-6">
+                <img src="{% static 'assets/img/icon.png' %}" alt="logo"/>
+            </div>
+            <div class="navbar-menu-mobile col-6">
+                <div class="navbar-search-mobile">
+                    <button class="navbar-search-btn">
+                        <span class="bi-search"></span>
+                    </button>
                 </div>
-                <div class="navbar-menu-mobile col-6">
-                    <div class="navbar-search-mobile">
-                        <button class="navbar-search-btn">
-                            <span class="bi-search"></span>
-                        </button>
-                    </div>
-                    <div class="navbar-menu-mobile-hamburger-menu">
-                        <button><span class="bi bi-list"></span></button>
-                    </div>
-                    <div class="navbar-menu-mobile-wrapper">
-                        <ul>
-                            <a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-                            <a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-                            <a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-                            <a href="{% url 'blog:blog' %}"><li>PORTFOLIO</li></a>
-                            <a href="{% url 'blog:blog' %}"><li>FAQ</li></a>
-                            <a href="{% url 'blog:blog' %}"><li>ABOUT</li></a>
-                        </ul>
-                    </div>
+                <div class="navbar-menu-mobile-hamburger-menu">
+                    <button><span class="bi bi-list"></span></button>
                 </div>
-                <div class="navbar-menu col-6">
+                <div class="navbar-menu-mobile-wrapper">
                     <ul>
-                        <a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-                        <a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-                        <a href="{% url 'blog:blog' %}"><li>PORTFOLIO</li></a>
-                        <div id="navbar-menu-button">
-                            <li>ABOUT <span class="bi-caret-down"></span></li>
-                        </div>
-                        <div class="navbar-menu-sub">
-                            <div>
-                                <a href="{% url 'blog:blog' %}"><li>CONTACT</li></a>
-                                <a href="{% url 'blog:blog' %}"><li>FAQ</li></a>
-                                <a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-                            </div>
-                        </div>
-                    </ul>
-                    <div class="navbar-search">
-                        <button class="navbar-search-btn">
-                            <span class="bi-search"></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="search-box-modal">
-                    <div class="col-5 col-md-6 col-lg-7 search-box-modal-container">
-                        <div class="search-box-modal-wrapper">
-                            <form class="search-box-modal-input" action="/blog" method="GET">
-                                <input name="s" class="col-9" type="text" placeholder="SEARCH" />
-                                <button class="col-3" type="submit">
-                                    <span class="bi-search"></span>
-                                </button>
-                            </form>
-                            <div class="search-box-modal-line"></div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
 
-        <div class="image-container">
-            <img src="{% static 'assets/img/homeBackground.jpg' %}" alt="home-background" />
-        </div>
-
-        <div class="wow home-container">
-            <section>
-                <p>
-                    IVE SEEN THINGS YOU PEOPLE WOULDNT BELIEVE, ALL THOSE MOMENTS WILL BE TEARS IN
-                    RAIN
-                </p>
-            </section>
-        </div>
-
-        <section class="wow portfolio-container">
-            <div
-                class="portfolio-card portfolio-card-left col-12"
-            >
-                <div class="portfolio-card-images">
-                    <div class="wow">
-                        <img src="{{ project.thumbnail1.url }}" alt="portfolio-image" />
-                    </div>
-                    <div class="wow">
-                        <img src="{{ project.thumbnail2.url }}" alt="portfolio-image" />
-                    </div>
-                    <div class="wow">
-                        <img src="{{ project.thumbnail3.url }}" alt="portfolio-image" />
-                    </div>
-                </div>
-
-                <div class="portfolio-card-content wow">
-                    <div class="portfolio-card-content-wrapper">
-                        <div class="portfolio-card-content-title col-12">
-                            <h1>{{ project.title }}</h1>
-                            <div></div>
-                        </div>
-                        <div class="portfolio-card-content-text col-12">
-                            <p>{{ project.text|truncatewords:15 }}</p>
-                        </div>
-                        <div class="portfolio-card-content-btn col-12 col-lg-8">
-                            <a href="{% url 'projects:project' project.slug %}"
-                                ><button>VIEW PROJECT</button></a
-                            >
-                            <div class="portfolio-card-content-btn-bg"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="quotes">
-            <h3>TESTIMONIALS</h3>
-            <div class="splide" aria-label="Users qoutes">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <li class="splide__slide">
-                            <div>
-                                <p>
-                                    "Sed non mauris vitae erat consequat auctor eu in elit. Class
-                                    aptent taciti uis sed odio sit amet nibh vulputate cursus a sit
-                                    amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio
-                                    tincidunt auctor a ornare odio. Proin gravida nibh vel velit
-                                    auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
-                                    nisi elit consequat ipsum."
-                                </p>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div>
-                                <p>
-                                    "Sed non mauris vitae erat consequat auctor eu in elit. Class
-                                    aptent taciti uis sed odio sit amet nibh vulputate cursus a sit
-                                    amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio
-                                    tincidunt auctor a ornare odio. Proin gravida nibh vel velit
-                                    auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
-                                    nisi elit consequat ipsum."
-                                </p>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div>
-                                <p>
-                                    "Sed non mauris vitae erat consequat auctor eu in elit. Class
-                                    aptent taciti uis sed odio sit amet nibh vulputate cursus a sit
-                                    amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio
-                                    tincidunt auctor a ornare odio. Proin gravida nibh vel velit
-                                    auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
-                                    nisi elit consequat ipsum."
-                                </p>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
-        </section>
-
-        <section class="contact">
-            <figure>
-                <form method="post">
-                    <div>{{ form.name }} {{ form.email }}</div>
-                    {{ form.text }} {% csrf_token %}
-                    <button type="submit" class="col-12">SEND</button>
-                </form>
-            </figure>
-        </section>
-
-        <footer>
-            <div class="footer-logo"></div>
-            <div class="footer-social">
+            <div class="navbar-menu col-6">
                 <ul>
-                    <a href="#"
-                        ><li><span class="bi-whatsapp"></span></li
-                    ></a>
-                    <a href="#"
-                        ><li><span class="bi-instagram"></span></li
-                    ></a>
-                    <a href="#"
-                        ><li><span class="bi-twitter"></span></li
-                    ></a>
-                    <a href="https://www.linkedin.com/in/nima-jokar-26976620b/"
-                        ><li><span class="bi-linkedin"></span></li
-                    ></a>
-                    <a href=""
-                        ><li><span class="bi-youtube"></span></li
-                    ></a>
-                    <a href="https://github.com/nimiology"
-                        ><li><span class="bi-github"></span></li
-                    ></a>
-                    <a href="mailto: nimiologyy@gmail.com"
-                        ><li><span class="bi-google"></span></li
-                    ></a>
+                    <a href="{% url 'staticpages:home' %}" class="active">
+                        <li>HOME</li>
+                    </a>
+                    <a href="{% url 'blog:blog' %}">
+                        <li>BLOG</li>
+                    </a>
+                    <a href="{% url 'projects:projects' %}">
+                        <li>PORTFOLIO</li>
+                    </a>
+                    <div id="navbar-menu-button">
+                        <a href="{% url 'staticpages:about' %}">
+                            <li>ABOUT <span class="bi-caret-down"></span></li>
+                        </a>
+                    </div>
+                    <div class="navbar-menu-sub">
+                        <div>
+                            <a href="{% url 'staticpages:contact' %}">
+                                <li>CONTACT</li>
+                            </a>
+                            <a href="{% url 'staticpages:faq' %}">
+                                <li>FAQ</li>
+                            </a>
+                            <a href="{% url 'staticpages:process' %}">
+                                <li>PROCESS</li>
+                            </a>
+                        </div>
+                    </div>
+                </ul>
+                <div class="navbar-search">
+                    <button class="navbar-search-btn">
+                        <span class="bi-search"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="search-box-modal">
+                <div class="col-5 col-md-6 col-lg-7 search-box-modal-container">
+                    <div class="search-box-modal-wrapper">
+                        <form class="search-box-modal-input" action="/blog" method="GET">
+                            <input name="s" class="col-9" type="text" placeholder="SEARCH"/>
+                            <button class="col-3" type="submit">
+                                <span class="bi-search"></span>
+                            </button>
+                        </form>
+                        <div class="search-box-modal-line"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="image-container">
+        <img src="{% static 'assets/img/homeBackground.jpg' %}" alt="home-background"/>
+    </div>
+
+    <div class="wow home-container">
+        <section>
+            <p>
+                IVE SEEN THINGS YOU PEOPLE WOULDNT BELIEVE, ALL THOSE MOMENTS WILL BE TEARS IN
+                RAIN
+            </p>
+        </section>
+    </div>
+
+    <section class="wow portfolio-container">
+        <div
+                class="portfolio-card portfolio-card-left col-12"
+        >
+            <div class="portfolio-card-images">
+                <div class="wow">
+                    <img src="{{ project.thumbnail1.url }}" alt="portfolio-image"/>
+                </div>
+                <div class="wow">
+                    <img src="{{ project.thumbnail2.url }}" alt="portfolio-image"/>
+                </div>
+                <div class="wow">
+                    <img src="{{ project.thumbnail3.url }}" alt="portfolio-image"/>
+                </div>
+            </div>
+
+            <div class="portfolio-card-content wow">
+                <div class="portfolio-card-content-wrapper">
+                    <div class="portfolio-card-content-title col-12">
+                        <h1>{{ project.title }}</h1>
+                        <div></div>
+                    </div>
+                    <div class="portfolio-card-content-text col-12">
+                        <p>{{ project.text|truncatewords:15 }}</p>
+                    </div>
+                    <div class="portfolio-card-content-btn col-12 col-lg-8">
+                        <a href="{% url 'projects:project' project.slug %}"
+                        >
+                            <button>VIEW PROJECT</button>
+                        </a
+                        >
+                        <div class="portfolio-card-content-btn-bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quotes">
+        <h3>TESTIMONIALS</h3>
+        <div class="splide" aria-label="Users qoutes">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div>
+                            <p>
+                                "Sed non mauris vitae erat consequat auctor eu in elit. Class
+                                aptent taciti uis sed odio sit amet nibh vulputate cursus a sit
+                                amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio
+                                tincidunt auctor a ornare odio. Proin gravida nibh vel velit
+                                auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+                                nisi elit consequat ipsum."
+                            </p>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div>
+                            <p>
+                                "Sed non mauris vitae erat consequat auctor eu in elit. Class
+                                aptent taciti uis sed odio sit amet nibh vulputate cursus a sit
+                                amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio
+                                tincidunt auctor a ornare odio. Proin gravida nibh vel velit
+                                auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+                                nisi elit consequat ipsum."
+                            </p>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div>
+                            <p>
+                                "Sed non mauris vitae erat consequat auctor eu in elit. Class
+                                aptent taciti uis sed odio sit amet nibh vulputate cursus a sit
+                                amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio
+                                tincidunt auctor a ornare odio. Proin gravida nibh vel velit
+                                auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+                                nisi elit consequat ipsum."
+                            </p>
+                        </div>
+                    </li>
                 </ul>
             </div>
-            <nav class="footer-navbar">
-                <div class="footer-navbar-menu">
-                    <ul>
-                        <a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-                        <a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-                        <a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-                        <a href="{% url 'blog:blog' %}"><li>PORTFOLIO</li></a>
-                        <a href="{% url 'blog:blog' %}"><li>FAQ</li></a>
-                        <a href="{% url 'blog:blog' %}"><li>ABOUT</li></a>
-                    </ul>
-                </div>
-            </nav>
-            <div class="footer-copyright">
-                Designed By <a href="https://github.com/marzban-dev">Mansour Marzban</a> ©{% now "Y"
-                %}
-            </div>
-        </footer>
-    </body>
+        </div>
+    </section>
+
+    <section class="contact">
+        <figure>
+            <form method="post">
+                <div>{{ form.name }} {{ form.email }}</div>
+                {{ form.text }} {% csrf_token %}
+                <button type="submit" class="col-12">SEND</button>
+            </form>
+        </figure>
+    </section>
+{% endblock %}
+{% block scripts %}
 
     <script src="{% static 'js/wow.min.js' %}"></script>
     <script src="{% static 'js/splide.min.js' %}"></script>
@@ -255,4 +221,4 @@
         const DELAY_LENGTH = 800;
     </script>
     <script src="{% static 'js/showHeader.js' %}"></script>
-</html>
+{% endblock %}

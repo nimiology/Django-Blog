@@ -1,114 +1,233 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
+<head>
+    <meta charset="UTF-8"/>
+    <meta
             name="viewport"
             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        />
-        <link rel="icon" href="{% static 'assets/img/icon.png' %}" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
+    />
+    <link rel="icon" href="{% static 'assets/img/icon.png' %}"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
             href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
-        />
-        {% block custom-css %} {% endblock %}
-    </head>
+    />
+    {% block custom-css %} {% endblock %}
+</head>
 <body style="overflow-x:hidden;">
-  <header class="col-12">
+<header class="col-12">
     <nav>
-      <div class="navbar-logo col-6">
-          {% block header_icon %}
-        <img src="{% static 'assets/img/Signature.png' %}" alt="logo">
-          {% endblock %}
-      </div>
-      <div class="navbar-menu-mobile col-6">
-        <div class="navbar-search-mobile">
-          <button class="navbar-search-btn">
-            <span class="bi-search"></span>
-          </button>
-        </div>
-        <div class="navbar-menu-mobile-hamburger-menu">
-          <button><span class="bi bi-list"></span></button>
-        </div>
-        <div class="navbar-menu-mobile-wrapper">
-          <ul>
-              {% block header-mobile %}
-
-              {% endblock %}
-          </ul>
-        </div>
-      </div>
-      <div class="navbar-menu col-6">
-        <ul>
-            {% block header %}
-                <a href="{% url "staticpages:home" %}" class="active"><li>HOME</li></a>
-                <a href="{% url "projects:projects" %}"><li>PORTFOLIO</li></a>
-              <a href="{% url "blog:blog" %}"><li>BLOG</li></a>
-                <a href="{% url "staticpages:about" %}"><li>CONTACT</li></a>
+        <div class="navbar-logo col-6">
+            {% block header_icon %}
+                <img src="{% static 'assets/img/Signature.png' %}" alt="logo">
             {% endblock %}
-        </ul>
-        <div class="navbar-search">
-          <button class="navbar-search-btn">
-            <span class="bi-search"></span>
-          </button>
         </div>
-      </div>
-      <div class="search-box-modal">
-        <div class="col-5 col-md-6 col-lg-7 search-box-modal-container">
-          <div class="search-box-modal-wrapper">
-            <form class="search-box-modal-input" action="/blog" method="GET">
-              <input name="s" class="col-9" type="text" placeholder="SEARCH" />
-              <button class="col-3" type="submit">
-                <span class="bi-search"></span>
-              </button>
-            </form>
-            <div class="search-box-modal-line"></div>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
-  {% block main %}
-  
-  {% endblock %}
-  {% block scripts %}
+        <div class="navbar-menu-mobile col-6">
+            <div class="navbar-search-mobile">
+                <button class="navbar-search-btn">
+                    <span class="bi-search"></span>
+                </button>
+            </div>
+            <div class="navbar-menu-mobile-hamburger-menu">
+                <button><span class="bi bi-list"></span></button>
+            </div>
+            <div class="navbar-menu-mobile-wrapper">
+                <ul>
+                    {% block home_mobile_header %}
+                        <a href="{% url 'staticpages:home' %}">
+                            <li>HOME</li>
+                        </a>
+                    {% endblock %}
+                    {% block blog_mobile_header %}
 
-  {% endblock %}
-  <footer>
+                        <a href="{% url 'blog:blog' %}">
+                            <li>BLOG</li>
+                        </a>
+                    {% endblock %}
+                    {% block portfolio_mobile_header %}
+
+                        <a href="{% url 'projects:projects' %}">
+                            <li>PORTFOLIO</li>
+                        </a>
+                    {% endblock %}
+
+                    {% block process_mobile_header %}
+
+                        <a href="{% url 'staticpages:process' %}">
+                            <li>PROCESS</li>
+                        </a>
+                    {% endblock %}
+
+                    {% block faq_mobile_header %}
+
+                        <a href="{% url 'staticpages:faq' %}">
+                            <li>FAQ</li>
+                        </a>
+                    {% endblock %}
+
+                    {% block contact_mobile_header %}
+
+                        <a href="{% url 'staticpages:contact' %}">
+                            <li>CONTACT</li>
+                        </a>
+                    {% endblock %}
+                    {% block about_mobile_header %}
+
+                        <a href="{% url 'staticpages:about' %}">
+                            <li>ABOUT</li>
+                        </a>
+                    {% endblock %}
+
+                </ul>
+            </div>
+        </div>
+        <div class="navbar-menu col-6">
+            <ul>
+                {% block home_header %}<a href="{% url 'staticpages:home' %}">
+                    <li>HOME</li>
+                </a>{% endblock %}
+                {% block blog_header %}<a href="{% url 'blog:blog' %}">
+                    <li>BLOG</li>
+                </a>{% endblock %}
+                {% block portfolio_header %}<a href="{% url 'projects:projects' %}">
+                    <li>PORTFOLIO</li>
+                </a>{% endblock %}
+                <div id="navbar-menu-button">
+                    {% block about_header %}<a href="{% url 'staticpages:about' %}">
+                        <li>ABOUT <span class="bi-caret-down"></span></li>
+                    </a>{% endblock %}
+                </div>
+                <div class="navbar-menu-sub">
+                    <div>
+                        {% block contact_header %}<a href="{% url 'staticpages:contact' %}">
+                            <li>CONTACT</li>
+                        </a>{% endblock %}
+                        {% block faq_header %}<a href="{% url 'staticpages:faq' %}">
+                            <li>FAQ</li>
+                        </a>{% endblock %}
+                        {% block process_header %}<a href="{% url 'staticpages:process' %}">
+                            <li>PROCESS</li>
+                        </a>{% endblock %}
+                    </div>
+                </div>
+
+            </ul>
+            <div class="navbar-search">
+                <button class="navbar-search-btn">
+                    <span class="bi-search"></span>
+                </button>
+            </div>
+        </div>
+        <div class="search-box-modal">
+            <div class="col-5 col-md-6 col-lg-7 search-box-modal-container">
+                <div class="search-box-modal-wrapper">
+                    <form class="search-box-modal-input" action="/blog" method="GET">
+                        <input name="s" class="col-9" type="text" placeholder="SEARCH"/>
+                        <button class="col-3" type="submit">
+                            <span class="bi-search"></span>
+                        </button>
+                    </form>
+                    <div class="search-box-modal-line"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+{% block main %}
+
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}
+<footer>
     <div class="footer-logo">
     </div>
     <div class="footer-social">
-      <ul>
-        <a href="#"><li><span class="bi-whatsapp"></span></li></a>
-        <a href="#"><li><span class="bi-instagram"></span></li></a>
-        <a href="#"><li><span class="bi-twitter"></span></li></a>
-        <a href="https://www.linkedin.com/in/nima-jokar-26976620b/"><li><span class="bi-linkedin"></span></li></a>
-        <a href=""><li><span class="bi-youtube"></span></li></a>
-        <a href="https://github.com/nimiology"><li><span class="bi-github"></span></li></a>
-        <a href="mailto: nimiologyy@gmail.com"><li><span class="bi-google"></span></li></a>
-      </ul>
+        <ul>
+            <a href="#">
+                <li><span class="bi-whatsapp"></span></li>
+            </a>
+            <a href="#">
+                <li><span class="bi-instagram"></span></li>
+            </a>
+            <a href="#">
+                <li><span class="bi-twitter"></span></li>
+            </a>
+            <a href="https://www.linkedin.com/in/nima-jokar-26976620b/">
+                <li><span class="bi-linkedin"></span></li>
+            </a>
+            <a href="">
+                <li><span class="bi-youtube"></span></li>
+            </a>
+            <a href="https://github.com/nimiology">
+                <li><span class="bi-github"></span></li>
+            </a>
+            <a href="mailto: nimiologyy@gmail.com">
+                <li><span class="bi-google"></span></li>
+            </a>
+        </ul>
     </div>
     <nav class="footer-navbar">
-      <div class="footer-navbar-menu">
-        <ul>
-            {% block footer %}
+        <div class="footer-navbar-menu">
+            <ul>
+                {% block home_footer %}
+                        <a href="{% url 'staticpages:home' %}">
+                            <li>HOME</li>
+                        </a>
+                    {% endblock %}
+                    {% block blog_footer %}
 
-            {% endblock %}
-        </ul>
-      </div>
+                        <a href="{% url 'blog:blog' %}">
+                            <li>BLOG</li>
+                        </a>
+                    {% endblock %}
+                    {% block portfolio_footer %}
+
+                        <a href="{% url 'projects:projects' %}">
+                            <li>PORTFOLIO</li>
+                        </a>
+                    {% endblock %}
+
+                    {% block process_footer %}
+
+                        <a href="{% url 'staticpages:process' %}">
+                            <li>PROCESS</li>
+                        </a>
+                    {% endblock %}
+
+                    {% block faq_footer %}
+
+                        <a href="{% url 'staticpages:faq' %}">
+                            <li>FAQ</li>
+                        </a>
+                    {% endblock %}
+
+                    {% block contact_footer %}
+
+                        <a href="{% url 'staticpages:contact' %}">
+                            <li>CONTACT</li>
+                        </a>
+                    {% endblock %}
+                    {% block about_footer %}
+
+                        <a href="{% url 'staticpages:about' %}">
+                            <li>ABOUT</li>
+                        </a>
+                    {% endblock %}
+            </ul>
+        </div>
     </nav>
     <div class="footer-copyright">
-      Designed By <a href="https://github.com/marzban-dev">Mansour Marzban</a> ©{% now "Y" %}
+        Designed By <a href="https://github.com/marzban-dev">Mansour Marzban</a> ©{% now "Y" %}
     </div>
-  </footer>
+</footer>
 </body>
 
 
