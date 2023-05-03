@@ -1,19 +1,26 @@
-{% extends "Base.html" %} {% load static %} {% block title %}About{%endblock %} {% block custom-css
-%}<link rel="stylesheet" href="{% static 'css/about.css' %}" />{%endblock %} {% block header %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
-{% endblock %} {% block header-mobile %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
-{% endblock %} {% block main %}
+{% extends "Base.html" %}
+{% load static %}
+{% block title %}About{%endblock %}
+{% block custom-css %}<link rel="stylesheet" href="{% static 'css/about.css' %}" />{%endblock %}
+{% block header_icon %}
+<img src="{% static 'assets/img/icon.png' %}" alt="logo" />
+{% endblock %}
+{% block about_header %}
+
+    <a href="{% url 'staticpages:about' %}" class="active">
+        <li>ABOUT<span class="bi-caret-down"></span>    </li>
+    </a>
+{% endblock %} {% block about_mobile_header %}
+    <a href="{% url 'staticpages:about' %}" class="active">
+        <li>ABOUT</li>
+    </a>
+{% endblock %}
+{% block about_footer %}
+    <a href="{% url 'staticpages:about' %}" class="active">
+        <li>ABOUT</li>
+    </a>
+{% endblock %}
+{% block main %}
 
 <main class="about-container">
     <section class="about-header wow">
@@ -109,7 +116,7 @@
         <section class="work-with-us">
             <p>WANNA WORK WITH ME? JOLLY CO-OPERATION WILL ENSUE!</p>
             <div class="work-with-us-btn">
-                <a href="{% url 'projects:project' project.slug %}">
+                <a href="{% url 'staticpages:contact'%}">
                     <button>WORK WITH US</button>
                 </a>
                 <div class="work-with-us-btn-bg"></div>
@@ -128,11 +135,5 @@
     const WITH_DELAY = false;
 </script>
 <script src="{% static 'js/showHeader.js' %}"></script>
-{% endblock %} {% block footer %}
-<a href="{% url 'staticpages:home' %}" class="active"><li>HOME</li></a>
-<a href="{% url 'blog:blog' %}"><li>PROCCESS</li></a>
-<a href="{% url 'blog:blog' %}"><li>BLOG</li></a>
-<a href="{% url 'staticpages:process' %}"><li>PORTFOLIO</li></a>
-<a href="{% url 'staticpages:faq' %}"><li>FAQ</li></a>
-<a href="{% url 'staticpages:about' %}"><li>ABOUT</li></a>
+<script src="{% static 'js/showMenu.js' %}"></script>
 {% endblock %}
