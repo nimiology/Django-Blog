@@ -1,16 +1,16 @@
 from django.shortcuts import render
 
-from staticpages.forms import MessageForm
+from staticpages.forms import HomeMessageForm, ContactMessageForm
 from staticpages.models import Setting, Message
 from projects.models import Project
 
 
 def Home(request):
-    messageForm = MessageForm(request.POST or None)
+    messageForm = HomeMessageForm(request.POST or None)
     if messageForm.is_valid():
         data = messageForm.cleaned_data
         Message.objects.create(name=data['name'], email=data['email'], text=data['text'])
-        messageForm = MessageForm()
+        messageForm = HomeMessageForm()
     context = {
         'project': Project.objects.all().order_by('-id').first,
         'form': messageForm,
@@ -19,11 +19,11 @@ def Home(request):
 
 
 def contact(request):
-    messageForm = MessageForm(request.POST or None)
+    messageForm = ContactMessageForm(request.POST or None)
     if messageForm.is_valid():
         data = messageForm.cleaned_data
         Message.objects.create(name=data['name'], email=data['email'], text=data['text'])
-        messageForm = MessageForm()
+        messageForm = HomeMessageForm()
     context = {
         'form': messageForm
     }
