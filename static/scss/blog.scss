@@ -128,16 +128,15 @@ main {
         }
 
         a > h1 {
-          font-family: "Rajdhani", "sans-serif";
+          direction: rtl;
           font-size: 45px;
           font-weight: 700;
-          letter-spacing: 1px;
           line-height: 3rem;
           color: $color-text;
           transition: color 0.25s;
           cursor: pointer;
-          border-left: 4px solid #db7b7b;
-          padding-left: 1rem;
+          border-right: 4px solid #db7b7b;
+          padding-right: 1rem;
 
           &:hover {
             color: #db7b7b;
@@ -160,7 +159,6 @@ main {
 
         p {
           padding-top: 1rem;
-          font-family: "Roboto Condensed", sans-serif;
           font-size: 16px;
           font-weight: 300;
           color: $color-text;
@@ -175,11 +173,12 @@ main {
           font-weight: 300;
           color: darken($color: $color-text, $amount: 50%);
           display: flex;
-          justify-content: flex-start;
+          justify-content: end;
           align-items: center;
           margin-top: 2rem;
 
           .blog-article-text-author {
+            direction: rtl;
             span {
               cursor: pointer;
               transition: color 0.25s;

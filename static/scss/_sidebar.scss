@@ -21,6 +21,10 @@
     border-radius: 10px;
     margin-bottom: 2rem;
     padding: 2rem 2rem 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
 
     @media screen and (max-width: 900px) {
       padding: 1.25rem 2rem 1rem 1.5rem;
@@ -42,7 +46,6 @@
       margin: 0;
       font-size: 38px;
       font-weight: 700;
-      font-family: "Rajdhani", sans-serif;
 
       @media screen and (max-width: 1100px) {
         font-size: 28px;
@@ -54,6 +57,7 @@
     }
 
     div {
+      float: right;
       margin-top: 0.5rem;
       width: 30px;
       height: 3px;
@@ -63,6 +67,7 @@
 
   .blog-sidebar-categories {
     ul {
+      direction: rtl;
       a {
         text-decoration: none;
       }
@@ -70,7 +75,6 @@
         font-size: 20px;
         margin: 1rem 0;
         color: darken($color: $color-text, $amount: 50%);
-        font-family: "Roboto Condensed", sans-serif;
 
         &:hover {
           color: #db7b7b;
@@ -99,7 +103,6 @@
         font-size: 14px;
         margin: 0.25rem 0.25rem 0.2rem 0;
         color: $color-black;
-        font-family: "Roboto Condensed", sans-serif;
 
         &:hover {
           color: #db7b7b;

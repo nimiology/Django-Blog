@@ -1,31 +1,23 @@
-{% extends 'Base.html' %}
-{% load static %}
-{% block custom-css %}
-    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
-{% endblock %}
-{% block title %}Nima{% endblock %}
-{% block header_icon %}
-    <img src="{% static 'assets/img/icon.png' %}" alt="logo">
-{% endblock %}
-{% block home_header %}<a href="{% url 'staticpages:home' %}" class="active">
+{% extends 'Base.html' %} {% load static %} {% block custom-css %}
+<link rel="stylesheet" href="{% static 'css/splide.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %} {% block title %}Nima{% endblock %} {% block header_icon %}
+<img src="{% static 'assets/img/icon.png' %}" alt="logo" />
+{% endblock %} {% block home_header %}<a href="{% url 'staticpages:home' %}" class="active">
     <li>HOME</li>
 </a>
-{% endblock %}
-{% block home_mobile_header %}<a href="{% url 'staticpages:home' %}" class="active">
+{% endblock %} {% block home_mobile_header %}<a href="{% url 'staticpages:home' %}" class="active">
     <li>HOME</li>
 </a>
-{% endblock %}
-{% block home_footer %}<a href="{% url 'staticpages:home' %}" class="active">
+{% endblock %} {% block home_footer %}<a href="{% url 'staticpages:home' %}" class="active">
     <li>HOME</li>
 </a>
-{% endblock %}
-{% block main %}
-    <body style="overflow-x: hidden">
+{% endblock %} {% block main %}
+<body style="overflow-x: hidden">
     <header class="col-12">
         <nav>
             <div class="navbar-logo col-6">
-                <img src="{% static 'assets/img/icon.png' %}" alt="logo"/>
+                <img src="{% static 'assets/img/icon.png' %}" alt="logo" />
             </div>
             <div class="navbar-menu-mobile col-6">
                 <div class="navbar-search-mobile">
@@ -37,9 +29,7 @@
                     <button><span class="bi bi-list"></span></button>
                 </div>
                 <div class="navbar-menu-mobile-wrapper">
-                    <ul>
-
-                    </ul>
+                    <ul></ul>
                 </div>
             </div>
             <div class="navbar-menu col-6">
@@ -82,7 +72,7 @@
                 <div class="col-5 col-md-6 col-lg-7 search-box-modal-container">
                     <div class="search-box-modal-wrapper">
                         <form class="search-box-modal-input" action="/blog" method="GET">
-                            <input name="s" class="col-9" type="text" placeholder="SEARCH"/>
+                            <input name="s" class="col-9" type="text" placeholder="SEARCH" />
                             <button class="col-3" type="submit">
                                 <span class="bi-search"></span>
                             </button>
@@ -95,31 +85,26 @@
     </header>
 
     <div class="image-container">
-        <img src="{% static 'assets/img/homeBackground.jpg' %}" alt="home-background"/>
+        <img src="{% static 'assets/img/homeBackground.jpg' %}" alt="home-background" />
     </div>
 
     <div class="wow home-container">
         <section>
-            <p>
-                IVE SEEN THINGS YOU PEOPLE WOULDNT BELIEVE, ALL THOSE MOMENTS WILL BE TEARS IN
-                RAIN
-            </p>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و ب استفاده از طراحان</p>
         </section>
     </div>
 
     <section class="wow portfolio-container">
-        <div
-                class="portfolio-card portfolio-card-left col-12"
-        >
+        <div class="portfolio-card portfolio-card-left col-12">
             <div class="portfolio-card-images">
                 <div class="wow">
-                    <img src="{{ project.thumbnail1.url }}" alt="portfolio-image"/>
+                    <img src="{{ project.thumbnail1.url }}" alt="portfolio-image" />
                 </div>
                 <div class="wow">
-                    <img src="{{ project.thumbnail2.url }}" alt="portfolio-image"/>
+                    <img src="{{ project.thumbnail2.url }}" alt="portfolio-image" />
                 </div>
                 <div class="wow">
-                    <img src="{{ project.thumbnail3.url }}" alt="portfolio-image"/>
+                    <img src="{{ project.thumbnail3.url }}" alt="portfolio-image" />
                 </div>
             </div>
 
@@ -133,11 +118,9 @@
                         <p>{{ project.text|truncatewords:15 }}</p>
                     </div>
                     <div class="portfolio-card-content-btn col-12 col-lg-8">
-                        <a href="{% url 'projects:project' project.slug %}"
-                        >
-                            <button>VIEW PROJECT</button>
-                        </a
-                        >
+                        <a href="{% url 'projects:project' project.slug %}">
+                            <button>دیدن نمونه کار</button>
+                        </a>
                         <div class="portfolio-card-content-btn-bg"></div>
                     </div>
                 </div>
@@ -146,43 +129,37 @@
     </section>
 
     <section class="quotes">
-        <h3>TESTIMONIALS</h3>
+        <h3>نظرات کاربران</h3>
         <div class="splide" aria-label="Users qoutes">
             <div class="splide__track">
                 <ul class="splide__list">
                     <li class="splide__slide">
                         <div>
                             <p>
-                                "Sed non mauris vitae erat consequat auctor eu in elit. Class
-                                aptent taciti uis sed odio sit amet nibh vulputate cursus a sit
-                                amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio
-                                tincidunt auctor a ornare odio. Proin gravida nibh vel velit
-                                auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
-                                nisi elit consequat ipsum."
+                               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+                                ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
+                                و کاربردهای متنوع با هدف بهبود زیادی
                             </p>
                         </div>
                     </li>
                     <li class="splide__slide">
                         <div>
                             <p>
-                                "Sed non mauris vitae erat consequat auctor eu in elit. Class
-                                aptent taciti uis sed odio sit amet nibh vulputate cursus a sit
-                                amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio
-                                tincidunt auctor a ornare odio. Proin gravida nibh vel velit
-                                auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
-                                nisi elit consequat ipsum."
+                               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+                                ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
+                                و کاربردهای متنوع با هدف بهبود زیادی
                             </p>
                         </div>
                     </li>
                     <li class="splide__slide">
                         <div>
                             <p>
-                                "Sed non mauris vitae erat consequat auctor eu in elit. Class
-                                aptent taciti uis sed odio sit amet nibh vulputate cursus a sit
-                                amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio
-                                tincidunt auctor a ornare odio. Proin gravida nibh vel velit
-                                auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
-                                nisi elit consequat ipsum."
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+                                ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
+                                و کاربردهای متنوع با هدف بهبود زیادی
                             </p>
                         </div>
                     </li>
@@ -196,12 +173,11 @@
             <form method="post">
                 <div>{{ form.name }} {{ form.email }}</div>
                 {{ form.text }} {% csrf_token %}
-                <button type="submit" class="col-12">SEND</button>
+                <button type="submit" class="col-12">ارسال</button>
             </form>
         </figure>
     </section>
-{% endblock %}
-{% block scripts %}
+    {% endblock %} {% block scripts %}
 
     <script src="{% static 'js/wow.min.js' %}"></script>
     <script src="{% static 'js/splide.min.js' %}"></script>
@@ -221,4 +197,5 @@
         const DELAY_LENGTH = 800;
     </script>
     <script src="{% static 'js/showHeader.js' %}"></script>
-{% endblock %}
+    {% endblock %}
+</body>

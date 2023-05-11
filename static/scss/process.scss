@@ -51,7 +51,6 @@ main {
 
             h1 {
                 max-width: 700px;
-                font-family: "Rajdhani", "sans-serif";
                 font-weight: 700;
                 font-size: 80px;
                 text-align: center;
@@ -81,38 +80,14 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
+        flex-direction: row-reverse;
         gap: 80px;
 
-        &:nth-child(odd) {
-            flex-direction: row-reverse;
-
-            .card-content-title {
-                align-items: end !important;
-
-                h1 {
-                    text-align: right;
-                }
-            }
-
-            p {
-                text-align: right;
-            }
+        &:nth-child(even) {
+            flex-direction: row;
 
             @media screen and (max-width: 760px) {
                 flex-direction: column;
-
-                .card-content-title {
-                    align-items: start !important;
-
-                    h1 {
-                        text-align: left !important;
-                    }
-                }
-
-                p {
-                    text-align: left;
-                }
             }
         }
 
@@ -190,7 +165,7 @@ main {
                 .card-content-title {
                     display: flex;
                     justify-content: center;
-                    align-items: start;
+                    align-items: end;
                     flex-direction: column;
 
                     h1 {
@@ -198,10 +173,11 @@ main {
                         margin: 0;
                         font-size: 52px;
                         font-weight: 700;
-                        font-family: "Rajdhani", sans-serif;
                         cursor: default;
                         max-width: 420px;
-                        word-break: break-all;
+                        // word-break: break-all;
+                        line-height: 1.6;
+                        text-align: right;
 
                         @media screen and (max-width: 1050px) {
                             max-width: 370px;
@@ -239,9 +215,9 @@ main {
                         max-width: 420px;
                         overflow: hidden;
                         display: block;
-                        font-family: "Roboto Condensed", sans-serif;
                         font-size: 18px;
                         font-weight: 300;
+                        text-align: right;
 
                         @media screen and (max-width: 1050px) {
                             max-width: 370px;

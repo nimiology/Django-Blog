@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8"/>
     <meta
@@ -43,46 +43,46 @@
                 <ul>
                     {% block home_mobile_header %}
                         <a href="{% url 'staticpages:home' %}">
-                            <li>HOME</li>
+                            <li>خانه</li>
                         </a>
                     {% endblock %}
                     {% block blog_mobile_header %}
 
                         <a href="{% url 'blog:blog' %}">
-                            <li>BLOG</li>
+                            <li>بلاگ</li>
                         </a>
                     {% endblock %}
                     {% block portfolio_mobile_header %}
 
                         <a href="{% url 'projects:projects' %}">
-                            <li>PORTFOLIO</li>
+                            <li>نمونه کار</li>
                         </a>
                     {% endblock %}
 
                     {% block process_mobile_header %}
 
                         <a href="{% url 'staticpages:process' %}">
-                            <li>PROCESS</li>
+                            <li>مراحل</li>
                         </a>
                     {% endblock %}
 
                     {% block faq_mobile_header %}
 
                         <a href="{% url 'staticpages:faq' %}">
-                            <li>FAQ</li>
+                            <li>سوالات متداول</li>
                         </a>
                     {% endblock %}
 
                     {% block contact_mobile_header %}
 
                         <a href="{% url 'staticpages:contact' %}">
-                            <li>CONTACT</li>
+                            <li>ارتباط با ما</li>
                         </a>
                     {% endblock %}
                     {% block about_mobile_header %}
 
                         <a href="{% url 'staticpages:about' %}">
-                            <li>ABOUT</li>
+                            <li>درباره ما</li>
                         </a>
                     {% endblock %}
 
@@ -92,29 +92,29 @@
         <div class="navbar-menu col-6">
             <ul>
                 {% block home_header %}<a href="{% url 'staticpages:home' %}">
-                    <li>HOME</li>
+                    <li>خانه</li>
                 </a>{% endblock %}
                 {% block blog_header %}<a href="{% url 'blog:blog' %}">
-                    <li>BLOG</li>
+                    <li>بلاگ</li>
                 </a>{% endblock %}
                 {% block portfolio_header %}<a href="{% url 'projects:projects' %}">
-                    <li>PORTFOLIO</li>
+                    <li>مراحل</li>
                 </a>{% endblock %}
                 <div id="navbar-menu-button">
                     {% block about_header %}<a href="{% url 'staticpages:about' %}">
-                        <li>ABOUT <span class="bi-caret-down"></span></li>
+                        <li>درباره ما <span class="bi-caret-down"></span></li>
                     </a>{% endblock %}
                 </div>
                 <div class="navbar-menu-sub">
                     <div>
                         {% block contact_header %}<a href="{% url 'staticpages:contact' %}">
-                            <li>CONTACT</li>
+                            <li>ارتباط با ما</li>
                         </a>{% endblock %}
                         {% block faq_header %}<a href="{% url 'staticpages:faq' %}">
-                            <li>FAQ</li>
+                            <li>سوالات متداول</li>
                         </a>{% endblock %}
                         {% block process_header %}<a href="{% url 'staticpages:process' %}">
-                            <li>PROCESS</li>
+                            <li>مراحل</li>
                         </a>{% endblock %}
                     </div>
                 </div>
@@ -130,7 +130,7 @@
             <div class="col-5 col-md-6 col-lg-7 search-box-modal-container">
                 <div class="search-box-modal-wrapper">
                     <form class="search-box-modal-input" action="/blog" method="GET">
-                        <input name="s" class="col-9" type="text" placeholder="SEARCH"/>
+                        <input name="s" class="col-9" type="text" placeholder="جستجو" autocomplete="off"/>
                         <button class="col-3" type="submit">
                             <span class="bi-search"></span>
                         </button>
@@ -180,46 +180,46 @@
             <ul>
                 {% block home_footer %}
                         <a href="{% url 'staticpages:home' %}">
-                            <li>HOME</li>
+                            <li>خانه</li>
                         </a>
                     {% endblock %}
                     {% block blog_footer %}
 
                         <a href="{% url 'blog:blog' %}">
-                            <li>BLOG</li>
+                            <li>بلاگ</li>
                         </a>
                     {% endblock %}
                     {% block portfolio_footer %}
 
                         <a href="{% url 'projects:projects' %}">
-                            <li>PORTFOLIO</li>
+                            <li>نمونه کار</li>
                         </a>
                     {% endblock %}
 
                     {% block process_footer %}
 
                         <a href="{% url 'staticpages:process' %}">
-                            <li>PROCESS</li>
+                            <li>مراحل</li>
                         </a>
                     {% endblock %}
 
                     {% block faq_footer %}
 
                         <a href="{% url 'staticpages:faq' %}">
-                            <li>FAQ</li>
+                            <li>سوالات متداول</li>
                         </a>
                     {% endblock %}
 
                     {% block contact_footer %}
 
                         <a href="{% url 'staticpages:contact' %}">
-                            <li>CONTACT</li>
+                            <li>ارتباط با ما</li>
                         </a>
                     {% endblock %}
                     {% block about_footer %}
 
                         <a href="{% url 'staticpages:about' %}">
-                            <li>ABOUT</li>
+                            <li>در باره ما</li>
                         </a>
                     {% endblock %}
             </ul>

@@ -9,13 +9,22 @@
   top: 0;
   opacity: 1; }
 
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("../assets/fonts/yekan-bakh/YekanBakh-Regular.woff") format("woff"), url("../assets/fonts/yekan-bakh/YekanBakh-Bold.woff") format("woff"); }
+
+* {
+  font-family: "Yekan Bakh", sans-serif; }
+
+body {
+  overflow-x: hidden !important; }
+
 header {
   position: absolute;
   z-index: 200;
   top: -10%;
   opacity: 0;
-  transition: 1s;
-  font-family: "Rajdhani", sans-serif; }
+  transition: 1s; }
   header nav {
     display: flex;
     justify-content: space-between;
@@ -51,9 +60,8 @@ header {
             gap: 2rem; } }
         header nav .navbar-menu ul li, header nav .navbar-menu-mobile ul li {
           cursor: pointer;
-          letter-spacing: 2px;
           font-size: 18px;
-          font-weight: 600;
+          font-weight: 400;
           transition: color 150ms, border-bottom-color 150ms, transform 150ms;
           border-bottom: 2px solid transparent; }
           @media screen and (max-width: 1100px) {
@@ -71,16 +79,16 @@ header {
             justify-content: center;
             align-items: center; }
             header nav .navbar-menu ul #navbar-menu-button li span, header nav .navbar-menu-mobile ul #navbar-menu-button li span {
-              margin-top: 2px; }
+              margin-top: 8px; }
         header nav .navbar-menu ul .navbar-menu-sub, header nav .navbar-menu-mobile ul .navbar-menu-sub {
           padding-top: 25px;
           position: absolute;
-          top: 55px;
+          top: 65px;
           right: 70px;
           display: none; }
           @media screen and (max-width: 800px) {
             header nav .navbar-menu ul .navbar-menu-sub, header nav .navbar-menu-mobile ul .navbar-menu-sub {
-              top: 45px; } }
+              top: 55px; } }
           header nav .navbar-menu ul .navbar-menu-sub div, header nav .navbar-menu-mobile ul .navbar-menu-sub div {
             position: relative;
             opacity: 1;
@@ -175,7 +183,7 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: row;
+            flex-direction: row-reverse;
             padding: 0 2rem 0 1.5rem;
             width: 100%; }
             header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input {
@@ -184,6 +192,7 @@ header {
               background: transparent;
               padding: 0;
               margin: 0;
+              direction: rtl;
               font-size: 5rem;
               color: #ffffff; }
               header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:focus {
@@ -223,7 +232,7 @@ header {
                   font-size: 1.4rem; } }
               header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button span {
                 color: #b3b3b3;
-                float: right; }
+                float: left; }
                 header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button span:hover {
                   color: #ffffff; }
           header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-line {
@@ -353,7 +362,6 @@ main {
     align-items: center; }
     .faq-container .faq-header div h1 {
       max-width: 700px;
-      font-family: "Rajdhani", "sans-serif";
       font-weight: 700;
       font-size: 80px;
       text-align: center; }
@@ -374,6 +382,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: start;
+  flex-direction: row-reverse;
   width: 100%;
   padding: 80px 50px; }
   @media screen and (max-width: 980px) {
@@ -383,11 +392,12 @@ main {
     .faq-container .faq-sections {
       padding: 80px 20px; } }
   .faq-container .faq-sections .faq-questions-contents {
+    direction: rtl;
     width: 70%;
-    padding-left: 150px; }
+    padding-right: 150px; }
     @media screen and (max-width: 1050px) {
       .faq-container .faq-sections .faq-questions-contents {
-        padding-left: 50px; } }
+        padding-right: 50px; } }
     @media screen and (max-width: 980px) {
       .faq-container .faq-sections .faq-questions-contents {
         padding-left: 0;
@@ -399,10 +409,8 @@ main {
       .faq-container .faq-sections .faq-questions-contents .faq-questions-content h2 {
         font-size: 24px;
         font-weight: 700;
-        font-family: "Rajdhani", "sans-serif";
         padding-bottom: 15px; }
       .faq-container .faq-sections .faq-questions-contents .faq-questions-content p {
-        font-family: "Roboto Condensed", sans-serif;
         font-size: 16px; }
   .faq-container .faq-sections .faq-separator {
     width: 100%;
@@ -436,13 +444,15 @@ main {
         width: 100%;
         position: static; } }
     .faq-container .faq-sections .faq-questions .faq-questions-title h2 {
+      direction: rtl;
       font-size: 40px;
       font-weight: 700;
-      font-family: "Rajdhani", "sans-serif"; }
+      margin-bottom: 15px; }
     .faq-container .faq-sections .faq-questions .faq-questions-title p {
-      font-family: "Roboto Condensed", sans-serif;
+      direction: rtl;
       font-size: 16px; }
     .faq-container .faq-sections .faq-questions .faq-questions-list {
+      direction: rtl;
       padding: 0;
       margin-top: 60px; }
       .faq-container .faq-sections .faq-questions .faq-questions-list .faq-questions-item {
@@ -451,12 +461,11 @@ main {
         transition: transform 0.2s; }
         .faq-container .faq-sections .faq-questions .faq-questions-list .faq-questions-item:hover {
           color: #db7b7b;
-          transform: translateX(10px); }
+          transform: translateX(-10px); }
         .faq-container .faq-sections .faq-questions .faq-questions-list .faq-questions-item a {
           text-decoration: none;
           font-size: 24px;
           font-weight: 700;
-          font-family: "Rajdhani", "sans-serif";
           color: inherit;
           transition: color 0.2s; }
 
@@ -470,7 +479,6 @@ footer {
   flex-direction: column;
   position: relative;
   z-index: 25;
-  font-family: "Rajdhani", sans-serif;
   background-color: #fff;
   border-top: 2px solid #ec4e00; }
   footer .footer-logo {
@@ -506,7 +514,6 @@ footer {
         color: #000000; }
       footer .footer-navbar .footer-navbar-menu ul li {
         cursor: pointer;
-        letter-spacing: 2px;
         font-size: 1.1rem;
         font-weight: 600;
         transition: color 150ms, border-bottom-color 150ms, transform 150ms;
@@ -546,7 +553,6 @@ footer {
   footer .footer-copyright {
     margin-bottom: 5rem;
     color: #4d4d4d;
-    letter-spacing: 4px;
     font-size: 17px;
     font-weight: 500; }
     footer .footer-copyright a {
@@ -560,9 +566,7 @@ footer {
         margin-bottom: 2rem; } }
     @media screen and (max-width: 450px) {
       footer .footer-copyright {
-        font-size: 12px;
-        letter-spacing: 3px; } }
+        font-size: 12px; } }
     @media screen and (max-width: 400px) {
       footer .footer-copyright {
-        font-size: 10px;
-        letter-spacing: 2px; } }
+        font-size: 10px; } }

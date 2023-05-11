@@ -53,7 +53,6 @@ main {
 
             h1 {
                 max-width: 700px;
-                font-family: "Rajdhani", "sans-serif";
                 font-weight: 700;
                 font-size: 80px;
                 text-align: center;
@@ -81,6 +80,7 @@ main {
         display: flex;
         justify-content: center;
         align-items: start;
+        flex-direction: row-reverse;
         width: 100%;
         padding: 80px 50px;
 
@@ -93,11 +93,12 @@ main {
         }
 
         .faq-questions-contents {
+            direction: rtl;
             width: 70%;
-            padding-left: 150px;
+            padding-right: 150px;
 
             @media screen and (max-width: 1050px) {
-                padding-left: 50px;
+                padding-right: 50px;
             }
 
             @media screen and (max-width: 980px) {
@@ -109,15 +110,15 @@ main {
             .faq-questions-content {
                 list-style: none;
                 padding-bottom: 35px;
+                
+
                 h2 {
                     font-size: 24px;
                     font-weight: 700;
-                    font-family: "Rajdhani", "sans-serif";
                     padding-bottom: 15px;
                 }
 
                 p {
-                    font-family: "Roboto Condensed", sans-serif;
                     font-size: 16px;
                 }
             }
@@ -169,16 +170,18 @@ main {
 
             .faq-questions-title {
                 h2 {
+                    direction: rtl;
                     font-size: 40px;
                     font-weight: 700;
-                    font-family: "Rajdhani", "sans-serif";
+                    margin-bottom: 15px;
                 }
                 p {
-                    font-family: "Roboto Condensed", sans-serif;
+                    direction: rtl;
                     font-size: 16px;
                 }
             }
             .faq-questions-list {
+                direction: rtl;
                 padding: 0;
                 margin-top: 60px;
                 .faq-questions-item {
@@ -188,14 +191,13 @@ main {
 
                     &:hover {
                         color: $primary-color;
-                        transform: translateX(10px);
+                        transform: translateX(-10px);
                     }
 
                     a {
                         text-decoration: none;
                         font-size: 24px;
                         font-weight: 700;
-                        font-family: "Rajdhani", "sans-serif";
                         color: inherit;
                         transition: color 0.2s;
                     }

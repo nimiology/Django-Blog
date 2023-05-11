@@ -9,13 +9,22 @@
   top: 0;
   opacity: 1; }
 
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("../assets/fonts/yekan-bakh/YekanBakh-Regular.woff") format("woff"), url("../assets/fonts/yekan-bakh/YekanBakh-Bold.woff") format("woff"); }
+
+* {
+  font-family: "Yekan Bakh", sans-serif; }
+
+body {
+  overflow-x: hidden !important; }
+
 header {
   position: absolute;
   z-index: 200;
   top: -10%;
   opacity: 0;
-  transition: 1s;
-  font-family: "Rajdhani", sans-serif; }
+  transition: 1s; }
   header nav {
     display: flex;
     justify-content: space-between;
@@ -51,9 +60,8 @@ header {
             gap: 2rem; } }
         header nav .navbar-menu ul li, header nav .navbar-menu-mobile ul li {
           cursor: pointer;
-          letter-spacing: 2px;
           font-size: 18px;
-          font-weight: 600;
+          font-weight: 400;
           transition: color 150ms, border-bottom-color 150ms, transform 150ms;
           border-bottom: 2px solid transparent; }
           @media screen and (max-width: 1100px) {
@@ -71,16 +79,16 @@ header {
             justify-content: center;
             align-items: center; }
             header nav .navbar-menu ul #navbar-menu-button li span, header nav .navbar-menu-mobile ul #navbar-menu-button li span {
-              margin-top: 2px; }
+              margin-top: 8px; }
         header nav .navbar-menu ul .navbar-menu-sub, header nav .navbar-menu-mobile ul .navbar-menu-sub {
           padding-top: 25px;
           position: absolute;
-          top: 55px;
+          top: 65px;
           right: 70px;
           display: none; }
           @media screen and (max-width: 800px) {
             header nav .navbar-menu ul .navbar-menu-sub, header nav .navbar-menu-mobile ul .navbar-menu-sub {
-              top: 45px; } }
+              top: 55px; } }
           header nav .navbar-menu ul .navbar-menu-sub div, header nav .navbar-menu-mobile ul .navbar-menu-sub div {
             position: relative;
             opacity: 1;
@@ -175,7 +183,7 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: row;
+            flex-direction: row-reverse;
             padding: 0 2rem 0 1.5rem;
             width: 100%; }
             header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input {
@@ -184,6 +192,7 @@ header {
               background: transparent;
               padding: 0;
               margin: 0;
+              direction: rtl;
               font-size: 5rem;
               color: #ffffff; }
               header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:focus {
@@ -223,7 +232,7 @@ header {
                   font-size: 1.4rem; } }
               header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button span {
                 color: #b3b3b3;
-                float: right; }
+                float: left; }
                 header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button span:hover {
                   color: #ffffff; }
           header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-line {
@@ -402,16 +411,15 @@ main {
           color: #ffffff;
           text-decoration: none; }
         .blog-container .blog-articles .blog-article .blog-article-text a > h1 {
-          font-family: "Rajdhani", "sans-serif";
+          direction: rtl;
           font-size: 45px;
           font-weight: 700;
-          letter-spacing: 1px;
           line-height: 3rem;
           color: #ffffff;
           transition: color 0.25s;
           cursor: pointer;
-          border-left: 4px solid #db7b7b;
-          padding-left: 1rem; }
+          border-right: 4px solid #db7b7b;
+          padding-right: 1rem; }
           .blog-container .blog-articles .blog-article .blog-article-text a > h1:hover {
             color: #db7b7b; }
           @media screen and (max-width: 1100px) {
@@ -427,7 +435,6 @@ main {
               font-size: 20px; } }
         .blog-container .blog-articles .blog-article .blog-article-text p {
           padding-top: 1rem;
-          font-family: "Roboto Condensed", sans-serif;
           font-size: 16px;
           font-weight: 300;
           color: #ffffff; }
@@ -439,15 +446,17 @@ main {
           font-weight: 300;
           color: gray;
           display: flex;
-          justify-content: flex-start;
+          justify-content: end;
           align-items: center;
           margin-top: 2rem; }
-          .blog-container .blog-articles .blog-article .blog-article-text > div .blog-article-text-author span {
-            cursor: pointer;
-            transition: color 0.25s;
-            padding: 0 0.25rem; }
-            .blog-container .blog-articles .blog-article .blog-article-text > div .blog-article-text-author span:hover {
-              color: #db7b7b; }
+          .blog-container .blog-articles .blog-article .blog-article-text > div .blog-article-text-author {
+            direction: rtl; }
+            .blog-container .blog-articles .blog-article .blog-article-text > div .blog-article-text-author span {
+              cursor: pointer;
+              transition: color 0.25s;
+              padding: 0 0.25rem; }
+              .blog-container .blog-articles .blog-article .blog-article-text > div .blog-article-text-author span:hover {
+                color: #db7b7b; }
           .blog-container .blog-articles .blog-article .blog-article-text > div .blog-article-text-comment-btn, .blog-container .blog-articles .blog-article .blog-article-text > div .blog-article-text-like-btn {
             border: none;
             outline: none;
@@ -533,7 +542,11 @@ main {
       background-color: #e6e6e6;
       border-radius: 10px;
       margin-bottom: 2rem;
-      padding: 2rem 2rem 1rem 2rem; }
+      padding: 2rem 2rem 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: end; }
       @media screen and (max-width: 900px) {
         .blog-container .blog-sidebar section {
           padding: 1.25rem 2rem 1rem 1.5rem; } }
@@ -549,8 +562,7 @@ main {
       padding: 0;
       margin: 0;
       font-size: 38px;
-      font-weight: 700;
-      font-family: "Rajdhani", sans-serif; }
+      font-weight: 700; }
       @media screen and (max-width: 1100px) {
         .blog-container .blog-sidebar .blog-sidebar-title h1 {
           font-size: 28px; } }
@@ -558,19 +570,21 @@ main {
         .blog-container .blog-sidebar .blog-sidebar-title h1 {
           font-size: 22px; } }
     .blog-container .blog-sidebar .blog-sidebar-title div {
+      float: right;
       margin-top: 0.5rem;
       width: 30px;
       height: 3px;
       background-color: #db7b7b; }
-    .blog-container .blog-sidebar .blog-sidebar-categories ul a {
-      text-decoration: none; }
-    .blog-container .blog-sidebar .blog-sidebar-categories ul li {
-      font-size: 20px;
-      margin: 1rem 0;
-      color: gray;
-      font-family: "Roboto Condensed", sans-serif; }
-      .blog-container .blog-sidebar .blog-sidebar-categories ul li:hover {
-        color: #db7b7b; }
+    .blog-container .blog-sidebar .blog-sidebar-categories ul {
+      direction: rtl; }
+      .blog-container .blog-sidebar .blog-sidebar-categories ul a {
+        text-decoration: none; }
+      .blog-container .blog-sidebar .blog-sidebar-categories ul li {
+        font-size: 20px;
+        margin: 1rem 0;
+        color: gray; }
+        .blog-container .blog-sidebar .blog-sidebar-categories ul li:hover {
+          color: #db7b7b; }
     .blog-container .blog-sidebar .blog-sidebar-tags ul {
       display: flex;
       justify-content: flex-start;
@@ -586,8 +600,7 @@ main {
         border-radius: 5px;
         font-size: 14px;
         margin: 0.25rem 0.25rem 0.2rem 0;
-        color: #000000;
-        font-family: "Roboto Condensed", sans-serif; }
+        color: #000000; }
         .blog-container .blog-sidebar .blog-sidebar-tags ul li:hover {
           color: #db7b7b; }
 
@@ -601,7 +614,6 @@ footer {
   flex-direction: column;
   position: relative;
   z-index: 25;
-  font-family: "Rajdhani", sans-serif;
   background-color: #fff;
   border-top: 2px solid #ec4e00; }
   footer .footer-logo {
@@ -637,7 +649,6 @@ footer {
         color: #000000; }
       footer .footer-navbar .footer-navbar-menu ul li {
         cursor: pointer;
-        letter-spacing: 2px;
         font-size: 1.1rem;
         font-weight: 600;
         transition: color 150ms, border-bottom-color 150ms, transform 150ms;
@@ -677,7 +688,6 @@ footer {
   footer .footer-copyright {
     margin-bottom: 5rem;
     color: #4d4d4d;
-    letter-spacing: 4px;
     font-size: 17px;
     font-weight: 500; }
     footer .footer-copyright a {
@@ -691,9 +701,7 @@ footer {
         margin-bottom: 2rem; } }
     @media screen and (max-width: 450px) {
       footer .footer-copyright {
-        font-size: 12px;
-        letter-spacing: 3px; } }
+        font-size: 12px; } }
     @media screen and (max-width: 400px) {
       footer .footer-copyright {
-        font-size: 10px;
-        letter-spacing: 2px; } }
+        font-size: 10px; } }

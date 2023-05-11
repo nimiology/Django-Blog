@@ -22,7 +22,7 @@
     <main class="wow portfolio-container">
         {% for project in projects %}
             <section
-                    class="{% cycle 'portfolio-card portfolio-card-left col-12' 'portfolio-card portfolio-card-right col-12' %}"
+                    class="{% cycle 'portfolio-card portfolio-card-right col-12' 'portfolio-card portfolio-card-left col-12' %}"
             >
                 <div class="portfolio-card-images col-6">
                     <div class="wow">
@@ -53,7 +53,7 @@
                         <div class="portfolio-card-content-btn col-12 col-lg-8 col-xl-4">
                             <a href="{% url 'projects:project' project.slug %}"
                             >
-                                <button>VIEW PROJECT</button>
+                                <button>مشاهده بروژه</button>
                             </a
                             >
                             <div class="portfolio-card-content-btn-bg"></div>

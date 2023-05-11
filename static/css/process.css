@@ -9,13 +9,22 @@
   top: 0;
   opacity: 1; }
 
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("../assets/fonts/yekan-bakh/YekanBakh-Regular.woff") format("woff"), url("../assets/fonts/yekan-bakh/YekanBakh-Bold.woff") format("woff"); }
+
+* {
+  font-family: "Yekan Bakh", sans-serif; }
+
+body {
+  overflow-x: hidden !important; }
+
 header {
   position: absolute;
   z-index: 200;
   top: -10%;
   opacity: 0;
-  transition: 1s;
-  font-family: "Rajdhani", sans-serif; }
+  transition: 1s; }
   header nav {
     display: flex;
     justify-content: space-between;
@@ -51,9 +60,8 @@ header {
             gap: 2rem; } }
         header nav .navbar-menu ul li, header nav .navbar-menu-mobile ul li {
           cursor: pointer;
-          letter-spacing: 2px;
           font-size: 18px;
-          font-weight: 600;
+          font-weight: 400;
           transition: color 150ms, border-bottom-color 150ms, transform 150ms;
           border-bottom: 2px solid transparent; }
           @media screen and (max-width: 1100px) {
@@ -71,16 +79,16 @@ header {
             justify-content: center;
             align-items: center; }
             header nav .navbar-menu ul #navbar-menu-button li span, header nav .navbar-menu-mobile ul #navbar-menu-button li span {
-              margin-top: 2px; }
+              margin-top: 8px; }
         header nav .navbar-menu ul .navbar-menu-sub, header nav .navbar-menu-mobile ul .navbar-menu-sub {
           padding-top: 25px;
           position: absolute;
-          top: 55px;
+          top: 65px;
           right: 70px;
           display: none; }
           @media screen and (max-width: 800px) {
             header nav .navbar-menu ul .navbar-menu-sub, header nav .navbar-menu-mobile ul .navbar-menu-sub {
-              top: 45px; } }
+              top: 55px; } }
           header nav .navbar-menu ul .navbar-menu-sub div, header nav .navbar-menu-mobile ul .navbar-menu-sub div {
             position: relative;
             opacity: 1;
@@ -175,7 +183,7 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: row;
+            flex-direction: row-reverse;
             padding: 0 2rem 0 1.5rem;
             width: 100%; }
             header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input {
@@ -184,6 +192,7 @@ header {
               background: transparent;
               padding: 0;
               margin: 0;
+              direction: rtl;
               font-size: 5rem;
               color: #ffffff; }
               header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input input:focus {
@@ -223,7 +232,7 @@ header {
                   font-size: 1.4rem; } }
               header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button span {
                 color: #b3b3b3;
-                float: right; }
+                float: left; }
                 header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-input button span:hover {
                   color: #ffffff; }
           header nav .search-box-modal .search-box-modal-container .search-box-modal-wrapper .search-box-modal-line {
@@ -351,7 +360,6 @@ main {
     align-items: center; }
     .process-container .process-header div h1 {
       max-width: 700px;
-      font-family: "Rajdhani", "sans-serif";
       font-weight: 700;
       font-size: 80px;
       text-align: center; }
@@ -374,25 +382,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: row-reverse;
   gap: 80px; }
-  .process-container .card:nth-child(odd) {
-    flex-direction: row-reverse; }
-    .process-container .card:nth-child(odd) .card-content-title {
-      align-items: end !important; }
-      .process-container .card:nth-child(odd) .card-content-title h1 {
-        text-align: right; }
-    .process-container .card:nth-child(odd) p {
-      text-align: right; }
+  .process-container .card:nth-child(even) {
+    flex-direction: row; }
     @media screen and (max-width: 760px) {
-      .process-container .card:nth-child(odd) {
-        flex-direction: column; }
-        .process-container .card:nth-child(odd) .card-content-title {
-          align-items: start !important; }
-          .process-container .card:nth-child(odd) .card-content-title h1 {
-            text-align: left !important; }
-        .process-container .card:nth-child(odd) p {
-          text-align: left; } }
+      .process-container .card:nth-child(even) {
+        flex-direction: column; } }
   @media screen and (max-width: 970px) {
     .process-container .card {
       gap: 50px; } }
@@ -450,17 +446,17 @@ main {
     .process-container .card .card-content .card-content-wrapper .card-content-title {
       display: flex;
       justify-content: center;
-      align-items: start;
+      align-items: end;
       flex-direction: column; }
       .process-container .card .card-content .card-content-wrapper .card-content-title h1 {
         padding: 0;
         margin: 0;
         font-size: 52px;
         font-weight: 700;
-        font-family: "Rajdhani", sans-serif;
         cursor: default;
         max-width: 420px;
-        word-break: break-all; }
+        line-height: 1.6;
+        text-align: right; }
         @media screen and (max-width: 1050px) {
           .process-container .card .card-content .card-content-wrapper .card-content-title h1 {
             max-width: 370px; } }
@@ -487,9 +483,9 @@ main {
         max-width: 420px;
         overflow: hidden;
         display: block;
-        font-family: "Roboto Condensed", sans-serif;
         font-size: 18px;
-        font-weight: 300; }
+        font-weight: 300;
+        text-align: right; }
         @media screen and (max-width: 1050px) {
           .process-container .card .card-content .card-content-wrapper .card-content-text p {
             max-width: 370px;
@@ -514,7 +510,6 @@ footer {
   flex-direction: column;
   position: relative;
   z-index: 25;
-  font-family: "Rajdhani", sans-serif;
   background-color: #fff;
   border-top: 2px solid #ec4e00; }
   footer .footer-logo {
@@ -550,7 +545,6 @@ footer {
         color: #000000; }
       footer .footer-navbar .footer-navbar-menu ul li {
         cursor: pointer;
-        letter-spacing: 2px;
         font-size: 1.1rem;
         font-weight: 600;
         transition: color 150ms, border-bottom-color 150ms, transform 150ms;
@@ -590,7 +584,6 @@ footer {
   footer .footer-copyright {
     margin-bottom: 5rem;
     color: #4d4d4d;
-    letter-spacing: 4px;
     font-size: 17px;
     font-weight: 500; }
     footer .footer-copyright a {
@@ -604,9 +597,7 @@ footer {
         margin-bottom: 2rem; } }
     @media screen and (max-width: 450px) {
       footer .footer-copyright {
-        font-size: 12px;
-        letter-spacing: 3px; } }
+        font-size: 12px; } }
     @media screen and (max-width: 400px) {
       footer .footer-copyright {
-        font-size: 10px;
-        letter-spacing: 2px; } }
+        font-size: 10px; } }

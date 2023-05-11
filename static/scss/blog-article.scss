@@ -98,10 +98,8 @@ main {
         color: #db7b7b;
         text-decoration: none;
         h1 {
-          font-family: "Rajdhani", "sans-serif";
           font-size: 45px;
           font-weight: 700;
-          letter-spacing: 1px;
           line-height: 3rem;
           transition: color 0.25s;
           cursor: pointer;
@@ -120,7 +118,6 @@ main {
       }
 
       p {
-        font-family: "Roboto Condensed", sans-serif;
         font-size: 16px;
         font-weight: 300;
         color: $color-black;
@@ -159,7 +156,6 @@ main {
         color: $color-black;
         font-size: 25px;
         font-weight: 700;
-        font-family: "Rajdhani", "sans-serif";
         margin: 0 !important;
       }
 

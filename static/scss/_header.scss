@@ -6,13 +6,26 @@
     opacity: 1;
 }
 
+@font-face {
+    font-family: "Yekan Bakh";
+    src: url("../assets/fonts/yekan-bakh/YekanBakh-Regular.woff") format("woff"),
+        url("../assets/fonts/yekan-bakh/YekanBakh-Bold.woff") format("woff");
+}
+
+* {
+    font-family: "Yekan Bakh", sans-serif;
+}
+
+body {
+    overflow-x: hidden !important;
+}
+
 header {
     position: absolute;
     z-index: 200;
     top: -10%;
     opacity: 0;
     transition: 1s;
-    font-family: "Rajdhani", sans-serif;
     nav {
         display: flex;
         justify-content: space-between;
@@ -58,11 +71,10 @@ header {
 
                 li {
                     cursor: pointer;
-                    letter-spacing: 2px;
 
                     font: {
                         size: 18px;
-                        weight: 600;
+                        weight: 400;
                     }
 
                     transition: color 150ms, border-bottom-color 150ms, transform 150ms;
@@ -87,7 +99,7 @@ header {
                         justify-content: center;
                         align-items: center;
                         span {
-                            margin-top: 2px;
+                            margin-top: 8px;
                         }
                     }
                 }
@@ -95,12 +107,12 @@ header {
                 .navbar-menu-sub {
                     padding-top: 25px;
                     position: absolute;
-                    top: 55px;
+                    top: 65px;
                     right: 70px;
                     display: none;
 
                     @media screen and (max-width: 800px) {
-                        top: 45px;
+                        top: 55px;
                     }
 
                     div {
@@ -210,12 +222,13 @@ header {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        flex-direction: row;
+                        flex-direction: row-reverse;
                         padding: 0 2rem 0 1.5rem;
                         width: 100%;
 
                         input {
                             @include input_reset();
+                            direction: rtl;
                             font-size: 5rem;
                             color: $color-text;
 
@@ -243,7 +256,7 @@ header {
 
                             span {
                                 color: darken($color-text, 30%);
-                                float: right;
+                                float: left;
 
                                 &:hover {
                                     color: $color-text;
